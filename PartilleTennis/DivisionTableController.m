@@ -102,7 +102,7 @@
 	NSDictionary *teamData = (NSDictionary *)[[self tableData] objectAtIndex:[indexPath row]]; 
 	NSLog(@"Cellen: %@", teamData);
 	[cell textLabel].Text = [teamData objectForKey:@"team"];
-	[cell detailTextLabel].text = [NSString stringWithFormat:@"Matcher: %@, Matchpoäng: %@, Lagpoäng: %@", 
+	[cell detailTextLabel].text = [NSString stringWithFormat:@"Matcher: %@, Matchp: %@, Lagpoäng: %@", 
 																 [teamData objectForKey:@"matches"],
 																 [teamData objectForKey:@"match_points"],
 																 [teamData objectForKey:@"team_points"]];
