@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85B543C313BBCC2A0065B152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C213BBCC2A0065B152 /* UIKit.framework */; };
+		85B543C513BBCC2A0065B152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C413BBCC2A0065B152 /* Foundation.framework */; };
+		85B543C713BBCC2A0065B152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C613BBCC2A0065B152 /* CoreGraphics.framework */; };
+		85B543CD13BBCC2A0065B152 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85B543CB13BBCC2A0065B152 /* InfoPlist.strings */; };
+		85B543CF13BBCC2A0065B152 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B543CE13BBCC2A0065B152 /* main.m */; };
+		85B543D313BBCC2A0065B152 /* PartilleTennisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B543D213BBCC2A0065B152 /* PartilleTennisAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		85B543BE13BBCC2A0065B152 /* PartilleTennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartilleTennis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B543C213BBCC2A0065B152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		85B543C413BBCC2A0065B152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		85B543C613BBCC2A0065B152 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		85B543CA13BBCC2A0065B152 /* PartilleTennis-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PartilleTennis-Info.plist"; sourceTree = "<group>"; };
+		85B543CC13BBCC2A0065B152 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85B543CE13BBCC2A0065B152 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		85B543D013BBCC2A0065B152 /* PartilleTennis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PartilleTennis-Prefix.pch"; sourceTree = "<group>"; };
+		85B543D113BBCC2A0065B152 /* PartilleTennisAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartilleTennisAppDelegate.h; sourceTree = "<group>"; };
+		85B543D213BBCC2A0065B152 /* PartilleTennisAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PartilleTennisAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85B543BB13BBCC290065B152 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B543C313BBCC2A0065B152 /* UIKit.framework in Frameworks */,
+				85B543C513BBCC2A0065B152 /* Foundation.framework in Frameworks */,
+				85B543C713BBCC2A0065B152 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85B543B313BBCC290065B152 = {
+			isa = PBXGroup;
+			children = (
+				85B543C813BBCC2A0065B152 /* PartilleTennis */,
+				85B543C113BBCC2A0065B152 /* Frameworks */,
+				85B543BF13BBCC2A0065B152 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85B543BF13BBCC2A0065B152 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85B543BE13BBCC2A0065B152 /* PartilleTennis.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85B543C113BBCC2A0065B152 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85B543C213BBCC2A0065B152 /* UIKit.framework */,
+				85B543C413BBCC2A0065B152 /* Foundation.framework */,
+				85B543C613BBCC2A0065B152 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85B543C813BBCC2A0065B152 /* PartilleTennis */ = {
+			isa = PBXGroup;
+			children = (
+				85B543D113BBCC2A0065B152 /* PartilleTennisAppDelegate.h */,
+				85B543D213BBCC2A0065B152 /* PartilleTennisAppDelegate.m */,
+				85B543C913BBCC2A0065B152 /* Supporting Files */,
+			);
+			path = PartilleTennis;
+			sourceTree = "<group>";
+		};
+		85B543C913BBCC2A0065B152 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85B543CA13BBCC2A0065B152 /* PartilleTennis-Info.plist */,
+				85B543CB13BBCC2A0065B152 /* InfoPlist.strings */,
+				85B543CE13BBCC2A0065B152 /* main.m */,
+				85B543D013BBCC2A0065B152 /* PartilleTennis-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85B543BD13BBCC290065B152 /* PartilleTennis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85B543D613BBCC2A0065B152 /* Build configuration list for PBXNativeTarget "PartilleTennis" */;
+			buildPhases = (
+				85B543BA13BBCC290065B152 /* Sources */,
+				85B543BB13BBCC290065B152 /* Frameworks */,
+				85B543BC13BBCC290065B152 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PartilleTennis;
+			productName = PartilleTennis;
+			productReference = 85B543BE13BBCC2A0065B152 /* PartilleTennis.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85B543B513BBCC290065B152 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 85B543B813BBCC290065B152 /* Build configuration list for PBXProject "PartilleTennis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 85B543B313BBCC290065B152;
+			productRefGroup = 85B543BF13BBCC2A0065B152 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85B543BD13BBCC290065B152 /* PartilleTennis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85B543BC13BBCC290065B152 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B543CD13BBCC2A0065B152 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85B543BA13BBCC290065B152 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B543CF13BBCC2A0065B152 /* main.m in Sources */,
+				85B543D313BBCC2A0065B152 /* PartilleTennisAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		85B543CB13BBCC2A0065B152 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85B543CC13BBCC2A0065B152 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85B543D413BBCC2A0065B152 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		85B543D513BBCC2A0065B152 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85B543D713BBCC2A0065B152 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PartilleTennis/PartilleTennis-Prefix.pch";
+				INFOPLIST_FILE = "PartilleTennis/PartilleTennis-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		85B543D813BBCC2A0065B152 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PartilleTennis/PartilleTennis-Prefix.pch";
+				INFOPLIST_FILE = "PartilleTennis/PartilleTennis-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85B543B813BBCC290065B152 /* Build configuration list for PBXProject "PartilleTennis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B543D413BBCC2A0065B152 /* Debug */,
+				85B543D513BBCC2A0065B152 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85B543D613BBCC2A0065B152 /* Build configuration list for PBXNativeTarget "PartilleTennis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B543D713BBCC2A0065B152 /* Debug */,
+				85B543D813BBCC2A0065B152 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85B543B513BBCC290065B152 /* Project object */;
+}
