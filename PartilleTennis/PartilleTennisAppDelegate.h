@@ -11,5 +11,7 @@
 @interface PartilleTennisAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) UINavigationController *navController;
+@property (nonatomic, retain) UINavigationController *settingsNavController;
 
 @end

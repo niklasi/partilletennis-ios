@@ -7,17 +7,40 @@
 //
 
 #import "PartilleTennisAppDelegate.h"
+#import "SeriesController.h"
 
 @implementation PartilleTennisAppDelegate
 
-@synthesize window = _window;
+@synthesize window = _window, navController, settingsNavController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window makeKeyAndVisible];
-    return YES;
+	
+	UITabBarController *tabBarController = [[UITabBarController alloc] init];
+	UIViewController *seriesController = [[SeriesController alloc] init];
+	self.navController = [[UINavigationController alloc] initWithRootViewController:seriesController];
+	
+	//UIViewController *settingsController = [[SettingsController alloc] init];
+	//self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
+	
+	NSArray *viewControllers = [NSArray arrayWithObjects:self.navController, /*self.settingsNavController,*/ nil];
+	//[seriesController release];
+	//[settingsController release];
+	
+	[tabBarController setViewControllers:viewControllers];
+	
+  [_window setRootViewController:tabBarController];
+	//[tabBarController release];
+	
+	
+	// Add the navigation controller's view to the window and display.
+	[_window addSubview:tabBarController.view];
+
+	
+	[self.window makeKeyAndVisible];
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
