@@ -102,13 +102,13 @@
     
 	switch (indexPath.row) {
 		case 0:
-			[cell textLabel].text = @"Företagstennis Division 1";
+			[cell textLabel].text = @"Division 1";
 			break;
 		case 1:
-			[cell textLabel].text = @"Företagstennis Division 2";
+			[cell textLabel].text = @"Division 2";
 			break;
 		case 2:
-			[cell textLabel].text = @"Företagstennis Division 3";
+			[cell textLabel].text = @"Division 3";
 			break;
 	}
     
@@ -162,7 +162,8 @@
 	// Navigation logic may go here. Create and push another view controller.
 	DivisionTableController *divisionTableController = [[DivisionTableController alloc] init];
     
-	// Pass the selected object to the new view controller.
+	[divisionTableController setDivision:indexPath.row + 1];
+	
 	[self.navigationController pushViewController:divisionTableController animated:YES];
     
 }

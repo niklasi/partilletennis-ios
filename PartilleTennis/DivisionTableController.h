@@ -10,4 +10,6 @@
 
 @interface DivisionTableController : UITableViewController
 
+@property (nonatomic) int division;
+
 @end
