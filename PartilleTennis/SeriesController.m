@@ -15,7 +15,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-			[self setTitle:@"Tabell"];
+			[self setTitle:@"Serier"];
     }
     return self;
 }
@@ -102,13 +102,13 @@
     
 	switch (indexPath.row) {
 		case 0:
-			[cell textLabel].text = @"Division 1";
+			[cell textLabel].text = @"Företagstennis Division 1";
 			break;
 		case 1:
-			[cell textLabel].text = @"Division 2";
+			[cell textLabel].text = @"Företagstennis Division 2";
 			break;
 		case 2:
-			[cell textLabel].text = @"Division 3";
+			[cell textLabel].text = @"Företagstennis Division 3";
 			break;
 	}
     
