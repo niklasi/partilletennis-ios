@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8504711013BBD02D0052F1F4 /* SeriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504710F13BBD02D0052F1F4 /* SeriesController.m */; };
+		8504711713BBD68B0052F1F4 /* DivisionTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504711613BBD68B0052F1F4 /* DivisionTableController.m */; };
 		85B543C313BBCC2A0065B152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C213BBCC2A0065B152 /* UIKit.framework */; };
 		85B543C513BBCC2A0065B152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C413BBCC2A0065B152 /* Foundation.framework */; };
 		85B543C713BBCC2A0065B152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C613BBCC2A0065B152 /* CoreGraphics.framework */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		8504710E13BBD02D0052F1F4 /* SeriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesController.h; sourceTree = "<group>"; };
 		8504710F13BBD02D0052F1F4 /* SeriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesController.m; sourceTree = "<group>"; };
+		8504711513BBD68B0052F1F4 /* DivisionTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DivisionTableController.h; sourceTree = "<group>"; };
+		8504711613BBD68B0052F1F4 /* DivisionTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivisionTableController.m; sourceTree = "<group>"; };
 		85B543BE13BBCC2A0065B152 /* PartilleTennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartilleTennis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B543C213BBCC2A0065B152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85B543C413BBCC2A0065B152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,6 +83,8 @@
 				85B543C913BBCC2A0065B152 /* Supporting Files */,
 				8504710E13BBD02D0052F1F4 /* SeriesController.h */,
 				8504710F13BBD02D0052F1F4 /* SeriesController.m */,
+				8504711513BBD68B0052F1F4 /* DivisionTableController.h */,
+				8504711613BBD68B0052F1F4 /* DivisionTableController.m */,
 			);
 			path = PartilleTennis;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				85B543CF13BBCC2A0065B152 /* main.m in Sources */,
 				85B543D313BBCC2A0065B152 /* PartilleTennisAppDelegate.m in Sources */,
 				8504711013BBD02D0052F1F4 /* SeriesController.m in Sources */,
+				8504711713BBD68B0052F1F4 /* DivisionTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

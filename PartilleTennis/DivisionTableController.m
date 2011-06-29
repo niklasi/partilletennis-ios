@@ -1,21 +1,21 @@
 //
-//  SeriesController.m
+//  DivisionTable.m
 //  PartilleTennis
 //
 //  Created by Niklas Ingholt on 2011-06-29.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SeriesController.h"
 #import "DivisionTableController.h"
 
-@implementation SeriesController
+
+@implementation DivisionTableController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-			[self setTitle:@"Serier"];
+        // Custom initialization
     }
     return self;
 }
@@ -78,42 +78,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
-    // Return the number of sections.
-    return 1;
+	
+	// Return the number of sections.
+	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Cell";
     
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
-	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-		[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-	}
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
-	switch (indexPath.row) {
-		case 0:
-			[cell textLabel].text = @"Företagstennis Division 1";
-			break;
-		case 1:
-			[cell textLabel].text = @"Företagstennis Division 2";
-			break;
-		case 2:
-			[cell textLabel].text = @"Företagstennis Division 3";
-			break;
-	}
+    // Configure the cell...
     
-	return cell;
-
+    return cell;
 }
 
 /*
@@ -159,12 +146,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// Navigation logic may go here. Create and push another view controller.
-	DivisionTableController *divisionTableController = [[DivisionTableController alloc] init];
-    
-	// Pass the selected object to the new view controller.
-	[self.navigationController pushViewController:divisionTableController animated:YES];
-    
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
 }
 
 @end
