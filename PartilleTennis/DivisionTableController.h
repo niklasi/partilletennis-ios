@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBJson.h"
 
-@interface DivisionTableController : UITableViewController
+@class SBJsonStreamParser;
+@class SBJsonStreamParserAdapter;
+
+@interface DivisionTableController : UITableViewController <SBJsonStreamParserAdapterDelegate>
+{
+	NSURLConnection *theConnection;
+	SBJsonStreamParser *parser;
+	SBJsonStreamParserAdapter *adapter;
+}
 
 @property (nonatomic) int division;
+@property (nonatomic, retain) NSArray *tableData;
 
+- (IBAction)go;
 @end

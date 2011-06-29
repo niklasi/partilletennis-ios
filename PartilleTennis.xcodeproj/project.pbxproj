@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		8504710E13BBD02D0052F1F4 /* SeriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesController.h; sourceTree = "<group>"; };
 		8504710F13BBD02D0052F1F4 /* SeriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesController.m; sourceTree = "<group>"; };
-		8504711513BBD68B0052F1F4 /* DivisionTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DivisionTableController.h; sourceTree = "<group>"; };
+		8504711513BBD68B0052F1F4 /* DivisionTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivisionTableController.h; sourceTree = "<group>"; };
 		8504711613BBD68B0052F1F4 /* DivisionTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivisionTableController.m; sourceTree = "<group>"; };
 		8504711913BBDBD50052F1F4 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		8504711A13BBDBD50052F1F4 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
