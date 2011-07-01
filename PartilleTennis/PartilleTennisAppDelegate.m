@@ -8,10 +8,11 @@
 
 #import "PartilleTennisAppDelegate.h"
 #import "SeriesController.h"
+#import "MatchesController.h"
 
 @implementation PartilleTennisAppDelegate
 
-@synthesize window = _window, navController, settingsNavController;
+@synthesize window = _window, navController, matchesController, settingsNavController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -22,10 +23,11 @@
 	UIViewController *seriesController = [[SeriesController alloc] init];
 	self.navController = [[UINavigationController alloc] initWithRootViewController:seriesController];
 	
+	self.matchesController = [[UINavigationController	alloc] initWithRootViewController:[[MatchesController alloc] init]];
 	//UIViewController *settingsController = [[SettingsController alloc] init];
 	//self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
 	
-	NSArray *viewControllers = [NSArray arrayWithObjects:self.navController, /*self.settingsNavController,*/ nil];
+	NSArray *viewControllers = [NSArray arrayWithObjects:self.navController, self.matchesController, /*self.settingsNavController,*/ nil];
 	//[seriesController release];
 	//[settingsController release];
 	

@@ -27,12 +27,13 @@
 		85B543CD13BBCC2A0065B152 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85B543CB13BBCC2A0065B152 /* InfoPlist.strings */; };
 		85B543CF13BBCC2A0065B152 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B543CE13BBCC2A0065B152 /* main.m */; };
 		85B543D313BBCC2A0065B152 /* PartilleTennisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B543D213BBCC2A0065B152 /* PartilleTennisAppDelegate.m */; };
+		85B7182413BE216B00E8A81C /* MatchesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182313BE216B00E8A81C /* MatchesController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8504710E13BBD02D0052F1F4 /* SeriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesController.h; sourceTree = "<group>"; };
 		8504710F13BBD02D0052F1F4 /* SeriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesController.m; sourceTree = "<group>"; };
-		8504711513BBD68B0052F1F4 /* SeriesTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SeriesTableController.h; sourceTree = "<group>"; };
+		8504711513BBD68B0052F1F4 /* SeriesTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesTableController.h; sourceTree = "<group>"; };
 		8504711613BBD68B0052F1F4 /* SeriesTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTableController.m; sourceTree = "<group>"; };
 		8504711913BBDBD50052F1F4 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		8504711A13BBDBD50052F1F4 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -69,6 +70,8 @@
 		85B543D013BBCC2A0065B152 /* PartilleTennis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PartilleTennis-Prefix.pch"; sourceTree = "<group>"; };
 		85B543D113BBCC2A0065B152 /* PartilleTennisAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartilleTennisAppDelegate.h; sourceTree = "<group>"; };
 		85B543D213BBCC2A0065B152 /* PartilleTennisAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PartilleTennisAppDelegate.m; sourceTree = "<group>"; };
+		85B7182213BE216B00E8A81C /* MatchesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesController.h; sourceTree = "<group>"; };
+		85B7182313BE216B00E8A81C /* MatchesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				8504710F13BBD02D0052F1F4 /* SeriesController.m */,
 				8504711513BBD68B0052F1F4 /* SeriesTableController.h */,
 				8504711613BBD68B0052F1F4 /* SeriesTableController.m */,
+				85B7182213BE216B00E8A81C /* MatchesController.h */,
+				85B7182313BE216B00E8A81C /* MatchesController.m */,
 			);
 			path = PartilleTennis;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				8504713B13BBDBD50052F1F4 /* SBJsonTokeniser.m in Sources */,
 				8504713C13BBDBD50052F1F4 /* SBJsonUTF8Stream.m in Sources */,
 				8504713D13BBDBD50052F1F4 /* SBJsonWriter.m in Sources */,
+				85B7182413BE216B00E8A81C /* MatchesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
