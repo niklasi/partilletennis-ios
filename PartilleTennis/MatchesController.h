@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBJson.h"
 
-@interface MatchesController : UITableViewController
+@class SBJsonStreamParser;
+@class SBJsonStreamParserAdapter;
+
+@interface MatchesController : UITableViewController <SBJsonStreamParserAdapterDelegate>
+{
+	NSURLConnection *theConnection;
+	SBJsonStreamParser *parser;
+	SBJsonStreamParserAdapter *adapter;
+}
+
+@property (nonatomic, retain) NSArray *matchData;
+
+- (IBAction)go;
 
 @end
