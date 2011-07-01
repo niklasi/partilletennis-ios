@@ -7,7 +7,7 @@
 //
 
 #import "SeriesController.h"
-#import "DivisionTableController.h"
+#import "SeriesTableController.h"
 
 @implementation SeriesController
 
@@ -160,11 +160,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	// Navigation logic may go here. Create and push another view controller.
-	DivisionTableController *divisionTableController = [[DivisionTableController alloc] init];
+	SeriesTableController *seriesTableController = [[SeriesTableController alloc] init];
     
-	[divisionTableController setDivision:indexPath.row + 1];
+	[seriesTableController setDivision:indexPath.row + 1];
 	
-	[self.navigationController pushViewController:divisionTableController animated:YES];
+	[self.navigationController pushViewController:seriesTableController animated:YES];
     
 }
 

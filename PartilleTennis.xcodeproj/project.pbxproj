@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8504711013BBD02D0052F1F4 /* SeriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504710F13BBD02D0052F1F4 /* SeriesController.m */; };
-		8504711713BBD68B0052F1F4 /* DivisionTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504711613BBD68B0052F1F4 /* DivisionTableController.m */; };
+		8504711713BBD68B0052F1F4 /* SeriesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504711613BBD68B0052F1F4 /* SeriesTableController.m */; };
 		8504713213BBDBD50052F1F4 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504711A13BBDBD50052F1F4 /* NSObject+SBJson.m */; };
 		8504713313BBDBD50052F1F4 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504711D13BBDBD50052F1F4 /* SBJsonParser.m */; };
 		8504713413BBDBD50052F1F4 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504711F13BBDBD50052F1F4 /* SBJsonStreamParser.m */; };
@@ -32,8 +32,8 @@
 /* Begin PBXFileReference section */
 		8504710E13BBD02D0052F1F4 /* SeriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesController.h; sourceTree = "<group>"; };
 		8504710F13BBD02D0052F1F4 /* SeriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesController.m; sourceTree = "<group>"; };
-		8504711513BBD68B0052F1F4 /* DivisionTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivisionTableController.h; sourceTree = "<group>"; };
-		8504711613BBD68B0052F1F4 /* DivisionTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivisionTableController.m; sourceTree = "<group>"; };
+		8504711513BBD68B0052F1F4 /* SeriesTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SeriesTableController.h; sourceTree = "<group>"; };
+		8504711613BBD68B0052F1F4 /* SeriesTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTableController.m; sourceTree = "<group>"; };
 		8504711913BBDBD50052F1F4 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		8504711A13BBDBD50052F1F4 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		8504711B13BBDBD50052F1F4 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 				85B543C913BBCC2A0065B152 /* Supporting Files */,
 				8504710E13BBD02D0052F1F4 /* SeriesController.h */,
 				8504710F13BBD02D0052F1F4 /* SeriesController.m */,
-				8504711513BBD68B0052F1F4 /* DivisionTableController.h */,
-				8504711613BBD68B0052F1F4 /* DivisionTableController.m */,
+				8504711513BBD68B0052F1F4 /* SeriesTableController.h */,
+				8504711613BBD68B0052F1F4 /* SeriesTableController.m */,
 			);
 			path = PartilleTennis;
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 				85B543CF13BBCC2A0065B152 /* main.m in Sources */,
 				85B543D313BBCC2A0065B152 /* PartilleTennisAppDelegate.m in Sources */,
 				8504711013BBD02D0052F1F4 /* SeriesController.m in Sources */,
-				8504711713BBD68B0052F1F4 /* DivisionTableController.m in Sources */,
+				8504711713BBD68B0052F1F4 /* SeriesTableController.m in Sources */,
 				8504713213BBDBD50052F1F4 /* NSObject+SBJson.m in Sources */,
 				8504713313BBDBD50052F1F4 /* SBJsonParser.m in Sources */,
 				8504713413BBDBD50052F1F4 /* SBJsonStreamParser.m in Sources */,

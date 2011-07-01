@@ -12,7 +12,7 @@
 @class SBJsonStreamParser;
 @class SBJsonStreamParserAdapter;
 
-@interface DivisionTableController : UITableViewController <SBJsonStreamParserAdapterDelegate>
+@interface SeriesTableController : UITableViewController <SBJsonStreamParserAdapterDelegate>
 {
 	NSURLConnection *theConnection;
 	SBJsonStreamParser *parser;

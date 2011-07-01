@@ -6,10 +6,10 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "DivisionTableController.h"
+#import "SeriesTableController.h"
 
 
-@implementation DivisionTableController
+@implementation SeriesTableController
 
 @synthesize division, tableData;
 
