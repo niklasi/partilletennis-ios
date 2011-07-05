@@ -7,20 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SBJson.h"
+#import "PfService.h"
 
-@class SBJsonStreamParser;
-@class SBJsonStreamParserAdapter;
-
-@interface MatchesController : UITableViewController <SBJsonStreamParserAdapterDelegate>
+@interface MatchesController : UITableViewController <PfServiceDelegate>
 {
-	NSURLConnection *theConnection;
-	SBJsonStreamParser *parser;
-	SBJsonStreamParserAdapter *adapter;
+	PfService *pfService;
 }
 
 @property (nonatomic, retain) NSArray *matchData;
-
-- (IBAction)go;
 
 @end
