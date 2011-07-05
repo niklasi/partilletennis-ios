@@ -8,10 +8,12 @@
 
 #import "PfService.h"
 #import "Match.h"
+#import "SeriesTable.h"
 
 @interface PfService(private)
 
 - (void)parseMatches:(NSArray *)array;
+- (void)parseSeriesTable:(NSArray *)array;
 
 @end
 
@@ -23,7 +25,22 @@
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+			// We don't want *all* the individual messages from the
+			// SBJsonStreamParser, just the top-level objects. The stream
+			// parser adapter exists for this purpose.
+			adapter = [[SBJsonStreamParserAdapter alloc] init];
+			
+			adapter.delegate = self;
+			
+			parser = [[SBJsonStreamParser alloc] init];
+			
+			parser.delegate = adapter;
+			
+			// Normally it's an error if JSON is followed by anything but
+			// whitespace. Setting this means that the parser will be
+			// expecting the stream to contain multiple whitespace-separated
+			// JSON documents.
+			parser.supportMultipleDocuments = NO;
     }
     
     return self;
@@ -33,33 +50,32 @@
 {
 	if ([delegate respondsToSelector:@selector(loadedMatches:)]) {
 		
-		// We don't want *all* the individual messages from the
-		// SBJsonStreamParser, just the top-level objects. The stream
-		// parser adapter exists for this purpose.
-		adapter = [[SBJsonStreamParserAdapter alloc] init];
-		
-		adapter.delegate = self;
-		
-		parser = [[SBJsonStreamParser alloc] init];
-		
-		parser.delegate = adapter;
-		
-		// Normally it's an error if JSON is followed by anything but
-		// whitespace. Setting this means that the parser will be
-		// expecting the stream to contain multiple whitespace-separated
-		// JSON documents.
-		parser.supportMultipleDocuments = NO;
-		
 		NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/matches/%d/%d?output=json", series, team];
 		
 		NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
 																					timeoutInterval:60.0];
 		
-		theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+		[NSURLConnection connectionWithRequest:theRequest delegate:self];
 		NSLog(@"Load matches");
 	}
 }
+
+-(void)loadSeriesTable:(int)series
+{
+
+	if ([delegate respondsToSelector:@selector(loadedSeriesTable:)]) {
+		
+		NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/series/%d?output=json", series];
+		
+		NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
+																							cachePolicy:NSURLRequestUseProtocolCachePolicy
+																					timeoutInterval:60.0];		
+		[NSURLConnection connectionWithRequest:theRequest delegate:self];
+		NSLog(@"Load series");
+	}
+}
+
 
 - (void)parser:(SBJsonStreamParser *)parser foundArray:(NSArray *)array {
 	
@@ -69,6 +85,10 @@
 	NSDictionary *data = (NSDictionary *)[array objectAtIndex:0]; 
 	if ([data objectForKey:@"lanes"] /*Match-data*/) {
 		[self parseMatches:array];
+	}
+	else if([data objectForKey:@"match_points"])
+	{
+		[self parseSeriesTable:array];
 	}
 }
 
@@ -136,6 +156,25 @@
 		}
 		
 		[delegate loadedMatches:loadedMatches];
+	}
+}
+
+- (void)parseSeriesTable:(NSArray *)array
+{
+	if ([delegate respondsToSelector:@selector(loadedSeriesTable:)]) {
+		NSMutableArray *loadedSeriesTable = [[NSMutableArray alloc] init];
+		
+		for (int i = 0; i < [array count]; i++) {
+			NSDictionary *seriesData = (NSDictionary *)[array objectAtIndex:i];
+			SeriesTable *seriesTable = [[SeriesTable alloc] init];
+			seriesTable.teamName = [seriesData objectForKey:@"team"];
+			seriesTable.matches = [seriesData objectForKey:@"matches"];
+			seriesTable.matchPoints = [seriesData objectForKey:@"match_points"];
+			seriesTable.teamPoints = [seriesData objectForKey:@"team_points"];
+			[loadedSeriesTable addObject:seriesTable];
+		}
+		
+		[delegate loadedSeriesTable:loadedSeriesTable];
 	}
 }
 

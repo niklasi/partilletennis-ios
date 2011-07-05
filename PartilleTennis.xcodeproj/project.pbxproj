@@ -30,6 +30,7 @@
 		85B7182413BE216B00E8A81C /* MatchesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182313BE216B00E8A81C /* MatchesController.m */; };
 		85B7182A13C3ABC900E8A81C /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182913C3ABC900E8A81C /* Match.m */; };
 		85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182C13C3AE5D00E8A81C /* PfService.m */; };
+		85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183613C3C8B000E8A81C /* SeriesTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,8 @@
 		85B7182913C3ABC900E8A81C /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
 		85B7182B13C3AE5D00E8A81C /* PfService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PfService.h; sourceTree = "<group>"; };
 		85B7182C13C3AE5D00E8A81C /* PfService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PfService.m; sourceTree = "<group>"; };
+		85B7183513C3C8B000E8A81C /* SeriesTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesTable.h; sourceTree = "<group>"; };
+		85B7183613C3C8B000E8A81C /* SeriesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 			children = (
 				85B7182813C3ABC900E8A81C /* Match.h */,
 				85B7182913C3ABC900E8A81C /* Match.m */,
+				85B7183513C3C8B000E8A81C /* SeriesTable.h */,
+				85B7183613C3C8B000E8A81C /* SeriesTable.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				85B7182413BE216B00E8A81C /* MatchesController.m in Sources */,
 				85B7182A13C3ABC900E8A81C /* Match.m in Sources */,
 				85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */,
+				85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

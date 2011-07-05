@@ -16,14 +16,13 @@
 
 @optional
 - (void)loadedMatches:(NSArray *)matches;
-
+- (void)loadedSeriesTable:(NSArray *)seriesTable;
 @end
 
 @interface PfService : NSObject <SBJsonStreamParserAdapterDelegate, PfServiceDelegate>
 {
 	__unsafe_unretained id<PfServiceDelegate> delegate;
 	@private
-	NSURLConnection *theConnection;
 	SBJsonStreamParser *parser;
 	SBJsonStreamParserAdapter *adapter;
 }
@@ -31,6 +30,6 @@
 @property (nonatomic, assign) id<PfServiceDelegate> delegate;
 
 -(void)loadMatches:(int)series team:(int)team;
-
+-(void)loadSeriesTable:(int)series;
 
 @end
