@@ -23,19 +23,16 @@
 	UIViewController *seriesController = [[SeriesController alloc] init];
 	self.navController = [[UINavigationController alloc] initWithRootViewController:seriesController];
 	
-	self.matchesController = [[UINavigationController	alloc] initWithRootViewController:[[MatchesController alloc] init]];
+	self.matchesController = [[UINavigationController	alloc] initWithRootViewController:
+														[[MatchesController alloc] initWithSeries:2 team:6]];
 	//UIViewController *settingsController = [[SettingsController alloc] init];
 	//self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
 	
 	NSArray *viewControllers = [NSArray arrayWithObjects:self.navController, self.matchesController, /*self.settingsNavController,*/ nil];
-	//[seriesController release];
-	//[settingsController release];
 	
 	[tabBarController setViewControllers:viewControllers];
 	
   [_window setRootViewController:tabBarController];
-	//[tabBarController release];
-	
 	
 	// Add the navigation controller's view to the window and display.
 	[_window addSubview:tabBarController.view];

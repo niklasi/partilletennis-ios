@@ -21,6 +21,8 @@
 		8504713B13BBDBD50052F1F4 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504712D13BBDBD50052F1F4 /* SBJsonTokeniser.m */; };
 		8504713C13BBDBD50052F1F4 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504712F13BBDBD50052F1F4 /* SBJsonUTF8Stream.m */; };
 		8504713D13BBDBD50052F1F4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504713113BBDBD50052F1F4 /* SBJsonWriter.m */; };
+		8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAF613C4F1CC006F961E /* MatchDetailController.m */; };
+		8589AAFB13C4F248006F961E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAFA13C4F248006F961E /* Contact.m */; };
 		85B543C313BBCC2A0065B152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C213BBCC2A0065B152 /* UIKit.framework */; };
 		85B543C513BBCC2A0065B152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C413BBCC2A0065B152 /* Foundation.framework */; };
 		85B543C713BBCC2A0065B152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C613BBCC2A0065B152 /* CoreGraphics.framework */; };
@@ -64,6 +66,10 @@
 		8504712F13BBDBD50052F1F4 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		8504713013BBDBD50052F1F4 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		8504713113BBDBD50052F1F4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		8589AAF513C4F1CC006F961E /* MatchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchDetailController.h; sourceTree = "<group>"; };
+		8589AAF613C4F1CC006F961E /* MatchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchDetailController.m; sourceTree = "<group>"; };
+		8589AAF913C4F248006F961E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Contact.h; sourceTree = "<group>"; };
+		8589AAFA13C4F248006F961E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		85B543BE13BBCC2A0065B152 /* PartilleTennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartilleTennis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B543C213BBCC2A0065B152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85B543C413BBCC2A0065B152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -194,6 +200,8 @@
 				8504711613BBD68B0052F1F4 /* SeriesTableController.m */,
 				85B7182213BE216B00E8A81C /* MatchesController.h */,
 				85B7182313BE216B00E8A81C /* MatchesController.m */,
+				8589AAF513C4F1CC006F961E /* MatchDetailController.h */,
+				8589AAF613C4F1CC006F961E /* MatchDetailController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,6 +222,8 @@
 				85B7182913C3ABC900E8A81C /* Match.m */,
 				85B7183513C3C8B000E8A81C /* SeriesTable.h */,
 				85B7183613C3C8B000E8A81C /* SeriesTable.m */,
+				8589AAF913C4F248006F961E /* Contact.h */,
+				8589AAFA13C4F248006F961E /* Contact.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -306,6 +316,8 @@
 				85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */,
 				85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */,
 				85B7183F13C4DF7500E8A81C /* DSActivityView.m in Sources */,
+				8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */,
+				8589AAFB13C4F248006F961E /* Contact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

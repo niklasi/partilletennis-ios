@@ -1,29 +1,23 @@
 //
-//  MatchesController.m
+//  MatchDetailController.m
 //  PartilleTennis
 //
-//  Created by Niklas Ingholt on 2011-07-01.
+//  Created by Niklas Ingholt on 2011-07-06.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "MatchesController.h"
-#import "Match.h"
-#import "DSActivityView.h"
 #import "MatchDetailController.h"
 
-@implementation MatchesController
 
-@synthesize matchData;
+@implementation MatchDetailController
 
--(id)initWithSeries:(int)series team:(int)team
+@synthesize contact;
+
+- (id)init
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-			self.title = @"Matcher";
-			pfService = [[PfService alloc] init];
-			pfService.delegate = self;
-			[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
-			[pfService loadMatches:series	team:team];
+        // Custom initialization
     }
     return self;
 }
@@ -58,14 +52,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
-}
-
-- (void)loadedMatches:(NSArray *)matches
-{
-	[DSActivityView removeView];
-	self.matchData = matches;
-	[self.tableView reloadData];
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -93,14 +80,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+
     // Return the number of rows in the section.
-    return matchData.count;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,20 +98,12 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-	Match *match = (Match *)[[self matchData] objectAtIndex:[indexPath row]];
-	
-	[cell textLabel].Text = [NSString stringWithFormat:@"%@ - %@ kl %@", 
-													 match.teamName,
-													 match.date,
-													 match.time];
-	[cell detailTextLabel].text = [NSString stringWithFormat:@"Banor: %@", 
-																 match.lanes];
+    // Configure the cell...
     
-	return cell;
+    return cell;
 }
 
 /*
@@ -168,13 +149,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// Navigation logic may go here. Create and push another view controller.
-	MatchDetailController *matchDetailController = [[MatchDetailController alloc] init];
-	Match *match = (Match *)[self.matchData objectAtIndex:indexPath.row];
-	[matchDetailController setContact:match.contact];
-	
-	[self.navigationController pushViewController:matchDetailController animated:YES];
-	
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
 }
 
 @end

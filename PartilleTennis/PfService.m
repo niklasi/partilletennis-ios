@@ -152,6 +152,11 @@
 			match.date = [matchData objectForKey:@"date"];
 			match.time = [matchData objectForKey:@"time"];
 			match.lanes = [matchData objectForKey:@"lanes"];
+			Contact *contact = [[Contact alloc] init];
+			contact.name = [opponentData objectForKey:@"contact"];
+			contact.phone = [opponentData objectForKey:@"phone"];
+			contact.email = [opponentData objectForKey:@"email"];
+			match.contact = contact;
 			[loadedMatches addObject:match];
 		}
 		

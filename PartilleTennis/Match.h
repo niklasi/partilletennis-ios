@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Contact.h"
 
 @interface Match : NSObject
 {	
@@ -14,11 +15,12 @@
 	NSString *date;
 	NSString *time;
 	NSString *lanes;
+	Contact *contact;
 }
 
 @property (nonatomic, retain) NSString *teamName;
 @property (nonatomic, retain) NSString *date;
 @property (nonatomic, retain) NSString *time;
 @property (nonatomic, retain) NSString *lanes;
-
+@property (nonatomic, retain) Contact *contact;
 @end

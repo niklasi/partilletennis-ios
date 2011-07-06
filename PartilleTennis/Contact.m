@@ -1,16 +1,16 @@
 //
-//  Match.m
+//  Opponent.m
 //  PartilleTennis
 //
-//  Created by Niklas Ingholt on 2011-07-05.
+//  Created by Niklas Ingholt on 2011-07-06.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "Match.h"
+#import "Contact.h"
 
-@implementation Match
+@implementation Contact
 
-@synthesize teamName, date, time, lanes, contact;
+@synthesize name, phone, email;
 
 - (id)init
 {
