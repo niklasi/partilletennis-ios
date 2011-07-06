@@ -15,7 +15,7 @@
 
 - (id)init
 {
-    self = [super initWithStyle:UITableViewStylePlain];
+    self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         // Custom initialization
     }
@@ -82,14 +82,14 @@
 {
 
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -101,7 +101,19 @@
 			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
+	switch (indexPath.row) {
+		case 0:
+			cell.textLabel.text = self.contact.name;
+			break;
+		case 1:
+			cell.textLabel.text = self.contact.phone;
+			break;
+		case 2:
+			cell.textLabel.text = self.contact.email;
+			break;
+		default:
+			break;
+	}
     
     return cell;
 }
