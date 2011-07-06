@@ -24,7 +24,7 @@
 	self.navController = [[UINavigationController alloc] initWithRootViewController:seriesController];
 	
 	self.matchesController = [[UINavigationController	alloc] initWithRootViewController:
-														[[MatchesController alloc] initWithSeries:2 team:6]];
+														[[MatchesController alloc] init]];
 	//UIViewController *settingsController = [[SettingsController alloc] init];
 	//self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
 	

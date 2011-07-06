@@ -89,7 +89,14 @@
 {
 
     // Return the number of rows in the section.
-    return 3;
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+
+	return @"Kontakt";
+	
+	return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,22 +105,13 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-	switch (indexPath.row) {
-		case 0:
-			cell.textLabel.text = self.contact.name;
-			break;
-		case 1:
-			cell.textLabel.text = self.contact.phone;
-			break;
-		case 2:
-			cell.textLabel.text = self.contact.email;
-			break;
-		default:
-			break;
-	}
+
+	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", self.contact.name, self.contact.phone];
+	cell.detailTextLabel.text = self.contact.email;
+	
     
     return cell;
 }

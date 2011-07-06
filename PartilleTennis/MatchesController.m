@@ -15,15 +15,14 @@
 
 @synthesize matchData;
 
--(id)initWithSeries:(int)series team:(int)team
+-(id)init
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
 			self.title = @"Matcher";
 			pfService = [[PfService alloc] init];
 			pfService.delegate = self;
-			[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
-			[pfService loadMatches:series	team:team];
+			
     }
     return self;
 }
@@ -40,8 +39,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
+	[super viewDidLoad];
+	NSLog(@"View load...");
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -59,6 +58,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	if (self.matchData.count == 0) {
+		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
+		[pfService loadMatches:2	team:6];
+	}
 }
 
 - (void)loadedMatches:(NSArray *)matches

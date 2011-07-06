@@ -16,6 +16,4 @@
 
 @property (nonatomic, retain) NSArray *matchData;
 
--(id)initWithSeries:(int)series team:(int)team;
-
 @end
