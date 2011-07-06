@@ -31,6 +31,7 @@
 		85B7182A13C3ABC900E8A81C /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182913C3ABC900E8A81C /* Match.m */; };
 		85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182C13C3AE5D00E8A81C /* PfService.m */; };
 		85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183613C3C8B000E8A81C /* SeriesTable.m */; };
+		85B7183F13C4DF7500E8A81C /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183E13C4DF7500E8A81C /* DSActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,8 @@
 		85B7182C13C3AE5D00E8A81C /* PfService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PfService.m; sourceTree = "<group>"; };
 		85B7183513C3C8B000E8A81C /* SeriesTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesTable.h; sourceTree = "<group>"; };
 		85B7183613C3C8B000E8A81C /* SeriesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTable.m; sourceTree = "<group>"; };
+		85B7183D13C4DF7500E8A81C /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
+		85B7183E13C4DF7500E8A81C /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,7 @@
 		85B543C813BBCC2A0065B152 /* PartilleTennis */ = {
 			isa = PBXGroup;
 			children = (
+				85B7183C13C4DF3D00E8A81C /* DSActivityView */,
 				85B7182713C3AB7D00E8A81C /* Models */,
 				85B7182613C3AB5600E8A81C /* Services */,
 				85B7182513C3AB3000E8A81C /* Controllers */,
@@ -212,6 +216,15 @@
 				85B7183613C3C8B000E8A81C /* SeriesTable.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		85B7183C13C4DF3D00E8A81C /* DSActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				85B7183D13C4DF7500E8A81C /* DSActivityView.h */,
+				85B7183E13C4DF7500E8A81C /* DSActivityView.m */,
+			);
+			name = DSActivityView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +305,7 @@
 				85B7182A13C3ABC900E8A81C /* Match.m in Sources */,
 				85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */,
 				85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */,
+				85B7183F13C4DF7500E8A81C /* DSActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

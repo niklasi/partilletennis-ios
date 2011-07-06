@@ -8,14 +8,16 @@
 
 #import "SeriesTableController.h"
 #import "SeriesTable.h"
+#import "DSActivityView.h"
 
 @implementation SeriesTableController
 
 @synthesize division, tableData;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)init
 {
-    self = [super initWithStyle:style];
+    self = [super initWithStyle:UITableViewStylePlain];
+
     if (self) {
 			pfService = [[PfService alloc] init];
 			pfService.delegate = self;
@@ -54,6 +56,7 @@
 {
 	[super viewWillAppear:animated];
 	[self setTitle:[NSString stringWithFormat:@"Division %d", self.division]];
+	[DSActivityView newActivityViewForView:self.view].showNetworkActivityIndicator = YES;
 	[pfService loadSeriesTable:self.division];
 }
 
@@ -62,6 +65,7 @@
 {
 	self.tableData = seriesTable;
 	[self.tableView reloadData];
+	[DSActivityView removeView];
 }
 
 

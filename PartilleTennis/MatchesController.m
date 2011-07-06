@@ -8,14 +8,15 @@
 
 #import "MatchesController.h"
 #import "Match.h"
+#import "DSActivityView.h"
 
 @implementation MatchesController
 
 @synthesize matchData;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)init
 {
-    self = [super initWithStyle:style];
+    self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
 			self.title = @"Matcher";
 			pfService = [[PfService alloc] init];
@@ -55,11 +56,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	[DSActivityView newActivityViewForView:self.view].showNetworkActivityIndicator = YES;
 	[pfService loadMatches:2 team:6];
 }
 
 - (void)loadedMatches:(NSArray *)matches
 {
+	[DSActivityView removeView];
 	self.matchData = matches;
 	[self.tableView reloadData];
 }

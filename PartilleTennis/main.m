@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int retVal = 0;
-	@autoreleasepool {
+	@autoreleasepool { 
 	    retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([PartilleTennisAppDelegate class]));
 	}
 	return retVal;
