@@ -111,7 +111,6 @@ static DSActivityView *dsActivityView = nil;
     
     // Remember the new view (it is already retained):
     dsActivityView = self;
-    
     // Allow subclasses to change the view to which to add the activity view (e.g. to cover the keyboard):
     self.originalView = addToView;
     addToView = [self viewForView:addToView];

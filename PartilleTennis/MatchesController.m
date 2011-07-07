@@ -59,7 +59,7 @@
 {
 	[super viewWillAppear:animated];
 	if (self.matchData.count == 0) {
-		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
+		[DSActivityView newActivityViewForView:self.view.superview withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
 		[pfService loadMatches:2	team:6];
 	}
 }
