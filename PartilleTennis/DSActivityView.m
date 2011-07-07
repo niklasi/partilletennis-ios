@@ -119,9 +119,10 @@ static DSActivityView *dsActivityView = nil;
     [self setupBackground];
     self.labelWidth = labelWidth;
     self.activityLabel.text = labelText;
-    
+		self.backgroundColor = [UIColor whiteColor];
     // Assembile the subviews (the border and indicator are automatically created):
-	[addToView addSubview:self];
+		//[addToView addSubview:self];
+	[addToView.superview insertSubview:self aboveSubview:addToView];
     [self addSubview:self.borderView];
     [self.borderView addSubview:self.activityIndicator];
     [self.borderView addSubview:self.activityLabel];
