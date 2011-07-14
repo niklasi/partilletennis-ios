@@ -172,6 +172,7 @@
 		for (int i = 0; i < [array count]; i++) {
 			NSDictionary *seriesData = (NSDictionary *)[array objectAtIndex:i];
 			SeriesTable *seriesTable = [[SeriesTable alloc] init];
+			seriesTable.currentRank = [NSString stringWithFormat:@"%@", [seriesData objectForKey:@"currentRank"]];
 			seriesTable.teamName = [seriesData objectForKey:@"team"];
 			seriesTable.matches = [seriesData objectForKey:@"matches"];
 			seriesTable.matchPoints = [seriesData objectForKey:@"match_points"];

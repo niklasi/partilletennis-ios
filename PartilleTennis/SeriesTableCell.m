@@ -13,13 +13,14 @@
 }
 @property (nonatomic, strong) IBOutlet UILabel *teamLabel;
 @property (nonatomic, strong) IBOutlet UILabel *detailsLabel;
+@property (nonatomic, strong) IBOutlet UILabel *currentRankLabel;
 
 @end
 
 @implementation SeriesTableCell
 
 @synthesize seriesTable = _seriesTable, alternateBackgroundView = _alternateBackgroundView, 
-teamLabel = _teamLabel, detailsLabel = _detailsLabel;
+teamLabel = _teamLabel, detailsLabel = _detailsLabel, currentRankLabel = _currentRankLabel;
 
 
 -(void)setSeriesTable:(SeriesTable *)value
@@ -27,10 +28,10 @@ teamLabel = _teamLabel, detailsLabel = _detailsLabel;
 	_seriesTable = value;
 	self.teamLabel.text = self.seriesTable.teamName;
 	self.detailsLabel.text = [NSString stringWithFormat:@"Matcher: %@, Matchp: %@, Lagpoäng: %@", 
-	 self.seriesTable.matches,
-	 self.seriesTable.matchPoints,
-	 self.seriesTable.teamPoints];
-//	self.CurrentRankingLabel.text = self.seriesTable.
+	self.seriesTable.matches,
+	self.seriesTable.matchPoints,
+	self.seriesTable.teamPoints];
+	self.currentRankLabel.text = self.seriesTable.currentRank;
 }
 
 @end

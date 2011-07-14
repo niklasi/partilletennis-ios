@@ -16,7 +16,7 @@
     //self = [super initWithStyle:style];
   	self = [super initWithNibName:@"SeriesView" bundle:nil];  
 	if (self) {
-			[self setTitle:@"Serier"];
+			[self setTitle:@"Tabeller"];
     }
     return self;
 }

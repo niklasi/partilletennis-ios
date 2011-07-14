@@ -10,7 +10,7 @@
 
 @implementation SeriesTable
 
-@synthesize teamName, matches, matchPoints, teamPoints;
+@synthesize teamName = _teamName, matches = _matches, matchPoints = _matchPoints, teamPoints = _teamPoints, currentRank = _currentRank;
 
 - (id)init
 {

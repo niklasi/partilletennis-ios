@@ -10,7 +10,6 @@
 #import "SeriesTable.h"
 
 @interface SeriesTableCell : UITableViewCell {
-
 }
 
 @property (nonatomic, assign) IBOutlet UIView *alternateBackgroundView;

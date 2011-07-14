@@ -10,15 +10,12 @@
 
 @interface SeriesTable : NSObject
 {
-	NSString *teamName;
-	NSString *matches;
-	NSString *matchPoints;
-	NSString *teamPoints;
 }
 
-@property (nonatomic, retain) NSString *teamName;
-@property (nonatomic, retain) NSString *matches;
-@property (nonatomic, retain) NSString *matchPoints;
-@property (nonatomic, retain) NSString *teamPoints;
+@property (nonatomic, strong) NSString *currentRank;
+@property (nonatomic, strong) NSString *teamName;
+@property (nonatomic, strong) NSString *matches;
+@property (nonatomic, strong) NSString *matchPoints;
+@property (nonatomic, strong) NSString *teamPoints;
 
 @end
