@@ -15,7 +15,7 @@
 
 - (id)init
 {
-    self = [super initWithStyle:UITableViewStyleGrouped];
+	self = [super initWithNibName:@"MatchDetailView" bundle:nil];
     if (self) {
         // Custom initialization
     }

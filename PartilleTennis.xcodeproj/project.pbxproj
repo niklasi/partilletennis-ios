@@ -34,6 +34,7 @@
 		85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182C13C3AE5D00E8A81C /* PfService.m */; };
 		85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183613C3C8B000E8A81C /* SeriesTable.m */; };
 		85B7183F13C4DF7500E8A81C /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183E13C4DF7500E8A81C /* DSActivityView.m */; };
+		85C2867213CFABDB003A834B /* MatchDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C2867113CFABDB003A834B /* MatchDetailView.xib */; };
 		85CCAD6413CF9F1A0061FA5C /* MatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */; };
 		85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */; };
 		85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C113C76BA400975A7C /* SeriesView.xib */; };
@@ -97,6 +98,7 @@
 		85B7183613C3C8B000E8A81C /* SeriesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTable.m; sourceTree = "<group>"; };
 		85B7183D13C4DF7500E8A81C /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
 		85B7183E13C4DF7500E8A81C /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
+		85C2867113CFABDB003A834B /* MatchDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchDetailView.xib; sourceTree = "<group>"; };
 		85CCAD6213CF9F1A0061FA5C /* MatchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchTableCell.h; sourceTree = "<group>"; };
 		85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchTableCell.m; sourceTree = "<group>"; };
 		85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchTableCellView.xib; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				85E9F8C813C7711300975A7C /* SeriesTableView.xib */,
 				85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */,
 				85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */,
+				85C2867113CFABDB003A834B /* MatchDetailView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */,
 				85E9F8DD13CB577F00975A7C /* SeriesTableCellBackground.png in Resources */,
 				85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */,
+				85C2867213CFABDB003A834B /* MatchDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
