@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "PfService.h"
+#import "MatchTableCell.h"
 
 @interface MatchesController : UITableViewController <PfServiceDelegate>
 {
 	PfService *pfService;
 }
 
-@property (nonatomic, retain) NSArray *matchData;
+@property (nonatomic, strong) NSArray *matchData;
+@property (nonatomic, strong) IBOutlet MatchTableCell *matchTableCell;
 
 @end

@@ -13,7 +13,7 @@
 
 @implementation MatchesController
 
-@synthesize matchData;
+@synthesize matchData, matchTableCell;
 
 -(id)init
 {
@@ -108,23 +108,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"MatchCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MatchTableCell *cell = (MatchTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+			//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+			[[NSBundle mainBundle] loadNibNamed:@"MatchTableCellView" owner:self options:nil];
+			cell = matchTableCell;
     }
     
 	Match *match = (Match *)[[self matchData] objectAtIndex:[indexPath row]];
-	
-	[cell textLabel].Text = [NSString stringWithFormat:@"%@ - %@ kl %@", 
-													 match.teamName,
-													 match.date,
-													 match.time];
-	[cell detailTextLabel].text = [NSString stringWithFormat:@"Banor: %@", 
-																 match.lanes];
-    
+	cell.match = match;
 	return cell;
 }
 

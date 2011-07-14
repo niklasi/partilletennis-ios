@@ -34,6 +34,8 @@
 		85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182C13C3AE5D00E8A81C /* PfService.m */; };
 		85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183613C3C8B000E8A81C /* SeriesTable.m */; };
 		85B7183F13C4DF7500E8A81C /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183E13C4DF7500E8A81C /* DSActivityView.m */; };
+		85CCAD6413CF9F1A0061FA5C /* MatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */; };
+		85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */; };
 		85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C113C76BA400975A7C /* SeriesView.xib */; };
 		85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C813C7711300975A7C /* SeriesTableView.xib */; };
 		85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */; };
@@ -95,6 +97,9 @@
 		85B7183613C3C8B000E8A81C /* SeriesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTable.m; sourceTree = "<group>"; };
 		85B7183D13C4DF7500E8A81C /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
 		85B7183E13C4DF7500E8A81C /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
+		85CCAD6213CF9F1A0061FA5C /* MatchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchTableCell.h; sourceTree = "<group>"; };
+		85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchTableCell.m; sourceTree = "<group>"; };
+		85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchTableCellView.xib; sourceTree = "<group>"; };
 		85E9F8C113C76BA400975A7C /* SeriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesView.xib; sourceTree = "<group>"; };
 		85E9F8C813C7711300975A7C /* SeriesTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableView.xib; sourceTree = "<group>"; };
 		85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableCellView.xib; sourceTree = "<group>"; };
@@ -190,6 +195,8 @@
 				85B543C913BBCC2A0065B152 /* Supporting Files */,
 				85E9F8CF13C7817800975A7C /* SeriesTableCell.h */,
 				85E9F8D013C7817900975A7C /* SeriesTableCell.m */,
+				85CCAD6213CF9F1A0061FA5C /* MatchTableCell.h */,
+				85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */,
 			);
 			path = PartilleTennis;
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 				85E9F8C113C76BA400975A7C /* SeriesView.xib */,
 				85E9F8C813C7711300975A7C /* SeriesTableView.xib */,
 				85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */,
+				85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */,
 				85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */,
 				85E9F8DD13CB577F00975A7C /* SeriesTableCellBackground.png in Resources */,
+				85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +373,7 @@
 				8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */,
 				8589AAFB13C4F248006F961E /* Contact.m in Sources */,
 				85E9F8D113C7817900975A7C /* SeriesTableCell.m in Sources */,
+				85CCAD6413CF9F1A0061FA5C /* MatchTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
