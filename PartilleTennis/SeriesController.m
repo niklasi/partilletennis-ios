@@ -13,8 +13,9 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
+    //self = [super initWithStyle:style];
+  	self = [super initWithNibName:@"SeriesView" bundle:nil];  
+	if (self) {
 			[self setTitle:@"Serier"];
     }
     return self;

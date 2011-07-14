@@ -12,13 +12,13 @@
 
 @implementation SeriesTableController
 
-@synthesize division, tableData;
+@synthesize division, tableData, seriesTableCell;
 
 - (id)init
 {
-    self = [super initWithStyle:UITableViewStylePlain];
-
-    if (self) {
+    //self = [super initWithStyle:UITableViewStylePlain];
+  self = [super initWithNibName:@"SeriesTableView" bundle:nil];  
+	if (self) {
 			pfService = [[PfService alloc] init];
 			pfService.delegate = self;
     }
@@ -105,23 +105,35 @@
 {
 	return [self.tableData count];
 }
+/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 61.0;
+}*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"SeriesTableCellView";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    SeriesTableCell *cell = (SeriesTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+			//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+			[[NSBundle mainBundle] loadNibNamed:@"SeriesTableCellView" owner:self options:nil];
+			cell = seriesTableCell;
     }
     
+	if (indexPath.row % 2 != 0) {
+		cell.backgroundView = cell.alternateBackgroundView;
+	}
 	SeriesTable *seriesTable = (SeriesTable *)[[self tableData] objectAtIndex:[indexPath row]]; 
 
-	[cell textLabel].Text = seriesTable.teamName;
+	cell.seriesTable = seriesTable;
+	
+	/*[cell textLabel].Text = seriesTable.teamName;
 	[cell detailTextLabel].text = [NSString stringWithFormat:@"Matcher: %@, Matchp: %@, Lagpoäng: %@", 
 																 seriesTable.matches,
 																 seriesTable.matchPoints,
-																 seriesTable.teamPoints];
+																 seriesTable.teamPoints];*/
 	return cell;
 }
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PfService.h"
+#import "SeriesTableCell.h"
 
 @interface SeriesTableController : UITableViewController <PfServiceDelegate>
 {
@@ -16,5 +17,6 @@
 
 @property (nonatomic) int division;
 @property (nonatomic, retain) NSArray *tableData;
+@property (nonatomic, assign) IBOutlet SeriesTableCell *seriesTableCell;
 
 @end

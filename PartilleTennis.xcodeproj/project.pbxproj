@@ -34,6 +34,11 @@
 		85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182C13C3AE5D00E8A81C /* PfService.m */; };
 		85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183613C3C8B000E8A81C /* SeriesTable.m */; };
 		85B7183F13C4DF7500E8A81C /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183E13C4DF7500E8A81C /* DSActivityView.m */; };
+		85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C113C76BA400975A7C /* SeriesView.xib */; };
+		85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C813C7711300975A7C /* SeriesTableView.xib */; };
+		85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */; };
+		85E9F8D113C7817900975A7C /* SeriesTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E9F8D013C7817900975A7C /* SeriesTableCell.m */; };
+		85E9F8DD13CB577F00975A7C /* SeriesTableCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +73,7 @@
 		8504713113BBDBD50052F1F4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		8589AAF513C4F1CC006F961E /* MatchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchDetailController.h; sourceTree = "<group>"; };
 		8589AAF613C4F1CC006F961E /* MatchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchDetailController.m; sourceTree = "<group>"; };
-		8589AAF913C4F248006F961E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Contact.h; sourceTree = "<group>"; };
+		8589AAF913C4F248006F961E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		8589AAFA13C4F248006F961E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		85B543BE13BBCC2A0065B152 /* PartilleTennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartilleTennis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B543C213BBCC2A0065B152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -90,6 +95,12 @@
 		85B7183613C3C8B000E8A81C /* SeriesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTable.m; sourceTree = "<group>"; };
 		85B7183D13C4DF7500E8A81C /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
 		85B7183E13C4DF7500E8A81C /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
+		85E9F8C113C76BA400975A7C /* SeriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesView.xib; sourceTree = "<group>"; };
+		85E9F8C813C7711300975A7C /* SeriesTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableView.xib; sourceTree = "<group>"; };
+		85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableCellView.xib; sourceTree = "<group>"; };
+		85E9F8CF13C7817800975A7C /* SeriesTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesTableCell.h; sourceTree = "<group>"; };
+		85E9F8D013C7817900975A7C /* SeriesTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTableCell.m; sourceTree = "<group>"; };
+		85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeriesTableCellBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +179,8 @@
 		85B543C813BBCC2A0065B152 /* PartilleTennis */ = {
 			isa = PBXGroup;
 			children = (
+				85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */,
+				85E9F8BF13C76B7400975A7C /* Views */,
 				85B7183C13C4DF3D00E8A81C /* DSActivityView */,
 				85B7182713C3AB7D00E8A81C /* Models */,
 				85B7182613C3AB5600E8A81C /* Services */,
@@ -176,6 +189,8 @@
 				85B543D113BBCC2A0065B152 /* PartilleTennisAppDelegate.h */,
 				85B543D213BBCC2A0065B152 /* PartilleTennisAppDelegate.m */,
 				85B543C913BBCC2A0065B152 /* Supporting Files */,
+				85E9F8CF13C7817800975A7C /* SeriesTableCell.h */,
+				85E9F8D013C7817900975A7C /* SeriesTableCell.m */,
 			);
 			path = PartilleTennis;
 			sourceTree = "<group>";
@@ -237,6 +252,16 @@
 			name = DSActivityView;
 			sourceTree = "<group>";
 		};
+		85E9F8BF13C76B7400975A7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85E9F8C113C76BA400975A7C /* SeriesView.xib */,
+				85E9F8C813C7711300975A7C /* SeriesTableView.xib */,
+				85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,6 +310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				85B543CD13BBCC2A0065B152 /* InfoPlist.strings in Resources */,
+				85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */,
+				85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */,
+				85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */,
+				85E9F8DD13CB577F00975A7C /* SeriesTableCellBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +347,7 @@
 				85B7183F13C4DF7500E8A81C /* DSActivityView.m in Sources */,
 				8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */,
 				8589AAFB13C4F248006F961E /* Contact.m in Sources */,
+				85E9F8D113C7817900975A7C /* SeriesTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
