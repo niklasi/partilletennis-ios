@@ -11,16 +11,12 @@
 
 @interface Match : NSObject
 {	
-	NSString *teamName;
-	NSString *date;
-	NSString *time;
-	NSString *lanes;
-	Contact *contact;
 }
 
 @property (nonatomic, retain) NSString *teamName;
 @property (nonatomic, retain) NSString *date;
 @property (nonatomic, retain) NSString *time;
 @property (nonatomic, retain) NSString *lanes;
+@property (nonatomic) BOOL homeMatch;
 @property (nonatomic, retain) Contact *contact;
 @end

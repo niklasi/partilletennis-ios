@@ -152,6 +152,8 @@
 			match.date = [matchData objectForKey:@"date"];
 			match.time = [matchData objectForKey:@"time"];
 			match.lanes = [matchData objectForKey:@"lanes"];
+			match.homeMatch = [[matchData objectForKey:@"homeMatch"] boolValue];
+			NSLog(@"Hemma match: %d", match.homeMatch);
 			Contact *contact = [[Contact alloc] init];
 			contact.name = [opponentData objectForKey:@"contact"];
 			contact.phone = [opponentData objectForKey:@"phone"];

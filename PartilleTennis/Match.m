@@ -10,7 +10,7 @@
 
 @implementation Match
 
-@synthesize teamName, date, time, lanes, contact;
+@synthesize teamName, date, time, lanes, contact, homeMatch;
 
 - (id)init
 {
