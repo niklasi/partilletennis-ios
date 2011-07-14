@@ -29,9 +29,9 @@
 												 self.match.teamName,
 												 self.match.date,
 												 self.match.time];
-	self.detailsLabel.text = [NSString stringWithFormat:@"Banor: %@, Hemma match: %@", 
+	self.detailsLabel.text = [NSString stringWithFormat:@"Banor: %@, %@", 
 														self.match.lanes,
-														self.match.homeMatch ? @"Ja" : @"Nej"];
+														self.match.homeMatch ? @"Hemmamatch" : @"Bortamatch"];
 	self.currentRankLabel.text = @"";
 }
 
