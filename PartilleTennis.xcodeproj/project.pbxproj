@@ -179,13 +179,12 @@
 		85B543C813BBCC2A0065B152 /* PartilleTennis */ = {
 			isa = PBXGroup;
 			children = (
-				85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */,
+				85CCAD6113CF9AF00061FA5C /* Resources */,
+				85CCAD6013CF9AD20061FA5C /* Lib */,
 				85E9F8BF13C76B7400975A7C /* Views */,
-				85B7183C13C4DF3D00E8A81C /* DSActivityView */,
 				85B7182713C3AB7D00E8A81C /* Models */,
 				85B7182613C3AB5600E8A81C /* Services */,
 				85B7182513C3AB3000E8A81C /* Controllers */,
-				8504711813BBDBAF0052F1F4 /* SBJson */,
 				85B543D113BBCC2A0065B152 /* PartilleTennisAppDelegate.h */,
 				85B543D213BBCC2A0065B152 /* PartilleTennisAppDelegate.m */,
 				85B543C913BBCC2A0065B152 /* Supporting Files */,
@@ -250,6 +249,23 @@
 				85B7183E13C4DF7500E8A81C /* DSActivityView.m */,
 			);
 			name = DSActivityView;
+			sourceTree = "<group>";
+		};
+		85CCAD6013CF9AD20061FA5C /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				8504711813BBDBAF0052F1F4 /* SBJson */,
+				85B7183C13C4DF3D00E8A81C /* DSActivityView */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		85CCAD6113CF9AF00061FA5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		85E9F8BF13C76B7400975A7C /* Views */ = {
