@@ -22,9 +22,11 @@
 	UITabBarController *tabBarController = [[UITabBarController alloc] init];
 	UIViewController *seriesController = [[SeriesController alloc] init];
 	self.navController = [[UINavigationController alloc] initWithRootViewController:seriesController];
-	
+	self.navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+
 	self.matchesController = [[UINavigationController	alloc] initWithRootViewController:
 														[[MatchesController alloc] init]];
+	self.matchesController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	//UIViewController *settingsController = [[SettingsController alloc] init];
 	//self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
 	
