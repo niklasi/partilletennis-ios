@@ -34,6 +34,10 @@
 		85B7182D13C3AE5D00E8A81C /* PfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7182C13C3AE5D00E8A81C /* PfService.m */; };
 		85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183613C3C8B000E8A81C /* SeriesTable.m */; };
 		85B7183F13C4DF7500E8A81C /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183E13C4DF7500E8A81C /* DSActivityView.m */; };
+		85B84DC413D0DB3B005266A6 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B84DC313D0DB3B005266A6 /* SettingsController.m */; };
+		85B84DC713D0DD2E005266A6 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 85B84DC613D0DD2E005266A6 /* 19-gear.png */; };
+		85B84DC913D0E037005266A6 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85B84DC813D0E037005266A6 /* 83-calendar.png */; };
+		85B84DCB13D0E0C0005266A6 /* 104-index-cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 85B84DCA13D0E0C0005266A6 /* 104-index-cards.png */; };
 		85C2867213CFABDB003A834B /* MatchDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C2867113CFABDB003A834B /* MatchDetailView.xib */; };
 		85CCAD6413CF9F1A0061FA5C /* MatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */; };
 		85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */; };
@@ -98,6 +102,11 @@
 		85B7183613C3C8B000E8A81C /* SeriesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTable.m; sourceTree = "<group>"; };
 		85B7183D13C4DF7500E8A81C /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
 		85B7183E13C4DF7500E8A81C /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
+		85B84DC213D0DB3B005266A6 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
+		85B84DC313D0DB3B005266A6 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
+		85B84DC613D0DD2E005266A6 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
+		85B84DC813D0E037005266A6 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
+		85B84DCA13D0E0C0005266A6 /* 104-index-cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "104-index-cards.png"; sourceTree = "<group>"; };
 		85C2867113CFABDB003A834B /* MatchDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchDetailView.xib; sourceTree = "<group>"; };
 		85CCAD6213CF9F1A0061FA5C /* MatchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchTableCell.h; sourceTree = "<group>"; };
 		85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchTableCell.m; sourceTree = "<group>"; };
@@ -225,6 +234,8 @@
 				85B7182313BE216B00E8A81C /* MatchesController.m */,
 				8589AAF513C4F1CC006F961E /* MatchDetailController.h */,
 				8589AAF613C4F1CC006F961E /* MatchDetailController.m */,
+				85B84DC213D0DB3B005266A6 /* SettingsController.h */,
+				85B84DC313D0DB3B005266A6 /* SettingsController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +283,9 @@
 		85CCAD6113CF9AF00061FA5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85B84DCA13D0E0C0005266A6 /* 104-index-cards.png */,
+				85B84DC813D0E037005266A6 /* 83-calendar.png */,
+				85B84DC613D0DD2E005266A6 /* 19-gear.png */,
 				85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */,
 			);
 			name = Resources;
@@ -343,6 +357,9 @@
 				85E9F8DD13CB577F00975A7C /* SeriesTableCellBackground.png in Resources */,
 				85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */,
 				85C2867213CFABDB003A834B /* MatchDetailView.xib in Resources */,
+				85B84DC713D0DD2E005266A6 /* 19-gear.png in Resources */,
+				85B84DC913D0E037005266A6 /* 83-calendar.png in Resources */,
+				85B84DCB13D0E0C0005266A6 /* 104-index-cards.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +395,7 @@
 				8589AAFB13C4F248006F961E /* Contact.m in Sources */,
 				85E9F8D113C7817900975A7C /* SeriesTableCell.m in Sources */,
 				85CCAD6413CF9F1A0061FA5C /* MatchTableCell.m in Sources */,
+				85B84DC413D0DB3B005266A6 /* SettingsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

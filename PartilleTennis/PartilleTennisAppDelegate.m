@@ -9,10 +9,11 @@
 #import "PartilleTennisAppDelegate.h"
 #import "SeriesController.h"
 #import "MatchesController.h"
+#import "SettingsController.h"
 
 @implementation PartilleTennisAppDelegate
 
-@synthesize window = _window, navController, matchesController, settingsNavController;
+@synthesize window = _window, navController, matchesController, settingsController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -27,13 +28,19 @@
 	self.matchesController = [[UINavigationController	alloc] initWithRootViewController:
 														[[MatchesController alloc] init]];
 	self.matchesController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	//UIViewController *settingsController = [[SettingsController alloc] init];
-	//self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
 	
-	NSArray *viewControllers = [NSArray arrayWithObjects:self.navController, self.matchesController, /*self.settingsNavController,*/ nil];
+	self.settingsController = [[UINavigationController alloc] initWithRootViewController:
+																														[[SettingsController alloc] init]];
+	self.settingsController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	NSArray *viewControllers = [NSArray arrayWithObjects:self.navController, self.matchesController, self.settingsController, nil];
 	
 	[tabBarController setViewControllers:viewControllers];
-	
+	UITabBarItem *seriesTableItem = [tabBarController.tabBar.items objectAtIndex:0];
+	seriesTableItem.image = [UIImage imageNamed:@"104-index-cards.png"]; 
+	UITabBarItem *matchesItem = [tabBarController.tabBar.items objectAtIndex:1];
+	matchesItem.image = [UIImage imageNamed:@"83-calendar.png"]; 
+	UITabBarItem *settingsItem = [tabBarController.tabBar.items objectAtIndex:2];
+	settingsItem.image = [UIImage imageNamed:@"19-gear.png"]; 
   [_window setRootViewController:tabBarController];
 	
 	// Add the navigation controller's view to the window and display.

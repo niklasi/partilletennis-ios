@@ -13,6 +13,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) UINavigationController *navController;
 @property (nonatomic, retain) UINavigationController *matchesController;
-@property (nonatomic, retain) UINavigationController *settingsNavController;
+@property (nonatomic, retain) UINavigationController *settingsController;
 
 @end
