@@ -24,6 +24,8 @@
 		8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAF613C4F1CC006F961E /* MatchDetailController.m */; };
 		8589AAFB13C4F248006F961E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAFA13C4F248006F961E /* Contact.m */; };
 		85A5836413D9A21800545CCB /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85A5836313D9A21800545CCB /* SettingsView.xib */; };
+		85A5836813D9BCCA00545CCB /* iPhone4-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A5836713D9BCCA00545CCB /* iPhone4-Icon.png */; };
+		85A5836A13D9BCF600545CCB /* Icon 2 57 Rounded.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A5836913D9BCF600545CCB /* Icon 2 57 Rounded.png */; };
 		85B543C313BBCC2A0065B152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C213BBCC2A0065B152 /* UIKit.framework */; };
 		85B543C513BBCC2A0065B152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C413BBCC2A0065B152 /* Foundation.framework */; };
 		85B543C713BBCC2A0065B152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C613BBCC2A0065B152 /* CoreGraphics.framework */; };
@@ -83,6 +85,8 @@
 		8589AAF913C4F248006F961E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		8589AAFA13C4F248006F961E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		85A5836313D9A21800545CCB /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		85A5836713D9BCCA00545CCB /* iPhone4-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone4-Icon.png"; path = "../iPhone4-Icon.png"; sourceTree = "<group>"; };
+		85A5836913D9BCF600545CCB /* Icon 2 57 Rounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon 2 57 Rounded.png"; path = "../Icon 2 57 Rounded.png"; sourceTree = "<group>"; };
 		85B543BE13BBCC2A0065B152 /* PartilleTennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartilleTennis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B543C213BBCC2A0065B152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85B543C413BBCC2A0065B152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -283,6 +287,8 @@
 		85CCAD6113CF9AF00061FA5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85A5836713D9BCCA00545CCB /* iPhone4-Icon.png */,
+				85A5836913D9BCF600545CCB /* Icon 2 57 Rounded.png */,
 				85B84DCA13D0E0C0005266A6 /* 104-index-cards.png */,
 				85B84DC813D0E037005266A6 /* 83-calendar.png */,
 				85B84DC613D0DD2E005266A6 /* 19-gear.png */,
@@ -360,6 +366,8 @@
 				85B84DC913D0E037005266A6 /* 83-calendar.png in Resources */,
 				85B84DCB13D0E0C0005266A6 /* 104-index-cards.png in Resources */,
 				85A5836413D9A21800545CCB /* SettingsView.xib in Resources */,
+				85A5836813D9BCCA00545CCB /* iPhone4-Icon.png in Resources */,
+				85A5836A13D9BCF600545CCB /* Icon 2 57 Rounded.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
