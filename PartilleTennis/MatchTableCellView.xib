@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1280</int>
-		<string key="IBDocument.SystemVersion">10K540</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1881</string>
-		<string key="IBDocument.AppKitVersion">1038.36</string>
-		<string key="IBDocument.HIToolboxVersion">461.00</string>
+		<string key="IBDocument.SystemVersion">11A511</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1891</string>
+		<string key="IBDocument.AppKitVersion">1138</string>
+		<string key="IBDocument.HIToolboxVersion">566.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">876</string>
+			<string key="NS.object.0">884</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -49,16 +49,16 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{47, 23}, {273, 21}}</string>
 								<reference key="NSSuperview" ref="471492020"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSWindow"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">Banor:3 3-4, Hemma match: Ja</string>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">2</int>
-									<bytes key="NSRGB">MC4wODYyNzQ1MTIxMSAwLjM2NDcwNTg5MDQgMQA</bytes>
+								<object class="NSColor" key="IBUITextColor" id="264463095">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MCAwIDAAA</bytes>
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
@@ -78,6 +78,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{47, -4}, {226, 33}}</string>
 								<reference key="NSSuperview" ref="471492020"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="579296234"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -85,10 +86,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">Härlanda byggledn 13 Jan kl 18</string>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">2</int>
-									<bytes key="NSRGB">MC4wODYyNzQ1MTIxMSAwLjM2NDcwNTg5MDQgMQA</bytes>
-								</object>
+								<reference key="IBUITextColor" ref="264463095"/>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">16</float>
@@ -107,6 +105,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{-4, 0}, {42, 44}}</string>
 								<reference key="NSSuperview" ref="471492020"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="825429817"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -114,10 +113,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">12</string>
-								<object class="NSColor" key="IBUITextColor" id="667298450">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MSAxIDEAA</bytes>
-								</object>
+								<reference key="IBUITextColor" ref="264463095"/>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">18</float>
@@ -135,6 +131,7 @@
 						</object>
 						<string key="NSFrameSize">{300, 44}</string>
 						<reference key="NSSuperview" ref="569406828"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="21864979"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -149,10 +146,13 @@
 				</object>
 				<string key="NSFrameSize">{320, 44}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="471492020"/>
-				<reference key="IBUIBackgroundColor" ref="667298450"/>
+				<object class="NSColor" key="IBUIBackgroundColor">
+					<int key="NSColorSpace">1</int>
+					<bytes key="NSRGB">MSAxIDEAA</bytes>
+				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<int key="IBUIAccessoryType">1</int>
 				<reference key="IBUIContentView" ref="471492020"/>
@@ -164,10 +164,6 @@
 					<string key="NSName">Helvetica</string>
 					<double key="NSSize">14</double>
 					<int key="NSfFlags">16</int>
-				</object>
-				<object class="NSCustomResource" key="IBUIImage">
-					<string key="NSClassName">NSImage</string>
-					<string key="NSResourceName">SeriesTableCellBackground.png</string>
 				</object>
 				<string key="IBUIReuseIdentifier">MatchCell</string>
 			</object>
@@ -299,7 +295,38 @@
 			<nil key="sourceID"/>
 			<int key="maxID">10</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">MatchTableCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MatchTableCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">MatchesController</string>
+					<string key="superclassName">UITableViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">matchTableCell</string>
+						<string key="NS.object.0">MatchTableCell</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">matchTableCell</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">matchTableCell</string>
+							<string key="candidateClassName">MatchTableCell</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MatchesController.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
@@ -308,10 +335,6 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">SeriesTableCellBackground.png</string>
-			<string key="NS.object.0">{320, 44}</string>
-		</object>
-		<string key="IBCocoaTouchPluginVersion">876</string>
+		<string key="IBCocoaTouchPluginVersion">884</string>
 	</data>
 </archive>

@@ -45,7 +45,6 @@
 		85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C813C7711300975A7C /* SeriesTableView.xib */; };
 		85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */; };
 		85E9F8D113C7817900975A7C /* SeriesTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E9F8D013C7817900975A7C /* SeriesTableCell.m */; };
-		85E9F8DD13CB577F00975A7C /* SeriesTableCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,7 +115,6 @@
 		85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableCellView.xib; sourceTree = "<group>"; };
 		85E9F8CF13C7817800975A7C /* SeriesTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesTableCell.h; sourceTree = "<group>"; };
 		85E9F8D013C7817900975A7C /* SeriesTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTableCell.m; sourceTree = "<group>"; };
-		85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeriesTableCellBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +284,6 @@
 				85B84DCA13D0E0C0005266A6 /* 104-index-cards.png */,
 				85B84DC813D0E037005266A6 /* 83-calendar.png */,
 				85B84DC613D0DD2E005266A6 /* 19-gear.png */,
-				85E9F8DC13CB577F00975A7C /* SeriesTableCellBackground.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 				85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */,
 				85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */,
 				85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */,
-				85E9F8DD13CB577F00975A7C /* SeriesTableCellBackground.png in Resources */,
 				85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */,
 				85C2867213CFABDB003A834B /* MatchDetailView.xib in Resources */,
 				85B84DC713D0DD2E005266A6 /* 19-gear.png in Resources */,
