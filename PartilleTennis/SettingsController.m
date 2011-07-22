@@ -11,9 +11,9 @@
 
 @implementation SettingsController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)init
 {
-    self = [super initWithStyle:style];
+	self = [super initWithNibName:@"SettingsView" bundle:nil];
     if (self) {
 			self.title = @"Inställningar";
     }
@@ -79,7 +79,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

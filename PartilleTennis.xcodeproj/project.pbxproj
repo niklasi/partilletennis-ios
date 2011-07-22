@@ -23,6 +23,7 @@
 		8504713D13BBDBD50052F1F4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504713113BBDBD50052F1F4 /* SBJsonWriter.m */; };
 		8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAF613C4F1CC006F961E /* MatchDetailController.m */; };
 		8589AAFB13C4F248006F961E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAFA13C4F248006F961E /* Contact.m */; };
+		85A5836413D9A21800545CCB /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85A5836313D9A21800545CCB /* SettingsView.xib */; };
 		85B543C313BBCC2A0065B152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C213BBCC2A0065B152 /* UIKit.framework */; };
 		85B543C513BBCC2A0065B152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C413BBCC2A0065B152 /* Foundation.framework */; };
 		85B543C713BBCC2A0065B152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B543C613BBCC2A0065B152 /* CoreGraphics.framework */; };
@@ -81,6 +82,7 @@
 		8589AAF613C4F1CC006F961E /* MatchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchDetailController.m; sourceTree = "<group>"; };
 		8589AAF913C4F248006F961E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		8589AAFA13C4F248006F961E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		85A5836313D9A21800545CCB /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		85B543BE13BBCC2A0065B152 /* PartilleTennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartilleTennis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B543C213BBCC2A0065B152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85B543C413BBCC2A0065B152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -296,6 +298,7 @@
 				85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */,
 				85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */,
 				85C2867113CFABDB003A834B /* MatchDetailView.xib */,
+				85A5836313D9A21800545CCB /* SettingsView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				85B84DC713D0DD2E005266A6 /* 19-gear.png in Resources */,
 				85B84DC913D0E037005266A6 /* 83-calendar.png in Resources */,
 				85B84DCB13D0E0C0005266A6 /* 104-index-cards.png in Resources */,
+				85A5836413D9A21800545CCB /* SettingsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
