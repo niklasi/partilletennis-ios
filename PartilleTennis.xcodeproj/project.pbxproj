@@ -21,6 +21,8 @@
 		8504713B13BBDBD50052F1F4 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504712D13BBDBD50052F1F4 /* SBJsonTokeniser.m */; };
 		8504713C13BBDBD50052F1F4 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504712F13BBDBD50052F1F4 /* SBJsonUTF8Stream.m */; };
 		8504713D13BBDBD50052F1F4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504713113BBDBD50052F1F4 /* SBJsonWriter.m */; };
+		8555726013DC551500100CD6 /* TeamPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555725F13DC551500100CD6 /* TeamPickerController.m */; };
+		8555726213DC554700100CD6 /* TeamPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8555726113DC554700100CD6 /* TeamPickerView.xib */; };
 		8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAF613C4F1CC006F961E /* MatchDetailController.m */; };
 		8589AAFB13C4F248006F961E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAFA13C4F248006F961E /* Contact.m */; };
 		85A5836413D9A21800545CCB /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85A5836313D9A21800545CCB /* SettingsView.xib */; };
@@ -80,6 +82,9 @@
 		8504712F13BBDBD50052F1F4 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		8504713013BBDBD50052F1F4 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		8504713113BBDBD50052F1F4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		8555725E13DC551500100CD6 /* TeamPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeamPickerController.h; path = ../TeamPickerController.h; sourceTree = "<group>"; };
+		8555725F13DC551500100CD6 /* TeamPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeamPickerController.m; path = ../TeamPickerController.m; sourceTree = "<group>"; };
+		8555726113DC554700100CD6 /* TeamPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamPickerView.xib; sourceTree = "<group>"; };
 		8589AAF513C4F1CC006F961E /* MatchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchDetailController.h; sourceTree = "<group>"; };
 		8589AAF613C4F1CC006F961E /* MatchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchDetailController.m; sourceTree = "<group>"; };
 		8589AAF913C4F248006F961E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
@@ -230,6 +235,8 @@
 		85B7182513C3AB3000E8A81C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8555725E13DC551500100CD6 /* TeamPickerController.h */,
+				8555725F13DC551500100CD6 /* TeamPickerController.m */,
 				8504710E13BBD02D0052F1F4 /* SeriesController.h */,
 				8504710F13BBD02D0052F1F4 /* SeriesController.m */,
 				8504711513BBD68B0052F1F4 /* SeriesTableController.h */,
@@ -305,6 +312,7 @@
 				85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */,
 				85C2867113CFABDB003A834B /* MatchDetailView.xib */,
 				85A5836313D9A21800545CCB /* SettingsView.xib */,
+				8555726113DC554700100CD6 /* TeamPickerView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 				85A5836413D9A21800545CCB /* SettingsView.xib in Resources */,
 				85A5836813D9BCCA00545CCB /* iPhone4-Icon.png in Resources */,
 				85A5836A13D9BCF600545CCB /* Icon 2 57 Rounded.png in Resources */,
+				8555726213DC554700100CD6 /* TeamPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +416,7 @@
 				85E9F8D113C7817900975A7C /* SeriesTableCell.m in Sources */,
 				85CCAD6413CF9F1A0061FA5C /* MatchTableCell.m in Sources */,
 				85B84DC413D0DB3B005266A6 /* SettingsController.m in Sources */,
+				8555726013DC551500100CD6 /* TeamPickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

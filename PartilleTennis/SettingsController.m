@@ -7,7 +7,7 @@
 //
 
 #import "SettingsController.h"
-
+#import "TeamPickerController.h"
 
 @implementation SettingsController
 
@@ -146,14 +146,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+	TeamPickerController *teamPicker = [[TeamPickerController alloc] initWithNibName:@"TeamPickerView" bundle:nil];
+    
+	[self.navigationController pushViewController:teamPicker animated:YES];
+    
+    
 }
 
 @end
