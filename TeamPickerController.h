@@ -10,9 +10,7 @@
 #import "PfService.h"
 
 @interface TeamPickerController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PfServiceDelegate> {
-	UIPickerView *TeamPicker;
+
 }
 
-
-@property (strong, nonatomic) IBOutlet UIPickerView *TeamPicker;
 @end

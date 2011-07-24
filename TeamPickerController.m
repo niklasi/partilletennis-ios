@@ -15,10 +15,11 @@
 }
 @property (nonatomic, strong) NSArray *teams;
 @property (nonatomic, strong) PfService *pfService;
+@property (strong, nonatomic) IBOutlet UIPickerView *teamPicker;
 @end
 
 @implementation TeamPickerController
-@synthesize TeamPicker, teams = _teams, pfService = _pfService;
+@synthesize teamPicker = _teamPicker, teams = _teams, pfService = _pfService;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,7 +42,7 @@
 - (void)loadedTeams:(NSArray *)teams
 {
 	self.teams = teams;
-	[TeamPicker reloadAllComponents];
+	[self.teamPicker reloadAllComponents];
 	[DSActivityView removeView];
 }
 
