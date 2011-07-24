@@ -10,6 +10,7 @@
 #import "SeriesController.h"
 #import "MatchesController.h"
 #import "SettingsController.h"
+#import "TeamPickerController.h"
 
 @implementation PartilleTennisAppDelegate
 
@@ -49,10 +50,17 @@
 	settingsItem.image = [UIImage imageNamed:@"19-gear.png"]; 
   [_window setRootViewController:tabBarController];
 	
+	if (self.myTeam == nil) {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Välj lag" message:@"Du måste välja vilket lag du tillhör." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+		[alert show];
+		tabBarController.selectedIndex = 2;
+		TeamPickerController *picker = [[TeamPickerController alloc] initWithNibName:@"TeamPickerView" bundle:nil];
+		[self.settingsController pushViewController:picker animated:YES];
+	}
+	
 	// Add the navigation controller's view to the window and display.
 	[_window addSubview:tabBarController.view];
 
-	
 	[self.window makeKeyAndVisible];
 	return YES;
 }
