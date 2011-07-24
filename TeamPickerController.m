@@ -7,15 +7,25 @@
 //
 
 #import "TeamPickerController.h"
+#import "Team.h"
+#import "DSActivityView.h"
+
+@interface TeamPickerController() {
+
+}
+@property (nonatomic, strong) NSArray *teams;
+@property (nonatomic, strong) PfService *pfService;
+@end
 
 @implementation TeamPickerController
-@synthesize TeamPicker;
+@synthesize TeamPicker, teams = _teams, pfService = _pfService;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+			self.pfService = [[PfService alloc] init];
+			self.pfService.delegate = self;
     }
     return self;
 }
@@ -28,6 +38,13 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)loadedTeams:(NSArray *)teams
+{
+	self.teams = teams;
+	[TeamPicker reloadAllComponents];
+	[DSActivityView removeView];
+}
+
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
 	return 1;
@@ -35,12 +52,14 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-	return 5;
+	NSLog(@"Antal: %d", self.teams.count);
+	return self.teams.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-	return @"MI 5";
+	Team *team = [self.teams objectAtIndex:row];
+	return team.name;
 }
 
 #pragma mark - View lifecycle
@@ -51,6 +70,15 @@
 {
 }
 */
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	if (self.teams.count == 0) {
+		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
+		[self.pfService loadAllTeams];
+	}
+
+}
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

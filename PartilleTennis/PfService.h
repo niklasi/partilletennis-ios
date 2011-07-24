@@ -15,6 +15,7 @@
 @protocol PfServiceDelegate <NSObject>
 
 @optional
+- (void)loadedTeams:(NSArray *)teams;
 - (void)loadedMatches:(NSArray *)matches;
 - (void)loadedSeriesTable:(NSArray *)seriesTable;
 @end
@@ -29,6 +30,7 @@
 
 @property (nonatomic, assign) id<PfServiceDelegate> delegate;
 
+-(void)loadAllTeams;
 -(void)loadMatches:(int)series team:(int)team;
 -(void)loadSeriesTable:(int)series;
 

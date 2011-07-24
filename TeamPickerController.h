@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PfService.h"
 
-@interface TeamPickerController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface TeamPickerController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PfServiceDelegate> {
 	UIPickerView *TeamPicker;
 }
 

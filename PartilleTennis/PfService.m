@@ -9,9 +9,11 @@
 #import "PfService.h"
 #import "Match.h"
 #import "SeriesTable.h"
+#import "Team.h"
 
 @interface PfService(private)
 
+- (void)parseTeams:(NSArray *)array;
 - (void)parseMatches:(NSArray *)array;
 - (void)parseSeriesTable:(NSArray *)array;
 
@@ -44,6 +46,21 @@
     }
     
     return self;
+}
+
+-(void)loadAllTeams
+{
+	if ([delegate respondsToSelector:@selector(loadedTeams:)]) {
+		
+		NSString *url = @"http://sharp-robot-596.heroku.com/teams/all?output=json";
+		
+		NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
+																							cachePolicy:NSURLRequestUseProtocolCachePolicy
+																					timeoutInterval:60.0];
+		
+		[NSURLConnection connectionWithRequest:theRequest delegate:self];
+		NSLog(@"Load teams");
+	}
 }
 
 -(void)loadMatches:(int)series team:(int)team
@@ -89,6 +106,10 @@
 	else if([data objectForKey:@"match_points"])
 	{
 		[self parseSeriesTable:array];
+	}
+	else if ([data objectForKey:@"division"])
+	{
+		[self parseTeams:array];
 	}
 }
 
@@ -136,6 +157,25 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+}
+
+- (void)parseTeams:(NSArray *)array
+{
+	if ([delegate respondsToSelector:@selector(loadedTeams:)]) {
+		NSMutableArray *loadedTeams = [[NSMutableArray alloc] init];
+		
+		for (int i = 0; i < [array count]; i++) {
+			NSDictionary *teamData = (NSDictionary *)[array objectAtIndex:i];
+			Team *team = [[Team alloc] init];
+			team.name = [teamData objectForKey:@"team_name"];
+			team.division =  [[teamData objectForKey:@"division"] intValue];
+			team.ranking = [[teamData objectForKey:@"ranking"] intValue];
+			
+			[loadedTeams addObject:team];
+		}
+		
+		[delegate loadedTeams:loadedTeams];
+	}
 }
 
 
