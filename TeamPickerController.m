@@ -9,7 +9,6 @@
 #import "TeamPickerController.h"
 #import "Team.h"
 #import "DSActivityView.h"
-#import "FileHelpers.h"
 
 @interface TeamPickerController() {
 
@@ -28,6 +27,7 @@
     if (self) {
 			self.pfService = [[PfService alloc] init];
 			self.pfService.delegate = self;
+			
     }
     return self;
 }
@@ -67,7 +67,8 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
 	Team *team = [self.teams objectAtIndex:row];
-	[NSKeyedArchiver archiveRootObject:team toFile:pathInDocumentDirectory(@"myTeam")];
+	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
+	teamDelegate.myTeam = team;
 }
 
 #pragma mark - View lifecycle

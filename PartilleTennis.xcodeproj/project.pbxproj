@@ -91,6 +91,7 @@
 		8555726413DC59E000100CD6 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		8555726B13DC6E7500100CD6 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelpers.h; sourceTree = "<group>"; };
 		8555726C13DC6E7500100CD6 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
+		8555727513DCC21300100CD6 /* TeamDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamDelegateProtocol.h; sourceTree = "<group>"; };
 		8589AAF513C4F1CC006F961E /* MatchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchDetailController.h; sourceTree = "<group>"; };
 		8589AAF613C4F1CC006F961E /* MatchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchDetailController.m; sourceTree = "<group>"; };
 		8589AAF913C4F248006F961E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
@@ -236,6 +237,7 @@
 				85B543D013BBCC2A0065B152 /* PartilleTennis-Prefix.pch */,
 				8555726B13DC6E7500100CD6 /* FileHelpers.h */,
 				8555726C13DC6E7500100CD6 /* FileHelpers.m */,
+				8555727513DCC21300100CD6 /* TeamDelegateProtocol.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

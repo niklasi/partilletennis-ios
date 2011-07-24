@@ -50,7 +50,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+	[super viewWillAppear:animated];
+	[self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -98,7 +99,9 @@
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-		cell.textLabel.text = @"Välj lag";
+	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
+	Team *myTeam = teamDelegate.myTeam;
+	cell.textLabel.text = [NSString stringWithFormat:@"Välj lag %@", myTeam != nil ? myTeam.name : @""];
 	
     return cell;
 }

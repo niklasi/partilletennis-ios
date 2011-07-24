@@ -10,8 +10,6 @@
 #import "Match.h"
 #import "DSActivityView.h"
 #import "MatchDetailController.h"
-#import "Team.h"
-#import "FileHelpers.h"
 
 @implementation MatchesController
 
@@ -62,7 +60,8 @@
 	[super viewWillAppear:animated];
 	if (self.matchData.count == 0) {
 		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
-		Team *myTeam = [NSKeyedUnarchiver unarchiveObjectWithFile:pathInDocumentDirectory(@"myTeam")];
+		id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
+		Team *myTeam = teamDelegate.myTeam;
 		[pfService loadMatches:myTeam.division team:myTeam.ranking];
 	}
 }

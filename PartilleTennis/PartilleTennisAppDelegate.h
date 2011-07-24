@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PartilleTennisAppDelegate : UIResponder <UIApplicationDelegate>
+@interface PartilleTennisAppDelegate : UIResponder <UIApplicationDelegate, TeamDelegateProtocol>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) UINavigationController *navController;
 @property (nonatomic, retain) UINavigationController *matchesController;
 @property (nonatomic, retain) UINavigationController *settingsController;
-
+@property (nonatomic, strong) Team *myTeam;
 @end
