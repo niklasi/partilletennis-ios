@@ -50,7 +50,7 @@
 {
 	if ([delegate respondsToSelector:@selector(loadedMatches:)]) {
 		
-		NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/matches/%d/%d?output=json", series, team];
+		NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/teams/matches/%d/%d?output=json", series, team];
 		
 		NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -148,11 +148,11 @@
 			NSDictionary *matchData = (NSDictionary *)[array objectAtIndex:i];
 			NSDictionary *opponentData = (NSDictionary *)[matchData objectForKey:@"opponent"];
 			Match *match = [[Match alloc] init];
-			match.teamName = [opponentData objectForKey:@"teamName"];
+			match.teamName = [opponentData objectForKey:@"team_name"];
 			match.date = [matchData objectForKey:@"date"];
 			match.time = [matchData objectForKey:@"time"];
 			match.lanes = [matchData objectForKey:@"lanes"];
-			match.homeMatch = [[matchData objectForKey:@"homeMatch"] boolValue];
+			match.homeMatch = [[matchData objectForKey:@"home_match"] boolValue];
 			NSLog(@"Hemma match: %d", match.homeMatch);
 			Contact *contact = [[Contact alloc] init];
 			contact.name = [opponentData objectForKey:@"contact"];

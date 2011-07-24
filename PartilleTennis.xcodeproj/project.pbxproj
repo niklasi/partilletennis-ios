@@ -334,6 +334,9 @@
 /* Begin PBXProject section */
 		85B543B513BBCC290065B152 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 85B543B813BBCC290065B152 /* Build configuration list for PBXProject "PartilleTennis" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
