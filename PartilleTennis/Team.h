@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Team : NSObject
+@interface Team : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) int division;

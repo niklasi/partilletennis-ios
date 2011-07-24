@@ -9,6 +9,7 @@
 #import "TeamPickerController.h"
 #import "Team.h"
 #import "DSActivityView.h"
+#import "FileHelpers.h"
 
 @interface TeamPickerController() {
 
@@ -61,6 +62,12 @@
 {
 	Team *team = [self.teams objectAtIndex:row];
 	return team.name;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+	Team *team = [self.teams objectAtIndex:row];
+	[NSKeyedArchiver archiveRootObject:team toFile:pathInDocumentDirectory(@"myTeam")];
 }
 
 #pragma mark - View lifecycle

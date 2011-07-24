@@ -169,7 +169,7 @@
 			Team *team = [[Team alloc] init];
 			team.name = [teamData objectForKey:@"team_name"];
 			team.division =  [[teamData objectForKey:@"division"] intValue];
-			team.ranking = [[teamData objectForKey:@"ranking"] intValue];
+			team.ranking = [[teamData objectForKey:@"team_ranking"] intValue];
 			
 			[loadedTeams addObject:team];
 		}
