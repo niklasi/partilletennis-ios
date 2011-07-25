@@ -22,10 +22,6 @@
 
 @interface PfService : NSObject <SBJsonStreamParserAdapterDelegate, PfServiceDelegate>
 {
-	__unsafe_unretained id<PfServiceDelegate> delegate;
-	@private
-	SBJsonStreamParser *parser;
-	SBJsonStreamParserAdapter *adapter;
 }
 
 @property (nonatomic, assign) id<PfServiceDelegate> delegate;

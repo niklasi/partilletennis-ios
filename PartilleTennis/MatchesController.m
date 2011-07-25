@@ -11,9 +11,15 @@
 #import "DSActivityView.h"
 #import "MatchDetailController.h"
 
+@interface MatchesController() {
+}
+
+@property (nonatomic, strong) NSString *currentTeam;
+@end
+
 @implementation MatchesController
 
-@synthesize matchData, matchTableCell;
+@synthesize matchData = _matchData, matchTableCell = _matchTableCell, currentTeam = _currentTeam;
 
 -(id)init
 {
@@ -22,6 +28,7 @@
 			self.title = @"Matcher";
 			pfService = [[PfService alloc] init];
 			pfService.delegate = self;
+			self.currentTeam = @"";
 			
     }
     return self;
@@ -58,10 +65,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	if (self.matchData.count == 0) {
+	
+	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
+	Team *myTeam = teamDelegate.myTeam;
+
+	if (self.matchData.count == 0 || myTeam.name != self.currentTeam) {
+		self.currentTeam = myTeam.name;
 		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
-		id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
-		Team *myTeam = teamDelegate.myTeam;
+		NSLog(@"Division: %d, Team: %d", myTeam.division, myTeam.ranking);
 		[pfService loadMatches:myTeam.division team:myTeam.ranking];
 	}
 }
@@ -105,7 +116,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return matchData.count;
+    return self.matchData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -116,7 +127,7 @@
     if (cell == nil) {
 			//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
 			[[NSBundle mainBundle] loadNibNamed:@"MatchTableCellView" owner:self options:nil];
-			cell = matchTableCell;
+			cell = self.matchTableCell;
     }
     
 	Match *match = (Match *)[[self matchData] objectAtIndex:[indexPath row]];

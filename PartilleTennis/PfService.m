@@ -11,7 +11,10 @@
 #import "SeriesTable.h"
 #import "Team.h"
 
-@interface PfService(private)
+@interface PfService()
+
+@property (nonatomic, strong) SBJsonStreamParser *parser;
+@property (nonatomic, strong) SBJsonStreamParserAdapter *adapter;
 
 - (void)parseTeams:(NSArray *)array;
 - (void)parseMatches:(NSArray *)array;
@@ -21,7 +24,7 @@
 
 @implementation PfService
 
-@synthesize delegate;
+@synthesize delegate, parser = _parser, adapter = _adapter;
 
 - (id)init
 {
@@ -30,19 +33,19 @@
 			// We don't want *all* the individual messages from the
 			// SBJsonStreamParser, just the top-level objects. The stream
 			// parser adapter exists for this purpose.
-			adapter = [[SBJsonStreamParserAdapter alloc] init];
+			self.adapter = [[SBJsonStreamParserAdapter alloc] init];
 			
-			adapter.delegate = self;
+			self.adapter.delegate = self;
 			
-			parser = [[SBJsonStreamParser alloc] init];
+			self.parser = [[SBJsonStreamParser alloc] init];
 			
-			parser.delegate = adapter;
+			self.parser.delegate = self.adapter;
 			
 			// Normally it's an error if JSON is followed by anything but
 			// whitespace. Setting this means that the parser will be
 			// expecting the stream to contain multiple whitespace-separated
 			// JSON documents.
-			parser.supportMultipleDocuments = NO;
+			self.parser.supportMultipleDocuments = YES;
     }
     
     return self;
@@ -139,11 +142,11 @@
 	// Parse the new chunk of data. The parser will append it to
 	// its internal buffer, then parse from where it left off in
 	// the last chunk.
-	SBJsonStreamParserStatus status = [parser parse:data];
+	SBJsonStreamParserStatus status = [self.parser parse:data];
 	
 	if (status == SBJsonStreamParserError) {
 		//tweet.text = [NSString stringWithFormat: @"The parser encountered an error: %@", parser.error];
-		NSLog(@"Parser error: %@", parser.error);
+		NSLog(@"Parser error: %@", self.parser.error);
 		
 	} else if (status == SBJsonStreamParserWaitingForData) {
 		NSLog(@"Parser waiting for more data");
