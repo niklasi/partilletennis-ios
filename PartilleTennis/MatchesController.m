@@ -14,7 +14,7 @@
 @interface MatchesController() {
 }
 
-@property (nonatomic, strong) NSString *currentTeam;
+@property (nonatomic, strong) Team *currentTeam;
 @end
 
 @implementation MatchesController
@@ -28,7 +28,6 @@
 			self.title = @"Matcher";
 			pfService = [[PfService alloc] init];
 			pfService.delegate = self;
-			self.currentTeam = @"";
 			
     }
     return self;
@@ -69,8 +68,8 @@
 	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
 	Team *myTeam = teamDelegate.myTeam;
 
-	if (self.matchData.count == 0 || myTeam.name != self.currentTeam) {
-		self.currentTeam = myTeam.name;
+	if (self.matchData.count == 0 || ![myTeam isEqual: self.currentTeam]) {
+		self.currentTeam = myTeam;
 		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
 		NSLog(@"Division: %d, Team: %d", myTeam.division, myTeam.ranking);
 		[pfService loadMatches:myTeam.division team:myTeam.ranking];
