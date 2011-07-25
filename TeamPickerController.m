@@ -44,8 +44,17 @@
 {
 	self.teams = teams;
 	[self.teamPicker reloadAllComponents];
+	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
+	if (teamDelegate != nil) {
+		int index = [self.teams indexOfObject:teamDelegate.myTeam];
+		[self.teamPicker selectRow:index inComponent:0 animated:NO];
+	}
+	
 	[DSActivityView removeView];
 }
+
+//- (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated
+
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {

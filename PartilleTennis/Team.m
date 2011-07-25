@@ -37,5 +37,21 @@
 	[aCoder encodeInt:self.ranking forKey:@"ranking"];
 }
 
+-(BOOL)isEqual:(id)object
+{
+	if ([object class] != self.class) return false;
+	Team *tmp = (Team *)object;
+	if (![self.name isEqualToString:tmp.name]) return false;
+	if (self.division != tmp.division) return false;
+	if (self.ranking != tmp.ranking) return false;
+	
+	return true;
+}
+
+-(NSUInteger)hash
+{
+	NSString *hashString = [NSString stringWithFormat:@"%@-%d-%d", self.name, self.division, self.ranking];
+	return [hashString hash];
+}
 
 @end
