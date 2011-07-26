@@ -25,10 +25,10 @@
 -(void)setMatch:(Match *)value
 {
 	_match = value;
-	self.teamLabel.text = [NSString stringWithFormat:@"%@ - %@ kl %@", 
-												 self.match.teamName,
+	self.teamLabel.text = [NSString stringWithFormat:@"%@ kl %@ - %@", 
 												 self.match.date,
-												 self.match.time];
+												 self.match.time,
+												 self.match.teamName];
 	self.detailsLabel.text = [NSString stringWithFormat:@"Banor: %@, %@", 
 														self.match.lanes,
 														self.match.homeMatch ? @"Hemmamatch" : @"Bortamatch"];
