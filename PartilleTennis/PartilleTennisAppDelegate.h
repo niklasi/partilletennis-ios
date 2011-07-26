@@ -15,4 +15,5 @@
 @property (nonatomic, retain) UINavigationController *matchesController;
 @property (nonatomic, retain) UINavigationController *settingsController;
 @property (nonatomic, strong) Team *myTeam;
+@property (nonatomic, strong) NSArray *allTeams;
 @end

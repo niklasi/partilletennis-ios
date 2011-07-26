@@ -7,19 +7,19 @@
 //
 
 #import "TeamPickerController.h"
-#import "Team.h"
 #import "DSActivityView.h"
 
 @interface TeamPickerController() {
 
 }
-@property (nonatomic, strong) NSArray *teams;
+@property (nonatomic, assign) id<TeamDelegateProtocol> teamDelegate;
 @property (nonatomic, strong) PfService *pfService;
 @property (strong, nonatomic) IBOutlet UIPickerView *teamPicker;
+-(void)selectTeam;
 @end
 
 @implementation TeamPickerController
-@synthesize teamPicker = _teamPicker, teams = _teams, pfService = _pfService;
+@synthesize teamPicker = _teamPicker, pfService = _pfService, teamDelegate = _teamDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,7 @@
     if (self) {
 			self.pfService = [[PfService alloc] init];
 			self.pfService.delegate = self;
-			
+			self.teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
     }
     return self;
 }
@@ -42,19 +42,12 @@
 
 - (void)loadedTeams:(NSArray *)teams
 {
-	self.teams = teams;
+	self.teamDelegate.allTeams = teams;
 	[self.teamPicker reloadAllComponents];
-	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
-	if (teamDelegate != nil) {
-		int index = [self.teams indexOfObject:teamDelegate.myTeam];
-		[self.teamPicker selectRow:index inComponent:0 animated:NO];
-	}
+	[self selectTeam];
 	
 	[DSActivityView removeView];
 }
-
-//- (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated
-
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -63,21 +56,28 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-	NSLog(@"Antal: %d", self.teams.count);
-	return self.teams.count;
+	NSLog(@"Antal: %d", self.teamDelegate.allTeams.count);
+	return self.teamDelegate.allTeams.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-	Team *team = [self.teams objectAtIndex:row];
+	Team *team = [self.teamDelegate.allTeams objectAtIndex:row];
 	return team.name;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-	Team *team = [self.teams objectAtIndex:row];
-	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
-	teamDelegate.myTeam = team;
+	Team *team = [self.teamDelegate.allTeams objectAtIndex:row];
+	self.teamDelegate.myTeam = team;
+}
+
+-(void)selectTeam
+{
+	if (self.teamDelegate.myTeam != nil) {
+		int index = [self.teamDelegate.allTeams indexOfObject:self.teamDelegate.myTeam];
+		[self.teamPicker selectRow:index inComponent:0 animated:NO];
+	}
 }
 
 #pragma mark - View lifecycle
@@ -91,9 +91,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	if (self.teams.count == 0) {
+	if (self.teamDelegate.allTeams.count == 0) {
 		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
 		[self.pfService loadAllTeams];
+	}
+	else {
+		[self selectTeam];
 	}
 
 }

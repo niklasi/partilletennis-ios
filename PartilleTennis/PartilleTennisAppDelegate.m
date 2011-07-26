@@ -14,7 +14,7 @@
 
 @implementation PartilleTennisAppDelegate
 
-@synthesize window = _window, navController, matchesController, settingsController, myTeam;
+@synthesize window = _window, navController, matchesController, settingsController, myTeam, allTeams;
 
 -(id)init
 {
@@ -77,6 +77,7 @@
 {
 	[NSKeyedArchiver archiveRootObject:self.myTeam toFile:pathInDocumentDirectory(@"myTeam")];
 	self.myTeam = nil;
+	self.allTeams = nil;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

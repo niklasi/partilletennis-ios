@@ -13,4 +13,7 @@
 -(Team *) myTeam;
 -(void) setMyTeam:(Team *)value;
 
+-(NSArray *) allTeams;
+-(void) setAllTeams:(NSArray *)value;
+
 @end
