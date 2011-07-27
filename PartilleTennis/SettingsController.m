@@ -95,13 +95,14 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
 	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
 	Team *myTeam = teamDelegate.myTeam;
-	cell.textLabel.text = [NSString stringWithFormat:@"Välj lag %@", myTeam != nil ? myTeam.name : @""];
+	cell.textLabel.text = @"Välj lag";
+	cell.detailTextLabel.text = myTeam.name;
 	
     return cell;
 }
