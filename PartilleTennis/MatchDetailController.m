@@ -82,18 +82,21 @@
 {
 
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
     return 3;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 
+	if (section == 0) {
+		return @"Resultat";
+	}
+	
 	return @"Kontakt";
 	
 	return nil;
@@ -110,16 +113,34 @@
     
 	switch (indexPath.row) {
 		case 0:
-			cell.textLabel.text = @"Namn";
-			cell.detailTextLabel.text = self.contact.name;
+			if (indexPath.section == 0) {
+				cell.textLabel.text = @"Dubbel";
+				cell.detailTextLabel.text = @"4-2, 4-1";
+			}
+			else {
+				cell.textLabel.text = @"Namn";
+				cell.detailTextLabel.text = self.contact.name;
+			}
 			break;
 		case 1:
-			cell.textLabel.text = @"Telefon";
-			cell.detailTextLabel.text = self.contact.phone;
+			if (indexPath.section == 0) {
+				cell.textLabel.text = @"1:a singel";
+				cell.detailTextLabel.text = @"4-3, 3-4, 4-1";				
+			}
+			else {
+				cell.textLabel.text = @"Telefon";
+				cell.detailTextLabel.text = self.contact.phone;
+			}
 			break;
 		case 2:
-			cell.textLabel.text = @"Email";
-			cell.detailTextLabel.text = self.contact.email;
+			if (indexPath.section == 0) {
+				cell.textLabel.text = @"2:a singel";
+				cell.detailTextLabel.text = @"2-4, 4-1";
+			}
+			else {
+				cell.textLabel.text = @"Email";
+				cell.detailTextLabel.text = self.contact.email;
+			}
 			break;
 		default:
 			break;
