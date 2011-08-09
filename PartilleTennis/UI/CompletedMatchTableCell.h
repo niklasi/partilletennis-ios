@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MatchTableCell.h"
 
-@interface CompletedMatchTableCell : MatchTableCell
+@interface CompletedMatchTableCell : MatchTableCell {
+}
 
 @end
