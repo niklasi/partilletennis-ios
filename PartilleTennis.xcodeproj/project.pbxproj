@@ -21,6 +21,8 @@
 		8504713B13BBDBD50052F1F4 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504712D13BBDBD50052F1F4 /* SBJsonTokeniser.m */; };
 		8504713C13BBDBD50052F1F4 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504712F13BBDBD50052F1F4 /* SBJsonUTF8Stream.m */; };
 		8504713D13BBDBD50052F1F4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504713113BBDBD50052F1F4 /* SBJsonWriter.m */; };
+		852525EE13E0D0A600C580AE /* CompletedMatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */; };
+		852525F113E0D37C00C580AE /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 852525F013E0D37C00C580AE /* 108-badge.png */; };
 		8555726013DC551500100CD6 /* TeamPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555725F13DC551500100CD6 /* TeamPickerController.m */; };
 		8555726213DC554700100CD6 /* TeamPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8555726113DC554700100CD6 /* TeamPickerView.xib */; };
 		8555726513DC59E000100CD6 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555726413DC59E000100CD6 /* Team.m */; };
@@ -47,7 +49,9 @@
 		85B84DCB13D0E0C0005266A6 /* 104-index-cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 85B84DCA13D0E0C0005266A6 /* 104-index-cards.png */; };
 		85C2867213CFABDB003A834B /* MatchDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C2867113CFABDB003A834B /* MatchDetailView.xib */; };
 		85CCAD6413CF9F1A0061FA5C /* MatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */; };
-		85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */; };
+		85CCAD6613CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CCAD6513CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib */; };
+		85CFDC1313EF16EE0016E4C4 /* CompletedMatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFDC1213EF16EE0016E4C4 /* CompletedMatchTableCell.m */; };
+		85CFDC1713EF17560016E4C4 /* UpcomingMatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFDC1613EF17560016E4C4 /* UpcomingMatchTableCell.m */; };
 		85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C113C76BA400975A7C /* SeriesView.xib */; };
 		85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C813C7711300975A7C /* SeriesTableView.xib */; };
 		85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */; };
@@ -84,6 +88,8 @@
 		8504712F13BBDBD50052F1F4 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		8504713013BBDBD50052F1F4 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		8504713113BBDBD50052F1F4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedMatchTableCellView.xib; sourceTree = "<group>"; };
+		852525F013E0D37C00C580AE /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108-badge.png"; sourceTree = "<group>"; };
 		8555725E13DC551500100CD6 /* TeamPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeamPickerController.h; path = ../TeamPickerController.h; sourceTree = "<group>"; };
 		8555725F13DC551500100CD6 /* TeamPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeamPickerController.m; path = ../TeamPickerController.m; sourceTree = "<group>"; };
 		8555726113DC554700100CD6 /* TeamPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamPickerView.xib; sourceTree = "<group>"; };
@@ -127,7 +133,11 @@
 		85C2867113CFABDB003A834B /* MatchDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchDetailView.xib; sourceTree = "<group>"; };
 		85CCAD6213CF9F1A0061FA5C /* MatchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchTableCell.h; sourceTree = "<group>"; };
 		85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchTableCell.m; sourceTree = "<group>"; };
-		85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchTableCellView.xib; sourceTree = "<group>"; };
+		85CCAD6513CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingMatchTableCellView.xib; sourceTree = "<group>"; };
+		85CFDC1113EF16EE0016E4C4 /* CompletedMatchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedMatchTableCell.h; sourceTree = "<group>"; };
+		85CFDC1213EF16EE0016E4C4 /* CompletedMatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedMatchTableCell.m; sourceTree = "<group>"; };
+		85CFDC1513EF17560016E4C4 /* UpcomingMatchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingMatchTableCell.h; sourceTree = "<group>"; };
+		85CFDC1613EF17560016E4C4 /* UpcomingMatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingMatchTableCell.m; sourceTree = "<group>"; };
 		85E9F8C113C76BA400975A7C /* SeriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesView.xib; sourceTree = "<group>"; };
 		85E9F8C813C7711300975A7C /* SeriesTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableView.xib; sourceTree = "<group>"; };
 		85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableCellView.xib; sourceTree = "<group>"; };
@@ -224,6 +234,10 @@
 				85E9F8D013C7817900975A7C /* SeriesTableCell.m */,
 				85CCAD6213CF9F1A0061FA5C /* MatchTableCell.h */,
 				85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */,
+				85CFDC1113EF16EE0016E4C4 /* CompletedMatchTableCell.h */,
+				85CFDC1213EF16EE0016E4C4 /* CompletedMatchTableCell.m */,
+				85CFDC1513EF17560016E4C4 /* UpcomingMatchTableCell.h */,
+				85CFDC1613EF17560016E4C4 /* UpcomingMatchTableCell.m */,
 			);
 			path = PartilleTennis;
 			sourceTree = "<group>";
@@ -306,6 +320,7 @@
 		85CCAD6113CF9AF00061FA5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				852525F013E0D37C00C580AE /* 108-badge.png */,
 				85A5836713D9BCCA00545CCB /* iPhone4-Icon.png */,
 				85A5836913D9BCF600545CCB /* Icon 2 57 Rounded.png */,
 				85B84DCA13D0E0C0005266A6 /* 104-index-cards.png */,
@@ -321,10 +336,11 @@
 				85E9F8C113C76BA400975A7C /* SeriesView.xib */,
 				85E9F8C813C7711300975A7C /* SeriesTableView.xib */,
 				85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */,
-				85CCAD6513CF9F4E0061FA5C /* MatchTableCellView.xib */,
+				85CCAD6513CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib */,
 				85C2867113CFABDB003A834B /* MatchDetailView.xib */,
 				85A5836313D9A21800545CCB /* SettingsView.xib */,
 				8555726113DC554700100CD6 /* TeamPickerView.xib */,
+				852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -383,7 +399,7 @@
 				85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */,
 				85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */,
 				85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */,
-				85CCAD6613CF9F4E0061FA5C /* MatchTableCellView.xib in Resources */,
+				85CCAD6613CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib in Resources */,
 				85C2867213CFABDB003A834B /* MatchDetailView.xib in Resources */,
 				85B84DC713D0DD2E005266A6 /* 19-gear.png in Resources */,
 				85B84DC913D0E037005266A6 /* 83-calendar.png in Resources */,
@@ -392,6 +408,8 @@
 				85A5836813D9BCCA00545CCB /* iPhone4-Icon.png in Resources */,
 				85A5836A13D9BCF600545CCB /* Icon 2 57 Rounded.png in Resources */,
 				8555726213DC554700100CD6 /* TeamPickerView.xib in Resources */,
+				852525EE13E0D0A600C580AE /* CompletedMatchTableCellView.xib in Resources */,
+				852525F113E0D37C00C580AE /* 108-badge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +449,8 @@
 				8555726013DC551500100CD6 /* TeamPickerController.m in Sources */,
 				8555726513DC59E000100CD6 /* Team.m in Sources */,
 				8555726D13DC6E7500100CD6 /* FileHelpers.m in Sources */,
+				85CFDC1313EF16EE0016E4C4 /* CompletedMatchTableCell.m in Sources */,
+				85CFDC1713EF17560016E4C4 /* UpcomingMatchTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -120,14 +120,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"MatchCell";
-    
-    MatchTableCell *cell = (MatchTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-			//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-			[[NSBundle mainBundle] loadNibNamed:@"MatchTableCellView" owner:self options:nil];
-			cell = self.matchTableCell;
-    }
+	NSString *cellIdentifier = @"UpcomingMatchCell";
+	NSString *nib = @"UpcomingMatchTableCellView";	
+	
+	if (indexPath.row < 3) {
+		cellIdentifier = @"CompletedMatchCell";
+		nib = @"CompletedMatchTableCellView";
+	}
+	
+	MatchTableCell *cell = (MatchTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	if (cell == nil) {
+		//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+		[[NSBundle mainBundle] loadNibNamed:nib owner:self options:nil];
+		cell = self.matchTableCell;
+	}
     
 	Match *match = (Match *)[[self matchData] objectAtIndex:[indexPath row]];
 	cell.match = match;
