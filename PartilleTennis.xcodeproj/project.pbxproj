@@ -17,6 +17,8 @@
 		8555726D13DC6E7500100CD6 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555726C13DC6E7500100CD6 /* FileHelpers.m */; };
 		8578545413F1E5BD00DD4640 /* iPhone4-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */; };
 		8578545613F1E60F00DD4640 /* iPhone3-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8578545513F1E60F00DD4640 /* iPhone3-Icon.png */; };
+		8578545913F1EEC800DD4640 /* MatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578545813F1EEC800DD4640 /* MatchResult.m */; };
+		8578545C13F1F16A00DD4640 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578545B13F1F16A00DD4640 /* Set.m */; };
 		8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAF613C4F1CC006F961E /* MatchDetailController.m */; };
 		8589AAFB13C4F248006F961E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAFA13C4F248006F961E /* Contact.m */; };
 		8591FAB613F1D35E00B0CC5F /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8591FA9E13F1D35E00B0CC5F /* NSObject+SBJson.m */; };
@@ -75,6 +77,10 @@
 		8555727513DCC21300100CD6 /* TeamDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamDelegateProtocol.h; sourceTree = "<group>"; };
 		8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone4-Icon.png"; sourceTree = "<group>"; };
 		8578545513F1E60F00DD4640 /* iPhone3-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone3-Icon.png"; sourceTree = "<group>"; };
+		8578545713F1EEC700DD4640 /* MatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchResult.h; sourceTree = "<group>"; };
+		8578545813F1EEC800DD4640 /* MatchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchResult.m; sourceTree = "<group>"; };
+		8578545A13F1F16A00DD4640 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Set.h; sourceTree = "<group>"; };
+		8578545B13F1F16A00DD4640 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
 		8589AAF513C4F1CC006F961E /* MatchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchDetailController.h; sourceTree = "<group>"; };
 		8589AAF613C4F1CC006F961E /* MatchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchDetailController.m; sourceTree = "<group>"; };
 		8589AAF913C4F248006F961E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
@@ -305,6 +311,10 @@
 				8589AAFA13C4F248006F961E /* Contact.m */,
 				8555726313DC59E000100CD6 /* Team.h */,
 				8555726413DC59E000100CD6 /* Team.m */,
+				8578545713F1EEC700DD4640 /* MatchResult.h */,
+				8578545813F1EEC800DD4640 /* MatchResult.m */,
+				8578545A13F1F16A00DD4640 /* Set.h */,
+				8578545B13F1F16A00DD4640 /* Set.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -459,6 +469,8 @@
 				8591FAC013F1D35E00B0CC5F /* SBJsonUTF8Stream.m in Sources */,
 				8591FAC113F1D35E00B0CC5F /* SBJsonWriter.m in Sources */,
 				8591FAC413F1D37D00B0CC5F /* DSActivityView.m in Sources */,
+				8578545913F1EEC800DD4640 /* MatchResult.m in Sources */,
+				8578545C13F1F16A00DD4640 /* Set.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
