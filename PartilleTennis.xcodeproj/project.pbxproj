@@ -11,6 +11,7 @@
 		8504711713BBD68B0052F1F4 /* SeriesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504711613BBD68B0052F1F4 /* SeriesTableController.m */; };
 		852525EE13E0D0A600C580AE /* CompletedMatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */; };
 		852525F113E0D37C00C580AE /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 852525F013E0D37C00C580AE /* 108-badge.png */; };
+		8530AA8F13F2C03400CEE4C5 /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = 8530AA8E13F2C03400CEE4C5 /* matches.json */; };
 		8555726013DC551500100CD6 /* TeamPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555725F13DC551500100CD6 /* TeamPickerController.m */; };
 		8555726213DC554700100CD6 /* TeamPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8555726113DC554700100CD6 /* TeamPickerView.xib */; };
 		8555726513DC59E000100CD6 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555726413DC59E000100CD6 /* Team.m */; };
@@ -67,6 +68,7 @@
 		8504711613BBD68B0052F1F4 /* SeriesTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTableController.m; sourceTree = "<group>"; };
 		852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedMatchTableCellView.xib; sourceTree = "<group>"; };
 		852525F013E0D37C00C580AE /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108-badge.png"; sourceTree = "<group>"; };
+		8530AA8E13F2C03400CEE4C5 /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
 		8555725E13DC551500100CD6 /* TeamPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamPickerController.h; sourceTree = "<group>"; };
 		8555725F13DC551500100CD6 /* TeamPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamPickerController.m; sourceTree = "<group>"; };
 		8555726113DC554700100CD6 /* TeamPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamPickerView.xib; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 		85CCAD6113CF9AF00061FA5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8530AA8E13F2C03400CEE4C5 /* matches.json */,
 				852525F013E0D37C00C580AE /* 108-badge.png */,
 				85B84DCA13D0E0C0005266A6 /* 104-index-cards.png */,
 				85B84DC813D0E037005266A6 /* 83-calendar.png */,
@@ -428,6 +431,7 @@
 				852525F113E0D37C00C580AE /* 108-badge.png in Resources */,
 				8578545413F1E5BD00DD4640 /* iPhone4-Icon.png in Resources */,
 				8578545613F1E60F00DD4640 /* iPhone3-Icon.png in Resources */,
+				8530AA8F13F2C03400CEE4C5 /* matches.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

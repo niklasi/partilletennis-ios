@@ -70,11 +70,21 @@
 {
 	if ([delegate respondsToSelector:@selector(loadedMatches:)]) {
 		
-		NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/teams/matches/%d/%d?output=json", series, team];
+		NSURLRequest *theRequest;
 		
-		NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
+		int useLocalFile = [[[[NSProcessInfo processInfo] environment] objectForKey:@"NO_NETWORK"] intValue];
+		
+		if (useLocalFile == 1) {
+			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"matches" ofType:@"json"]isDirectory:NO]];	
+		}
+		else {
+			NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/teams/matches/%d/%d?output=json", series, team];
+			
+			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
-																					timeoutInterval:60.0];
+																				timeoutInterval:60.0];
+		}
+		
 		
 		[NSURLConnection connectionWithRequest:theRequest delegate:self];
 		NSLog(@"Load matches");
