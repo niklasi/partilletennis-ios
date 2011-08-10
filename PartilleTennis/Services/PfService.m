@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) SBJsonStreamParser *parser;
 @property (nonatomic, strong) SBJsonStreamParserAdapter *adapter;
+@property (nonatomic, readonly) BOOL useLocalFile;
 
 - (void)parseTeams:(NSArray *)array;
 - (void)parseMatches:(NSArray *)array;
@@ -51,15 +52,27 @@
     return self;
 }
 
+-(BOOL)useLocalFile
+{
+	return [[[[NSProcessInfo processInfo] environment] objectForKey:@"NO_NETWORK"] intValue] == 1;
+}
+
 -(void)loadAllTeams
 {
 	if ([delegate respondsToSelector:@selector(loadedTeams:)]) {
 		
-		NSString *url = @"http://sharp-robot-596.heroku.com/teams/all?output=json";
+		NSURLRequest *theRequest;
 		
-		NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
+		if (self.useLocalFile == YES) {
+			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"allTeams" ofType:@"json"]isDirectory:NO]];	
+		}
+		else {
+			NSString *url = @"http://sharp-robot-596.heroku.com/teams/all?output=json";
+		
+			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
 																					timeoutInterval:60.0];
+		}
 		
 		[NSURLConnection connectionWithRequest:theRequest delegate:self];
 		NSLog(@"Load teams");
@@ -71,10 +84,8 @@
 	if ([delegate respondsToSelector:@selector(loadedMatches:)]) {
 		
 		NSURLRequest *theRequest;
-		
-		int useLocalFile = [[[[NSProcessInfo processInfo] environment] objectForKey:@"NO_NETWORK"] intValue];
-		
-		if (useLocalFile == 1) {
+	
+		if (self.useLocalFile == YES) {
 			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"matches" ofType:@"json"]isDirectory:NO]];	
 		}
 		else {
@@ -96,12 +107,19 @@
 
 	if ([delegate respondsToSelector:@selector(loadedSeriesTable:)]) {
 		
+		NSURLRequest *theRequest;
+		
+		if (self.useLocalFile == YES) {
+			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"series%d", series] ofType:@"json"]isDirectory:NO]];	
+		}
+		else {
 		NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/series/%d?output=json", series];
 		
-		NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
+			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
 																					timeoutInterval:60.0];		
-		[NSURLConnection connectionWithRequest:theRequest delegate:self];
+		}
+			[NSURLConnection connectionWithRequest:theRequest delegate:self];
 		NSLog(@"Load series");
 	}
 }
