@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditMatchResultController : UIViewController
+@interface EditMatchResultController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @end

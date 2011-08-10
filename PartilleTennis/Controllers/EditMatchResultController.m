@@ -10,9 +10,9 @@
 
 @implementation EditMatchResultController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"EditMatchResultView" bundle:nil];
     if (self) {
         // Custom initialization
     }
@@ -26,6 +26,22 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+	return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+	return 5;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+	return [NSString stringWithFormat:@"%d", row];
+}
+
 
 #pragma mark - View lifecycle
 

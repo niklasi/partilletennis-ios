@@ -11,6 +11,7 @@
 #import "DSActivityView.h"
 #import "MatchDetailController.h"
 #import "Set.h"
+#import "EditMatchResultController.h"
 
 @interface MatchesController() {
 }
@@ -215,12 +216,15 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	// Navigation logic may go here. Create and push another view controller.
-	MatchDetailController *matchDetailController = [[MatchDetailController alloc] init];
-	Match *match = (Match *)[self.matchData objectAtIndex:indexPath.row];
-	[matchDetailController setContact:match.contact];
+	//MatchDetailController *matchDetailController = [[MatchDetailController alloc] init];
+	//Match *match = (Match *)[self.matchData objectAtIndex:indexPath.row];
+	//[matchDetailController setContact:match.contact];
+	
+	//[self.navigationController pushViewController:matchDetailController animated:YES];
+	
+	EditMatchResultController *matchDetailController = [[EditMatchResultController alloc] init];
 	
 	[self.navigationController pushViewController:matchDetailController animated:YES];
-	
 }
 
 @end
