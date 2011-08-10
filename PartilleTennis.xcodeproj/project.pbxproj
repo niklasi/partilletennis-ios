@@ -79,7 +79,7 @@
 		8578545513F1E60F00DD4640 /* iPhone3-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone3-Icon.png"; sourceTree = "<group>"; };
 		8578545713F1EEC700DD4640 /* MatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchResult.h; sourceTree = "<group>"; };
 		8578545813F1EEC800DD4640 /* MatchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchResult.m; sourceTree = "<group>"; };
-		8578545A13F1F16A00DD4640 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Set.h; sourceTree = "<group>"; };
+		8578545A13F1F16A00DD4640 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
 		8578545B13F1F16A00DD4640 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
 		8589AAF513C4F1CC006F961E /* MatchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchDetailController.h; sourceTree = "<group>"; };
 		8589AAF613C4F1CC006F961E /* MatchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchDetailController.m; sourceTree = "<group>"; };
@@ -244,6 +244,8 @@
 		85B543C813BBCC2A0065B152 /* PartilleTennis */ = {
 			isa = PBXGroup;
 			children = (
+				85B543CA13BBCC2A0065B152 /* PartilleTennis-Info.plist */,
+				85B543D013BBCC2A0065B152 /* PartilleTennis-Prefix.pch */,
 				856751D313F1CE7900FF00AE /* UI */,
 				85CCAD6113CF9AF00061FA5C /* Resources */,
 				85CCAD6013CF9AD20061FA5C /* Lib */,
@@ -261,10 +263,8 @@
 		85B543C913BBCC2A0065B152 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				85B543CA13BBCC2A0065B152 /* PartilleTennis-Info.plist */,
 				85B543CB13BBCC2A0065B152 /* InfoPlist.strings */,
 				85B543CE13BBCC2A0065B152 /* main.m */,
-				85B543D013BBCC2A0065B152 /* PartilleTennis-Prefix.pch */,
 				8555726B13DC6E7500100CD6 /* FileHelpers.h */,
 				8555726C13DC6E7500100CD6 /* FileHelpers.m */,
 				8555727513DCC21300100CD6 /* TeamDelegateProtocol.h */,
