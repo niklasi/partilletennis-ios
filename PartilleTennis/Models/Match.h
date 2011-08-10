@@ -8,15 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "Contact.h"
+#import "MatchResult.h"
 
-@interface Match : NSObject
+@interface Match : NSObject <NSCopying>
 {	
 }
 
-@property (nonatomic, retain) NSString *teamName;
-@property (nonatomic, retain) NSString *date;
-@property (nonatomic, retain) NSString *time;
-@property (nonatomic, retain) NSString *lanes;
+@property (nonatomic, strong) NSString *teamName;
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSString *lanes;
 @property (nonatomic) BOOL homeMatch;
-@property (nonatomic, retain) Contact *contact;
+@property (nonatomic, strong) Contact *contact;
+@property (nonatomic, strong) MatchResult *result;
 @end

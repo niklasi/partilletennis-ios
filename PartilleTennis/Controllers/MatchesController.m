@@ -10,16 +10,19 @@
 #import "Match.h"
 #import "DSActivityView.h"
 #import "MatchDetailController.h"
+#import "Set.h"
 
 @interface MatchesController() {
 }
 
 @property (nonatomic, strong) Team *currentTeam;
+@property (nonatomic, strong) NSDictionary *matchResults;
 @end
 
 @implementation MatchesController
 
-@synthesize matchData = _matchData, matchTableCell = _matchTableCell, currentTeam = _currentTeam;
+@synthesize matchData = _matchData, matchTableCell = _matchTableCell, 
+currentTeam = _currentTeam, matchResults = _matchResults;
 
 -(id)init
 {
@@ -73,6 +76,7 @@
 		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
 		NSLog(@"Division: %d, Team: %d", myTeam.division, myTeam.ranking);
 		[pfService loadMatches:myTeam.division team:myTeam.ranking];
+		self.matchResults = [NSKeyedUnarchiver unarchiveObjectWithFile:pathInDocumentDirectory(@"matchResults")];
 	}
 }
 
@@ -120,10 +124,38 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	Match *match = (Match *)[[self matchData] objectAtIndex:[indexPath row]];
+	
+	if (indexPath.row < 3) {
+		MatchResult *result = [[MatchResult alloc] init];
+		
+		result.doubleSets = [NSArray arrayWithObjects:
+												 [[Set alloc] initWithSets:4 opponent:2], 
+												 [[Set alloc] initWithSets:3 opponent:4],
+												 [[Set alloc] initWithSets:2 opponent:2],
+												 nil];
+		
+		result.single1Sets = [NSArray arrayWithObjects:
+												 [[Set alloc] initWithSets:4 opponent:2], 
+												 [[Set alloc] initWithSets:3 opponent:4],
+												 [[Set alloc] initWithSets:2 opponent:2],
+												 nil];
+		
+		result.single2Sets = [NSArray arrayWithObjects:
+													[[Set alloc] initWithSets:4 opponent:2], 
+													[[Set alloc] initWithSets:1 opponent:4],
+													[[Set alloc] initWithSets:1 opponent:3],
+													nil];
+		
+		self.matchResults = [[NSDictionary alloc] initWithObjectsAndKeys: result, match, nil];
+	}
+	
+	match.result = [self.matchResults objectForKey:match];
+	
 	NSString *cellIdentifier = @"UpcomingMatchCell";
 	NSString *nib = @"UpcomingMatchTableCellView";	
 	
-	if (indexPath.row < 3) {
+	if (match.result != nil) {
 		cellIdentifier = @"CompletedMatchCell";
 		nib = @"CompletedMatchTableCellView";
 	}
@@ -135,7 +167,6 @@
 		cell = self.matchTableCell;
 	}
     
-	Match *match = (Match *)[[self matchData] objectAtIndex:[indexPath row]];
 	cell.match = match;
 	return cell;
 }

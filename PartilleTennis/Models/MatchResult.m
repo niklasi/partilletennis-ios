@@ -32,19 +32,16 @@
 	[aCoder encodeObject:self.single2Sets forKey:@"single2Sets"];
 }
 
--(Result)result
+-(int)calculateTotalMatchPoints
 {
-	int totalMatchPoints = [self calculateMatchPoint:self.doubleSets];
-	totalMatchPoints += [self calculateMatchPoint:self.single1Sets];
-	totalMatchPoints += [self calculateMatchPoint:self.single2Sets];
+	int totalMatchPoints = [self calculateMatchPoints:self.doubleSets];
+	totalMatchPoints += [self calculateMatchPoints:self.single1Sets];
+	totalMatchPoints += [self calculateMatchPoints:self.single2Sets];
 	
-	if (totalMatchPoints > 3) return Won;
-	if (totalMatchPoints < 3) return Lost;
-	
-	return Draw;
+	return totalMatchPoints;
 }
 
--(int)calculateMatchPoint:(NSArray*) sets
+-(int)calculateMatchPoints:(NSArray*) sets
 {
 	const int MATCH_POINTS_WON = 2;
 	const int MATCH_POINTS_DRAW = 1;

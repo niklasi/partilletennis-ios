@@ -12,4 +12,6 @@
 
 @property (nonatomic) int myTeam;
 @property (nonatomic) int	opponent;
+
+-(id)initWithSets:(int)myTeam opponent:(int)opponent;
 @end

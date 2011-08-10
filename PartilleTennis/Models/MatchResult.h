@@ -7,20 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Match.h"
 
-typedef enum {
-	Won,
-	Lost,
-	Draw
-} Result;
 
 @interface MatchResult : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSMutableArray *doubleSets;
 @property (nonatomic, strong) NSMutableArray *single1Sets;
 @property (nonatomic, strong) NSMutableArray *single2Sets;
-@property (nonatomic, readonly) Result result;
 
--(int)calculateMatchPoint:(NSArray*) sets;
+-(int)calculateTotalMatchPoints;
+-(int)calculateMatchPoints:(NSArray*) sets;
 @end

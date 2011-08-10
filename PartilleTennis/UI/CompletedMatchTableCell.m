@@ -7,6 +7,7 @@
 //
 
 #import "CompletedMatchTableCell.h"
+#import "MatchResult.h"
 
 @interface CompletedMatchTableCell() {
 
@@ -25,8 +26,21 @@
 {
 	[super setMatch:value];
 	self.teamLabel.text = self.match.teamName;
-
-	self.resultLabel.text = @"Vinst: 4-2";
+	
+	NSString *resultText;
+	int matchPoints = [value.result calculateTotalMatchPoints];
+	
+	if (matchPoints > 3) {
+		resultText = @"Vinst";
+	}
+	else if (matchPoints == 3) {
+		resultText = @"Oavgjort";
+	}
+	else {
+		resultText = @"Förlust";
+	}
+	
+	self.resultLabel.text = [NSString stringWithFormat:@"%@: %d-%d", resultText, matchPoints, 6 - matchPoints];
 }
 
 @end

@@ -12,6 +12,16 @@
 
 @synthesize myTeam = _myTeam, opponent = _opponent;
 
+-(id)initWithSets:(int)myTeam opponent:(int)opponent
+{
+	self = [super init];
+	if (self) {
+		self.myTeam = myTeam;
+		self.opponent = opponent;
+	}
+	return self;
+}
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
