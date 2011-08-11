@@ -25,7 +25,7 @@
 
 @implementation PfService
 
-@synthesize delegate, parser = _parser, adapter = _adapter;
+@synthesize delegate = _delegate, parser = _parser, adapter = _adapter;
 
 - (id)init
 {
@@ -59,7 +59,7 @@
 
 -(void)loadAllTeams
 {
-	if ([delegate respondsToSelector:@selector(loadedTeams:)]) {
+	if ([self.delegate respondsToSelector:@selector(loadedTeams:)]) {
 		
 		NSURLRequest *theRequest;
 		
@@ -81,7 +81,7 @@
 
 -(void)loadMatches:(int)series team:(int)team
 {
-	if ([delegate respondsToSelector:@selector(loadedMatches:)]) {
+	if ([self.delegate respondsToSelector:@selector(loadedMatches:)]) {
 		
 		NSURLRequest *theRequest;
 	
@@ -105,7 +105,7 @@
 -(void)loadSeriesTable:(int)series
 {
 
-	if ([delegate respondsToSelector:@selector(loadedSeriesTable:)]) {
+	if ([self.delegate respondsToSelector:@selector(loadedSeriesTable:)]) {
 		
 		NSURLRequest *theRequest;
 		
@@ -192,7 +192,7 @@
 
 - (void)parseTeams:(NSArray *)array
 {
-	if ([delegate respondsToSelector:@selector(loadedTeams:)]) {
+	if ([self.delegate respondsToSelector:@selector(loadedTeams:)]) {
 		NSMutableArray *loadedTeams = [[NSMutableArray alloc] init];
 		
 		for (int i = 0; i < [array count]; i++) {
@@ -205,14 +205,14 @@
 			[loadedTeams addObject:team];
 		}
 		
-		[delegate loadedTeams:loadedTeams];
+		[self.delegate loadedTeams:loadedTeams];
 	}
 }
 
 
 - (void)parseMatches:(NSArray *)array
 {
-	if ([delegate respondsToSelector:@selector(loadedMatches:)]) {
+	if ([self.delegate respondsToSelector:@selector(loadedMatches:)]) {
 		NSMutableArray *loadedMatches = [[NSMutableArray alloc] init];
 	
 		for (int i = 0; i < [array count]; i++) {
@@ -233,13 +233,13 @@
 			[loadedMatches addObject:match];
 		}
 		
-		[delegate loadedMatches:loadedMatches];
+		[self.delegate loadedMatches:loadedMatches];
 	}
 }
 
 - (void)parseSeriesTable:(NSArray *)array
 {
-	if ([delegate respondsToSelector:@selector(loadedSeriesTable:)]) {
+	if ([self.delegate respondsToSelector:@selector(loadedSeriesTable:)]) {
 		NSMutableArray *loadedSeriesTable = [[NSMutableArray alloc] init];
 		
 		for (int i = 0; i < [array count]; i++) {
@@ -253,7 +253,7 @@
 			[loadedSeriesTable addObject:seriesTable];
 		}
 		
-		[delegate loadedSeriesTable:loadedSeriesTable];
+		[self.delegate loadedSeriesTable:loadedSeriesTable];
 	}
 }
 

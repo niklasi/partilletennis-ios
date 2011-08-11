@@ -60,7 +60,6 @@
 	
 	// Add the navigation controller's view to the window and display.
 	[_window addSubview:tabBarController.view];
-
 	[self.window makeKeyAndVisible];
 	return YES;
 }
@@ -75,13 +74,13 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-	[NSKeyedArchiver archiveRootObject:self.myTeam toFile:pathInDocumentDirectory(@"myTeam")];
-	self.myTeam = nil;
-	self.allTeams = nil;
+	NSLog(@"Background...");
+	[self save];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+	NSLog(@"Enter foreground...");
 	self.myTeam = [NSKeyedUnarchiver unarchiveObjectWithFile:pathInDocumentDirectory(@"myTeam")];
 }
 
@@ -94,7 +93,24 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+	NSLog(@"Terminate...");
+	[self save];
+}
+
+-(void)save
+{
 	[NSKeyedArchiver archiveRootObject:self.myTeam toFile:pathInDocumentDirectory(@"myTeam")];
+	UIViewController *controller = [self.matchesController.viewControllers objectAtIndex:0];; 
+		
+	if ([controller conformsToProtocol:@protocol(SaveProtocol)]) {
+		NSLog(@"Sparar..");
+		id<SaveProtocol> tmp = (id <SaveProtocol>)controller;
+		[tmp save];
+	}
+	
+	[NSKeyedArchiver archiveRootObject:self.myTeam toFile:pathInDocumentDirectory(@"myTeam")];
+	self.myTeam = nil;
+	self.allTeams = nil;
 }
 
 @end

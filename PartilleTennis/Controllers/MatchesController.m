@@ -43,12 +43,24 @@ currentTeam = _currentTeam, matchResults = _matchResults;
     // Release any cached data, images, etc that aren't in use.
 }
 
+-(void)save
+{
+	if (self.matchData.count == 0) return;
+	
+	self.matchResults = [[NSMutableDictionary alloc] init];
+	for (Match *match in self.matchData) {
+		if (match.result != nil) {
+			[self.matchResults setObject:match.result forKey:match];
+		}
+	}
+	[NSKeyedArchiver archiveRootObject:self.matchResults toFile:pathInDocumentDirectory(@"matchResults")];
+}
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	NSLog(@"View load...");
+	NSLog(@"Matches view load...");
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -58,9 +70,8 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+	[super viewDidUnload];
+	NSLog(@"Matches view did unload...");
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -82,6 +93,12 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 	}
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	NSLog(@"Matches view will disappear...");
+}
+
 - (void)loadedMatches:(NSArray *)matches
 {
 	[DSActivityView removeView];
@@ -97,18 +114,6 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-	self.matchResults = [[NSMutableDictionary alloc] init];
-	for (Match *match in self.matchData) {
-		if (match.result != nil) {
-			[self.matchResults setObject:match.result forKey:match];
-		}
-	}
-	[NSKeyedArchiver archiveRootObject:self.matchResults toFile:pathInDocumentDirectory(@"matchResults")];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

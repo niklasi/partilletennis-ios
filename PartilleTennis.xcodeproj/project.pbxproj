@@ -77,6 +77,7 @@
 		8521C0AF13F314800063BAAC /* EditMatchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMatchResultController.m; sourceTree = "<group>"; };
 		852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedMatchTableCellView.xib; sourceTree = "<group>"; };
 		852525F013E0D37C00C580AE /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108-badge.png"; sourceTree = "<group>"; };
+		852BD19013F48B330026DD5C /* SaveProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SaveProtocol.h; sourceTree = "<group>"; };
 		8530AA8E13F2C03400CEE4C5 /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
 		8530AA9013F2CA4100CEE4C5 /* allTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allTeams.json; sourceTree = "<group>"; };
 		8530AA9113F2CA4100CEE4C5 /* series1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = series1.json; sourceTree = "<group>"; };
@@ -212,6 +213,15 @@
 			path = SBJson;
 			sourceTree = "<group>";
 		};
+		852BD18E13F48A690026DD5C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				8555727513DCC21300100CD6 /* TeamDelegateProtocol.h */,
+				852BD19013F48B330026DD5C /* SaveProtocol.h */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 		856751D313F1CE7900FF00AE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +269,7 @@
 		85B543C813BBCC2A0065B152 /* PartilleTennis */ = {
 			isa = PBXGroup;
 			children = (
+				852BD18E13F48A690026DD5C /* Infrastructure */,
 				85B543CA13BBCC2A0065B152 /* PartilleTennis-Info.plist */,
 				85B543D013BBCC2A0065B152 /* PartilleTennis-Prefix.pch */,
 				856751D313F1CE7900FF00AE /* UI */,
@@ -282,7 +293,6 @@
 				85B543CE13BBCC2A0065B152 /* main.m */,
 				8555726B13DC6E7500100CD6 /* FileHelpers.h */,
 				8555726C13DC6E7500100CD6 /* FileHelpers.m */,
-				8555727513DCC21300100CD6 /* TeamDelegateProtocol.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,8 +314,6 @@
 				8589AAF613C4F1CC006F961E /* MatchDetailController.m */,
 				85B84DC213D0DB3B005266A6 /* SettingsController.h */,
 				85B84DC313D0DB3B005266A6 /* SettingsController.m */,
-				8521C0A413F30A190063BAAC /* EditMatchResultController.h */,
-				8521C0A513F30A190063BAAC /* EditMatchResultController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -384,7 +392,6 @@
 				85A5836313D9A21800545CCB /* SettingsView.xib */,
 				8555726113DC554700100CD6 /* TeamPickerView.xib */,
 				852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */,
-				8521C0A113F3086A0063BAAC /* EditMatchResultView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -459,7 +466,6 @@
 				8530AA9513F2CA4100CEE4C5 /* series1.json in Resources */,
 				8530AA9613F2CA4100CEE4C5 /* series2.json in Resources */,
 				8530AA9713F2CA4100CEE4C5 /* series3.json in Resources */,
-				8521C0A213F3086A0063BAAC /* EditMatchResultView.xib in Resources */,
 				8521C0AC13F3145C0063BAAC /* EditMatchResultView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +510,6 @@
 				8591FAC413F1D37D00B0CC5F /* DSActivityView.m in Sources */,
 				8578545913F1EEC800DD4640 /* MatchResult.m in Sources */,
 				8578545C13F1F16A00DD4640 /* Set.m in Sources */,
-				8521C0A613F30A190063BAAC /* EditMatchResultController.m in Sources */,
 				8521C0B013F314800063BAAC /* EditMatchResultController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

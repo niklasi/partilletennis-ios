@@ -10,7 +10,7 @@
 #import "PfService.h"
 #import "MatchTableCell.h"
 
-@interface MatchesController : UITableViewController <PfServiceDelegate>
+@interface MatchesController : UITableViewController <PfServiceDelegate, SaveProtocol>
 {
 	PfService *pfService;
 }
