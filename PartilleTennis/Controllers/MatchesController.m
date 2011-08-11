@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, strong) Team *currentTeam;
-@property (nonatomic, strong) NSDictionary *matchResults;
+@property (nonatomic, strong) NSMutableDictionary *matchResults;
 @end
 
 @implementation MatchesController
@@ -30,8 +30,7 @@ currentTeam = _currentTeam, matchResults = _matchResults;
     if (self) {
 			self.title = @"Matcher";
 			pfService = [[PfService alloc] init];
-			pfService.delegate = self;
-			
+			pfService.delegate = self;			
     }
     return self;
 }
@@ -78,11 +77,19 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 		[pfService loadMatches:myTeam.division team:myTeam.ranking];
 		self.matchResults = [NSKeyedUnarchiver unarchiveObjectWithFile:pathInDocumentDirectory(@"matchResults")];
 	}
+	else {
+		[self.tableView reloadData];
+	}
 }
 
 - (void)loadedMatches:(NSArray *)matches
 {
 	[DSActivityView removeView];
+	
+	for (Match *match in matches) {
+    match.result = [self.matchResults objectForKey:match];
+	}
+	
 	self.matchData = matches;
 	[self.tableView reloadData];
 }
@@ -94,7 +101,14 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewWillDisappear:animated];
+	[super viewWillDisappear:animated];
+	self.matchResults = [[NSMutableDictionary alloc] init];
+	for (Match *match in self.matchData) {
+		if (match.result != nil) {
+			[self.matchResults setObject:match.result forKey:match];
+		}
+	}
+	[NSKeyedArchiver archiveRootObject:self.matchResults toFile:pathInDocumentDirectory(@"matchResults")];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -104,8 +118,8 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	// Return YES for supported orientations
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
@@ -125,37 +139,13 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	Match *match = (Match *)[[self matchData] objectAtIndex:[indexPath row]];
-	
-	if (indexPath.row < 3) {
-		MatchResult *result = [[MatchResult alloc] init];
 		
-		result.doubleSets = [NSArray arrayWithObjects:
-												 [[Set alloc] initWithSets:4 opponent:2], 
-												 [[Set alloc] initWithSets:3 opponent:4],
-												 [[Set alloc] initWithSets:2 opponent:2],
-												 nil];
-		
-		result.single1Sets = [NSArray arrayWithObjects:
-												 [[Set alloc] initWithSets:4 opponent:2], 
-												 [[Set alloc] initWithSets:3 opponent:4],
-												 [[Set alloc] initWithSets:2 opponent:2],
-												 nil];
-		
-		result.single2Sets = [NSArray arrayWithObjects:
-													[[Set alloc] initWithSets:4 opponent:2], 
-													[[Set alloc] initWithSets:1 opponent:4],
-													[[Set alloc] initWithSets:1 opponent:3],
-													nil];
-		
-		self.matchResults = [[NSDictionary alloc] initWithObjectsAndKeys: result, match, nil];
-	}
-	
-	match.result = [self.matchResults objectForKey:match];
+//	match.result = [self.matchResults objectForKey:match];
 	
 	NSString *cellIdentifier = @"UpcomingMatchCell";
 	NSString *nib = @"UpcomingMatchTableCellView";	
 	
-	if (match.result != nil) {
+	if (match.result.completeResult) {
 		cellIdentifier = @"CompletedMatchCell";
 		nib = @"CompletedMatchTableCellView";
 	}
@@ -217,7 +207,7 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 	// Navigation logic may go here. Create and push another view controller.
 	MatchDetailController *matchDetailController = [[MatchDetailController alloc] init];
 	Match *match = (Match *)[self.matchData objectAtIndex:indexPath.row];
-	[matchDetailController setContact:match.contact];
+	[matchDetailController setMatch:match];
 	
 	[self.navigationController pushViewController:matchDetailController animated:YES];
 	

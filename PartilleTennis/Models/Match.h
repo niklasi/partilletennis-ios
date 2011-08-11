@@ -10,7 +10,7 @@
 #import "Contact.h"
 #import "MatchResult.h"
 
-@interface Match : NSObject <NSCopying>
+@interface Match : NSObject <NSCopying, NSCoding>
 {	
 }
 

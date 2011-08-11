@@ -7,8 +7,19 @@
 //
 
 #import "EditMatchResultController.h"
+#import "Set.h"
+
+@interface EditMatchResultController() {
+}
+
+-(void)selectSetNumbers;
+-(void)hideSetControls;
+
+@end
 
 @implementation EditMatchResultController
+
+@synthesize sets = _sets;
 
 - (id)init
 {
@@ -42,6 +53,67 @@
 	return [NSString stringWithFormat:@"%d", row];
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+	int index = pickerView.tag - 100;
+	Set *set;
+	
+	if (index < self.sets.count) {
+		set = [self.sets objectAtIndex:index];
+	}
+	
+	if (!set) {
+		set = [[Set alloc] init];
+		[self.sets addObject:set];
+	}
+	
+	if (component == 0) {
+		set.myTeam = row;
+	}
+	else {
+		set.opponent = row;
+	}
+	
+	if (set.myTeam == 4 || set.opponent == 4) {
+		[[self.view viewWithTag:pickerView.tag + 1] setHidden:NO];
+		[[self.view viewWithTag:pickerView.tag + 101] setHidden:NO];
+	}
+
+}
+
+-(void)selectSetNumbers
+{
+	for (int index = 0; index < self.sets.count; index++) {
+		UIPickerView *picker = (UIPickerView *)[self.view viewWithTag:index + 100];	
+		Set *set = [self.sets objectAtIndex:index];
+		[picker selectRow:set.myTeam inComponent:0 animated:NO];
+		[picker selectRow:set.opponent inComponent:1 animated:NO];
+	}
+}
+
+-(void)hideSetControls
+{
+	int setCount = self.sets.count;
+	
+	int offset = 0;
+	if (setCount == 0) {
+		offset = 1;
+	}
+	else {
+		Set *lastSet = [self.sets objectAtIndex:setCount - 1];
+		if (lastSet.myTeam == 4 || lastSet.opponent == 4) {
+			offset = 1;
+		}
+	}
+	
+	for (int index = 6; index >= setCount + offset; index--) {
+		UIPickerView *picker = (UIPickerView *)[self.view viewWithTag:index + 100];	
+		[picker selectRow:0 inComponent:0 animated:NO];
+		[picker selectRow:0 inComponent:1 animated:NO];
+		[picker setHidden:YES];
+		[[self.view viewWithTag:index + 200] setHidden:YES];
+	}
+}
 
 #pragma mark - View lifecycle
 
@@ -59,6 +131,24 @@
     [super viewDidLoad];
 }
 */
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self selectSetNumbers];
+	[self hideSetControls];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	if (self.sets.count > 0) {
+		Set *lastSet = [self.sets objectAtIndex:self.sets.count - 1];
+		if (lastSet.myTeam == 0 && lastSet.opponent == 0) {
+			[self.sets removeObject:lastSet];
+		}
+	}
+}
 
 - (void)viewDidUnload
 {

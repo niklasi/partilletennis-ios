@@ -12,14 +12,23 @@
 
 @synthesize name, phone, email;
 
-- (id)init
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
+	self = [super init];
+	
+	self.name = [aDecoder decodeObjectForKey:@"name"];
+	self.phone = [aDecoder decodeObjectForKey:@"phone"];
+	self.email = [aDecoder decodeObjectForKey:@"email"];
+
+	return self;
+	
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+	[aCoder encodeObject:self.name forKey:@"name"];
+	[aCoder encodeObject:self.phone forKey:@"phone"];
+	[aCoder encodeObject:self.email forKey:@"email"];
 }
 
 @end

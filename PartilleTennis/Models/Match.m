@@ -13,14 +13,30 @@
 @synthesize teamName = _teamName, date = _date, time = _time, lanes = _lanes, 
 contact = _contact, homeMatch = _homeMatch, result = _result;
 
-- (id)init
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
+	self = [super init];
+	
+	self.teamName = [aDecoder decodeObjectForKey:@"teamName"];
+	self.date = [aDecoder decodeObjectForKey:@"date"];
+	self.time = [aDecoder decodeObjectForKey:@"time"];
+	self.lanes = [aDecoder decodeObjectForKey:@"lanes"];
+	self.contact = [aDecoder decodeObjectForKey:@"contact"];
+	self.homeMatch = [aDecoder decodeIntForKey:@"homeMatch"] == 1 ? YES : NO;
+	self.result = [aDecoder decodeObjectForKey:@"result"];
+	return self;
+	
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+	[aCoder encodeObject:self.teamName forKey:@"teamName"];
+	[aCoder encodeObject:self.date forKey:@"date"];
+	[aCoder encodeObject:self.time forKey:@"time"];
+	[aCoder encodeObject:self.lanes forKey:@"lanes"];
+	[aCoder encodeObject:self.contact forKey:@"contact"];
+	[aCoder encodeInt:self.homeMatch == YES ? 1 : 0 forKey:@"homeMatch"];
+	[aCoder encodeObject:self.result forKey:@"result"];
 }
 
 -(id)copyWithZone:(NSZone *)zone
@@ -42,15 +58,15 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 	if ([object class] != self.class) return false;
 	Match *tmp = (Match *)object;
 	if (![self.teamName isEqualToString:tmp.teamName]) return false;
-	if (self.date != tmp.date) return false;
-	if (self.time != tmp.time) return false;
+	if (![self.date isEqualToString:tmp.date]) return false;
+	if (![self.time isEqualToString:tmp.time]) return false;
 	
 	return true;
 }
 
 -(NSUInteger)hash
 {
-	NSString *hashString = [NSString stringWithFormat:@"%@-%d-%d", self.teamName, self.date, self.time];
+	NSString *hashString = [NSString stringWithFormat:@"%@-%@-%@", self.teamName, self.date, self.time];
 	return [hashString hash];
 }
 

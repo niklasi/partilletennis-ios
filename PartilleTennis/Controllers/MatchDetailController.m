@@ -7,17 +7,24 @@
 //
 
 #import "MatchDetailController.h"
+#import "EditMatchResultController.h"
+#import "Set.h"
+@interface MatchDetailController() {
+}
 
+-(NSString *)matchResult:(NSArray *)sets;
+
+@end
 
 @implementation MatchDetailController
 
-@synthesize contact;
+@synthesize match = _match;
 
 - (id)init
 {
 	self = [super initWithNibName:@"MatchDetailView" bundle:nil];
     if (self) {
-        // Custom initialization
+			//[[self navigationItem] setRightBarButtonItem:[self editButtonItem]];
     }
     return self;
 }
@@ -52,7 +59,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+	[super viewWillAppear:animated];
+	[self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -115,50 +123,52 @@
 		case 0:
 			if (indexPath.section == 0) {
 				cell.textLabel.text = @"Dubbel";
-				cell.detailTextLabel.text = @"4-2, 4-1";
+				
+				cell.detailTextLabel.text = [self matchResult:self.match.result.doubleSets];
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			}
 			else {
 				cell.textLabel.text = @"Namn";
-				cell.detailTextLabel.text = self.contact.name;
+				cell.detailTextLabel.text = self.match.contact.name;
 			}
 			break;
 		case 1:
 			if (indexPath.section == 0) {
 				cell.textLabel.text = @"1:a singel";
-				cell.detailTextLabel.text = @"4-3, 3-4, 4-1";				
+				cell.detailTextLabel.text = [self matchResult:self.match.result.single1Sets];
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			}
 			else {
 				cell.textLabel.text = @"Telefon";
-				cell.detailTextLabel.text = self.contact.phone;
+				cell.detailTextLabel.text = self.match.contact.phone;
 			}
 			break;
 		case 2:
 			if (indexPath.section == 0) {
 				cell.textLabel.text = @"2:a singel";
-				cell.detailTextLabel.text = @"2-4, 4-1";
+				cell.detailTextLabel.text = [self matchResult:self.match.result.single2Sets];
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			}
 			else {
 				cell.textLabel.text = @"Email";
-				cell.detailTextLabel.text = self.contact.email;
+				cell.detailTextLabel.text = self.match.contact.email;
 			}
 			break;
 		default:
 			break;
 	}
 	
-	
-    
-    return cell;
+	return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+	if (indexPath.section == 1) return NO;
+	return YES;
 }
-*/
+
 
 /*
 // Override to support editing the table view.
@@ -186,7 +196,7 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return NO;
 }
 */
 
@@ -194,14 +204,50 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+	if (indexPath.section == 0) {
+		
+		EditMatchResultController *resultsController = [[EditMatchResultController alloc] init];
+    if (!self.match.result) {
+			self.match.result = [[MatchResult alloc] init];
+		}
+			
+		switch (indexPath.row) {
+			case 0:
+				if (!self.match.result.doubleSets) {
+					self.match.result.doubleSets = [[NSMutableArray alloc] init];
+				}
+				resultsController.sets = self.match.result.doubleSets;
+				break;
+			case 1:
+				if (!self.match.result.single1Sets) {
+					self.match.result.single1Sets = [[NSMutableArray alloc] init];
+				}
+				resultsController.sets = self.match.result.single1Sets;
+				break;
+			case 2:
+				if (!self.match.result.single2Sets) {
+					self.match.result.single2Sets = [[NSMutableArray alloc] init];
+				}
+				resultsController.sets = self.match.result.single2Sets;
+				break;
+			default:
+				break;
+		}
+		
+		[self.navigationController pushViewController:resultsController animated:YES];
+	}
 }
 
+-(NSString *)matchResult:(NSArray *)sets
+{
+	if (sets.count == 0) return @"";
+	NSString *resultText = [NSString stringWithFormat: @"%@", [(Set *)[sets objectAtIndex:0] asText]];
+	
+	for (int count = 1; count < sets.count; count++) {
+		Set *set = [sets objectAtIndex:count];
+		resultText = [resultText stringByAppendingString:[NSString stringWithFormat:@", %@", [set asText]]];
+	}
+	
+	return resultText;
+}
 @end

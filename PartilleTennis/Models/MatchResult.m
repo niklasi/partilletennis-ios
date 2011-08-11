@@ -32,6 +32,15 @@
 	[aCoder encodeObject:self.single2Sets forKey:@"single2Sets"];
 }
 
+-(BOOL)completeResult
+{
+	if (self.doubleSets.count == 0) return NO;
+	if (self.single1Sets.count == 0) return NO;
+	if (self.single2Sets.count == 0) return NO;
+	
+	return YES;
+}
+
 -(int)calculateTotalMatchPoints
 {
 	int totalMatchPoints = [self calculateMatchPoints:self.doubleSets];
