@@ -11,6 +11,7 @@
 
 @interface MatchResult : NSObject <NSCoding>
 
+@property (nonatomic, readonly) BOOL completeResult;
 @property (nonatomic, strong) NSMutableArray *doubleSets;
 @property (nonatomic, strong) NSMutableArray *single1Sets;
 @property (nonatomic, strong) NSMutableArray *single2Sets;

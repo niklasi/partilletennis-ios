@@ -7,6 +7,11 @@
 //
 
 #import "EditMatchResultController.h"
+<<<<<<< HEAD
+
+@implementation EditMatchResultController
+
+=======
 #import "Set.h"
 
 @interface EditMatchResultController() {
@@ -21,6 +26,7 @@
 
 @synthesize sets = _sets;
 
+>>>>>>> rescue
 - (id)init
 {
     self = [super initWithNibName:@"EditMatchResultView" bundle:nil];
@@ -53,6 +59,8 @@
 	return [NSString stringWithFormat:@"%d", row];
 }
 
+<<<<<<< HEAD
+=======
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
 	int index = pickerView.tag - 100;
@@ -114,6 +122,7 @@
 		[[self.view viewWithTag:index + 200] setHidden:YES];
 	}
 }
+>>>>>>> rescue
 
 #pragma mark - View lifecycle
 
@@ -132,6 +141,8 @@
 }
 */
 
+<<<<<<< HEAD
+=======
 -(void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
@@ -150,6 +161,7 @@
 	}
 }
 
+>>>>>>> rescue
 - (void)viewDidUnload
 {
     [super viewDidUnload];

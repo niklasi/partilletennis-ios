@@ -36,4 +36,8 @@
 	[aCoder encodeInt:self.opponent forKey:@"opponent"];
 }
 
+-(NSString *)asText
+{
+	return [NSString stringWithFormat:@"%d-%d", self.myTeam, self.opponent];
+}
 @end

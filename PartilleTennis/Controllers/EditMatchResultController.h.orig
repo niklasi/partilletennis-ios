@@ -10,5 +10,8 @@
 
 @interface EditMatchResultController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
+<<<<<<< HEAD
+=======
 @property (nonatomic, strong) NSMutableArray *sets;
+>>>>>>> rescue
 @end

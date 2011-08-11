@@ -9,8 +9,13 @@
 /* Begin PBXBuildFile section */
 		8504711013BBD02D0052F1F4 /* SeriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504710F13BBD02D0052F1F4 /* SeriesController.m */; };
 		8504711713BBD68B0052F1F4 /* SeriesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504711613BBD68B0052F1F4 /* SeriesTableController.m */; };
+<<<<<<< HEAD
+		8521C0A213F3086A0063BAAC /* EditMatchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8521C0A113F3086A0063BAAC /* EditMatchResultView.xib */; };
+		8521C0A613F30A190063BAAC /* EditMatchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8521C0A513F30A190063BAAC /* EditMatchResultController.m */; };
+=======
 		8521C0AC13F3145C0063BAAC /* EditMatchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8521C0AB13F3145C0063BAAC /* EditMatchResultView.xib */; };
 		8521C0B013F314800063BAAC /* EditMatchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8521C0AF13F314800063BAAC /* EditMatchResultController.m */; };
+>>>>>>> rescue
 		852525EE13E0D0A600C580AE /* CompletedMatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */; };
 		852525F113E0D37C00C580AE /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 852525F013E0D37C00C580AE /* 108-badge.png */; };
 		8530AA8F13F2C03400CEE4C5 /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = 8530AA8E13F2C03400CEE4C5 /* matches.json */; };
@@ -72,9 +77,15 @@
 		8504710F13BBD02D0052F1F4 /* SeriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesController.m; sourceTree = "<group>"; };
 		8504711513BBD68B0052F1F4 /* SeriesTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesTableController.h; sourceTree = "<group>"; };
 		8504711613BBD68B0052F1F4 /* SeriesTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTableController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		8521C0A113F3086A0063BAAC /* EditMatchResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditMatchResultView.xib; sourceTree = "<group>"; };
+		8521C0A413F30A190063BAAC /* EditMatchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMatchResultController.h; sourceTree = "<group>"; };
+		8521C0A513F30A190063BAAC /* EditMatchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMatchResultController.m; sourceTree = "<group>"; };
+=======
 		8521C0AB13F3145C0063BAAC /* EditMatchResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditMatchResultView.xib; sourceTree = "<group>"; };
 		8521C0AE13F314800063BAAC /* EditMatchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMatchResultController.h; sourceTree = "<group>"; };
 		8521C0AF13F314800063BAAC /* EditMatchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMatchResultController.m; sourceTree = "<group>"; };
+>>>>>>> rescue
 		852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedMatchTableCellView.xib; sourceTree = "<group>"; };
 		852525F013E0D37C00C580AE /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108-badge.png"; sourceTree = "<group>"; };
 		8530AA8E13F2C03400CEE4C5 /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
@@ -459,8 +470,11 @@
 				8530AA9513F2CA4100CEE4C5 /* series1.json in Resources */,
 				8530AA9613F2CA4100CEE4C5 /* series2.json in Resources */,
 				8530AA9713F2CA4100CEE4C5 /* series3.json in Resources */,
+<<<<<<< HEAD
 				8521C0A213F3086A0063BAAC /* EditMatchResultView.xib in Resources */,
+=======
 				8521C0AC13F3145C0063BAAC /* EditMatchResultView.xib in Resources */,
+>>>>>>> rescue
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,8 +518,11 @@
 				8591FAC413F1D37D00B0CC5F /* DSActivityView.m in Sources */,
 				8578545913F1EEC800DD4640 /* MatchResult.m in Sources */,
 				8578545C13F1F16A00DD4640 /* Set.m in Sources */,
+<<<<<<< HEAD
 				8521C0A613F30A190063BAAC /* EditMatchResultController.m in Sources */,
+=======
 				8521C0B013F314800063BAAC /* EditMatchResultController.m in Sources */,
+>>>>>>> rescue
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

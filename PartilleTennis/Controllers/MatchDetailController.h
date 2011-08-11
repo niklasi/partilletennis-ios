@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Contact.h"
+#import "Match.h"
 
 @interface MatchDetailController : UITableViewController
 {
-	Contact *contact;
 }
 
-@property (nonatomic, retain) Contact *contact;
+@property (nonatomic, retain) Match *match;
 @end
