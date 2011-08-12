@@ -40,6 +40,11 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)PfServiceFailedWithError:(NSError *)error
+{
+	[DSActivityView removeView];
+}
+
 - (void)loadedTeams:(NSArray *)teams
 {
 	self.teamDelegate.allTeams = teams;

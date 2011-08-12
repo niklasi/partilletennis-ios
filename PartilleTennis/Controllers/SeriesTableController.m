@@ -70,6 +70,10 @@
 	[DSActivityView removeView];
 }
 
+- (void)PfServiceFailedWithError:(NSError *)error
+{
+	[DSActivityView removeView];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {

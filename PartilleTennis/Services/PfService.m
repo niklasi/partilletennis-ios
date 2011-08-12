@@ -185,6 +185,8 @@
 	NSLog(@"Connection failed! Error - %@ %@",
 				[error localizedDescription],
 				[[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+	
+	[self.delegate PfServiceFailedWithError:error];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

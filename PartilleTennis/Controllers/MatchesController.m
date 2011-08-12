@@ -111,6 +111,11 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 	[self.tableView reloadData];
 }
 
+- (void)PfServiceFailedWithError:(NSError *)error
+{
+	[DSActivityView removeView];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

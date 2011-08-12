@@ -13,14 +13,14 @@
 @class SBJsonStreamParserAdapter;
 
 @protocol PfServiceDelegate <NSObject>
-
+- (void)PfServiceFailedWithError:(NSError *)error;
 @optional
 - (void)loadedTeams:(NSArray *)teams;
 - (void)loadedMatches:(NSArray *)matches;
 - (void)loadedSeriesTable:(NSArray *)seriesTable;
 @end
 
-@interface PfService : NSObject <SBJsonStreamParserAdapterDelegate, PfServiceDelegate>
+@interface PfService : NSObject <SBJsonStreamParserAdapterDelegate>
 {
 }
 
