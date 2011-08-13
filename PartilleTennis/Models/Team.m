@@ -43,14 +43,13 @@
 	Team *tmp = (Team *)object;
 	if (![self.name isEqualToString:tmp.name]) return false;
 	if (self.division != tmp.division) return false;
-	if (self.ranking != tmp.ranking) return false;
-	
+
 	return true;
 }
 
 -(NSUInteger)hash
 {
-	NSString *hashString = [NSString stringWithFormat:@"%@-%d-%d", self.name, self.division, self.ranking];
+	NSString *hashString = [NSString stringWithFormat:@"%@-%d", self.name, self.division];
 	return [hashString hash];
 }
 
