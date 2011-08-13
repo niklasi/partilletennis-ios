@@ -79,7 +79,7 @@
 	}
 }
 
--(void)loadMatches:(int)series team:(int)team
+-(void)loadMatches:(int)series team:(NSString *)team
 {
 	if ([self.delegate respondsToSelector:@selector(loadedMatches:)]) {
 		
@@ -89,9 +89,9 @@
 			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"matches" ofType:@"json"]isDirectory:NO]];	
 		}
 		else {
-			NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/teams/matches/%d/%d?output=json", series, team];
+			NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/teams/matches/%d/%@?output=json", series, team];
 			
-			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
+			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
 																				timeoutInterval:60.0];
 		}
@@ -185,6 +185,9 @@
 	NSLog(@"Connection failed! Error - %@ %@",
 				[error localizedDescription],
 				[[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Kunde inte hämta data." message:@"Detta kan vara ett tillfälligt fel som EVENTUELLT har uppstått pga av ändringar på Partille Tennis hemsida.\r\nFörsök igen lite senare." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[alert show];
 	
 	[self.delegate PfServiceFailedWithError:error];
 }

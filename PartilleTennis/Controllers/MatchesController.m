@@ -85,7 +85,7 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 		self.currentTeam = myTeam;
 		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
 		NSLog(@"Division: %d, Team: %d", myTeam.division, myTeam.ranking);
-		[pfService loadMatches:myTeam.division team:myTeam.ranking];
+		[pfService loadMatches:myTeam.division team:myTeam.name];
 		self.matchResults = [NSKeyedUnarchiver unarchiveObjectWithFile:pathInDocumentDirectory(@"matchResults")];
 	}
 	else {
