@@ -12,4 +12,5 @@
 @interface CompletedMatchTableCell : MatchTableCell {
 }
 
+
 @end

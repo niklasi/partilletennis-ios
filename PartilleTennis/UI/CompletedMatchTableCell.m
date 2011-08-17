@@ -14,7 +14,6 @@
 }
 @property (strong, nonatomic) IBOutlet UILabel *teamLabel;
 @property (strong, nonatomic) IBOutlet UILabel *resultLabel;
-
 @end
 
 @implementation CompletedMatchTableCell
@@ -29,18 +28,23 @@
 	
 	NSString *resultText;
 	int matchPoints = [value.result calculateTotalMatchPoints];
-	
+	UIImage *resultIcon;
 	if (matchPoints > 3) {
 		resultText = @"Vinst";
+		resultIcon = [UIImage imageNamed:@"won.png"];
 	}
 	else if (matchPoints == 3) {
 		resultText = @"Oavgjort";
+		resultIcon = [UIImage imageNamed:@"draw.png"];
 	}
 	else {
 		resultText = @"Förlust";
+		resultIcon = [UIImage imageNamed:@"lost.png"];
 	}
 	
 	self.resultLabel.text = [NSString stringWithFormat:@"%@: %d-%d", resultText, matchPoints, 6 - matchPoints];
+	self.imageView.image = resultIcon;
+	
 }
 
 @end
