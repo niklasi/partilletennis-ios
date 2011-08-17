@@ -77,7 +77,7 @@
 		8521C0AF13F314800063BAAC /* EditMatchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMatchResultController.m; sourceTree = "<group>"; };
 		852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedMatchTableCellView.xib; sourceTree = "<group>"; };
 		852525F013E0D37C00C580AE /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108-badge.png"; sourceTree = "<group>"; };
-		852BD19013F48B330026DD5C /* SaveProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SaveProtocol.h; sourceTree = "<group>"; };
+		852BD19013F48B330026DD5C /* SaveProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveProtocol.h; sourceTree = "<group>"; };
 		8530AA8E13F2C03400CEE4C5 /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
 		8530AA9013F2CA4100CEE4C5 /* allTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allTeams.json; sourceTree = "<group>"; };
 		8530AA9113F2CA4100CEE4C5 /* series1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = series1.json; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		8591FAC213F1D37D00B0CC5F /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
 		8591FAC313F1D37D00B0CC5F /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
 		85A5836313D9A21800545CCB /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
-		85B543BE13BBCC2A0065B152 /* PartilleTennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartilleTennis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B543BE13BBCC2A0065B152 /* Partille Davis Cup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Partille Davis Cup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B543C213BBCC2A0065B152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		85B543C413BBCC2A0065B152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		85B543C613BBCC2A0065B152 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -251,7 +251,7 @@
 		85B543BF13BBCC2A0065B152 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85B543BE13BBCC2A0065B152 /* PartilleTennis.app */,
+				85B543BE13BBCC2A0065B152 /* Partille Davis Cup.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 			);
 			name = PartilleTennis;
 			productName = PartilleTennis;
-			productReference = 85B543BE13BBCC2A0065B152 /* PartilleTennis.app */;
+			productReference = 85B543BE13BBCC2A0065B152 /* Partille Davis Cup.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -580,7 +580,7 @@
 				GCC_PREFIX_HEADER = "PartilleTennis/PartilleTennis-Prefix.pch";
 				INFOPLIST_FILE = "PartilleTennis/PartilleTennis-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Partille Davis Cup";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -592,7 +592,7 @@
 				GCC_PREFIX_HEADER = "PartilleTennis/PartilleTennis-Prefix.pch";
 				INFOPLIST_FILE = "PartilleTennis/PartilleTennis-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Partille Davis Cup";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
