@@ -83,6 +83,9 @@
 		int index = [self.teamDelegate.allTeams indexOfObject:self.teamDelegate.myTeam];
 		[self.teamPicker selectRow:index inComponent:0 animated:NO];
 	}
+	else {
+		self.teamDelegate.myTeam = [self.teamDelegate.allTeams objectAtIndex:0];;
+	}
 }
 
 #pragma mark - View lifecycle
