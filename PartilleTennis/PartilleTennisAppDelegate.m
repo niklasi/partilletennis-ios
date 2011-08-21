@@ -12,6 +12,12 @@
 #import "SettingsController.h"
 #import "TeamPickerController.h"
 
+@interface PartilleTennisAppDelegate() {
+}
+
+-(void)teamPickerDidFinnish:(TeamPickerController *)teamPickerController;
+@end
+
 @implementation PartilleTennisAppDelegate
 
 @synthesize window = _window, navController, matchesController, settingsController, myTeam, allTeams;
@@ -57,12 +63,26 @@
 	if (self.myTeam == nil) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Välj lag" message:@"Du måste välja vilket lag du tillhör." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 		[alert show];
-		tabBarController.selectedIndex = 2;
+
 		TeamPickerController *picker = [[TeamPickerController alloc] initWithNibName:@"TeamPickerView" bundle:nil];
-		[self.settingsController pushViewController:picker animated:YES];
+
+		picker.navigationItem.title = @"Välj ditt lag";
+		UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+																																							target:self 
+																																							action:@selector(teamPickerDidFinnish:)];
+		picker.navigationItem.rightBarButtonItem = doneButton;
+
+		UINavigationController *tmp = [[UINavigationController alloc] initWithRootViewController:picker];
+		tmp.navigationBar.barStyle = UIBarStyleBlackOpaque;
+		[tabBarController presentModalViewController:tmp animated:NO];
 	}
 	
 	return YES;
+}
+
+-(void)teamPickerDidFinnish:(TeamPickerController *)teamPickerController
+{
+	[self.window.rootViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
