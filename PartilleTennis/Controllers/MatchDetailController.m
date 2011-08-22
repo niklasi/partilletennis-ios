@@ -9,6 +9,7 @@
 #import "MatchDetailController.h"
 #import "EditMatchResultController.h"
 #import "Set.h"
+
 @interface MatchDetailController() {
 }
 
@@ -236,6 +237,21 @@
 		
 		[self.navigationController pushViewController:resultsController animated:YES];
 	}
+	
+	if (indexPath.section == 1) {
+		if ([MFMessageComposeViewController canSendText]) {
+			MFMessageComposeViewController *smsController = [[MFMessageComposeViewController alloc] init];
+			smsController.recipients = [[NSArray alloc] initWithObjects:@"0705275386", nil];
+			smsController.body = @"Hej, vi har match. Kan ni?";
+			smsController.messageComposeDelegate = self;
+			[self presentModalViewController:smsController animated:YES];
+		}
+	}
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 -(NSString *)matchResult:(NSArray *)sets

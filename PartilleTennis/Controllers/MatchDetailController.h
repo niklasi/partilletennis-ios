@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Match.h"
+#import <MessageUI/MessageUI.h>
 
-@interface MatchDetailController : UITableViewController
+@interface MatchDetailController : UITableViewController <MFMessageComposeViewControllerDelegate>
 {
 }
 

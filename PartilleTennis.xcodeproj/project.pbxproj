@@ -24,6 +24,7 @@
 		8555726213DC554700100CD6 /* TeamPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8555726113DC554700100CD6 /* TeamPickerView.xib */; };
 		8555726513DC59E000100CD6 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555726413DC59E000100CD6 /* Team.m */; };
 		8555726D13DC6E7500100CD6 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555726C13DC6E7500100CD6 /* FileHelpers.m */; };
+		855F58A51402FFEA00499B78 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855F58A41402FFEA00499B78 /* MessageUI.framework */; };
 		8578545413F1E5BD00DD4640 /* iPhone4-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */; };
 		8578545613F1E60F00DD4640 /* iPhone3-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8578545513F1E60F00DD4640 /* iPhone3-Icon.png */; };
 		8578545913F1EEC800DD4640 /* MatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578545813F1EEC800DD4640 /* MatchResult.m */; };
@@ -95,6 +96,7 @@
 		8555726B13DC6E7500100CD6 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelpers.h; sourceTree = "<group>"; };
 		8555726C13DC6E7500100CD6 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
 		8555727513DCC21300100CD6 /* TeamDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamDelegateProtocol.h; sourceTree = "<group>"; };
+		855F58A41402FFEA00499B78 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone4-Icon.png"; sourceTree = "<group>"; };
 		8578545513F1E60F00DD4640 /* iPhone3-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone3-Icon.png"; sourceTree = "<group>"; };
 		8578545713F1EEC700DD4640 /* MatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchResult.h; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				855F58A51402FFEA00499B78 /* MessageUI.framework in Frameworks */,
 				85B543C313BBCC2A0065B152 /* UIKit.framework in Frameworks */,
 				85B543C513BBCC2A0065B152 /* Foundation.framework in Frameworks */,
 				85B543C713BBCC2A0065B152 /* CoreGraphics.framework in Frameworks */,
@@ -263,6 +266,7 @@
 		85B543C113BBCC2A0065B152 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				855F58A41402FFEA00499B78 /* MessageUI.framework */,
 				85B543C213BBCC2A0065B152 /* UIKit.framework */,
 				85B543C413BBCC2A0065B152 /* Foundation.framework */,
 				85B543C613BBCC2A0065B152 /* CoreGraphics.framework */,
