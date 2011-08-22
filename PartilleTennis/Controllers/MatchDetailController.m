@@ -19,7 +19,7 @@
 
 @implementation MatchDetailController
 
-@synthesize match = _match;
+@synthesize match = _match, contactTableCell = _contactTableCell;
 
 - (id)init
 {
@@ -96,8 +96,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 3;
+  if (section == 0) return 3;
+	
+	return 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -111,8 +112,18 @@
 	return nil;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (indexPath.section == 1) return 96;
+	
+	return 44.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	if (indexPath.section == 0) {
+		
+	
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -158,8 +169,17 @@
 		default:
 			break;
 	}
+		return cell;
+	}
 	
-	return cell;
+	ContactTableCell *contactCell = (ContactTableCell *)[tableView dequeueReusableCellWithIdentifier:@"ContactTableCellView"];
+	if (contactCell == nil) {
+		//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+			[[NSBundle mainBundle] loadNibNamed:@"ContactTableCellView" owner:self options:nil];
+			contactCell = self.contactTableCell;
+		}
+
+	return contactCell;
 }
 
 
@@ -237,15 +257,16 @@
 		
 		[self.navigationController pushViewController:resultsController animated:YES];
 	}
-	
-	if (indexPath.section == 1) {
-		if ([MFMessageComposeViewController canSendText]) {
-			MFMessageComposeViewController *smsController = [[MFMessageComposeViewController alloc] init];
-			smsController.recipients = [[NSArray alloc] initWithObjects:@"0705275386", nil];
-			smsController.body = @"Hej, vi har match. Kan ni?";
-			smsController.messageComposeDelegate = self;
-			[self presentModalViewController:smsController animated:YES];
-		}
+}
+
+-(IBAction)sendSms:(id)sender
+{
+	if ([MFMessageComposeViewController canSendText]) {
+		MFMessageComposeViewController *smsController = [[MFMessageComposeViewController alloc] init];
+		smsController.recipients = [[NSArray alloc] initWithObjects:@"0705275386", nil];
+		smsController.body = @"Hej, vi har match. Kan ni?";
+		smsController.messageComposeDelegate = self;
+		[self presentModalViewController:smsController animated:YES];
 	}
 }
 

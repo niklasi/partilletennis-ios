@@ -25,6 +25,8 @@
 		8555726513DC59E000100CD6 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555726413DC59E000100CD6 /* Team.m */; };
 		8555726D13DC6E7500100CD6 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555726C13DC6E7500100CD6 /* FileHelpers.m */; };
 		855F58A51402FFEA00499B78 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855F58A41402FFEA00499B78 /* MessageUI.framework */; };
+		855F58A7140305D200499B78 /* ContactTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 855F58A6140305D200499B78 /* ContactTableCellView.xib */; };
+		855F58AA1403095000499B78 /* ContactTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 855F58A91403095000499B78 /* ContactTableCell.m */; };
 		8578545413F1E5BD00DD4640 /* iPhone4-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */; };
 		8578545613F1E60F00DD4640 /* iPhone3-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8578545513F1E60F00DD4640 /* iPhone3-Icon.png */; };
 		8578545913F1EEC800DD4640 /* MatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578545813F1EEC800DD4640 /* MatchResult.m */; };
@@ -97,6 +99,9 @@
 		8555726C13DC6E7500100CD6 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
 		8555727513DCC21300100CD6 /* TeamDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamDelegateProtocol.h; sourceTree = "<group>"; };
 		855F58A41402FFEA00499B78 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		855F58A6140305D200499B78 /* ContactTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableCellView.xib; sourceTree = "<group>"; };
+		855F58A81403095000499B78 /* ContactTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableCell.h; sourceTree = "<group>"; };
+		855F58A91403095000499B78 /* ContactTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableCell.m; sourceTree = "<group>"; };
 		8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone4-Icon.png"; sourceTree = "<group>"; };
 		8578545513F1E60F00DD4640 /* iPhone3-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone3-Icon.png"; sourceTree = "<group>"; };
 		8578545713F1EEC700DD4640 /* MatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchResult.h; sourceTree = "<group>"; };
@@ -240,6 +245,8 @@
 				85CFDC1213EF16EE0016E4C4 /* CompletedMatchTableCell.m */,
 				85CFDC1513EF17560016E4C4 /* UpcomingMatchTableCell.h */,
 				85CFDC1613EF17560016E4C4 /* UpcomingMatchTableCell.m */,
+				855F58A81403095000499B78 /* ContactTableCell.h */,
+				855F58A91403095000499B78 /* ContactTableCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -402,6 +409,7 @@
 				85A5836313D9A21800545CCB /* SettingsView.xib */,
 				8555726113DC554700100CD6 /* TeamPickerView.xib */,
 				852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */,
+				855F58A6140305D200499B78 /* ContactTableCellView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -479,6 +487,7 @@
 				851FD8A213FC5E4900FC766C /* draw.png in Resources */,
 				851FD8A813FC6A5700FC766C /* won.png in Resources */,
 				8510BEC813FC738500117F22 /* lost.png in Resources */,
+				855F58A7140305D200499B78 /* ContactTableCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +532,7 @@
 				8578545913F1EEC800DD4640 /* MatchResult.m in Sources */,
 				8578545C13F1F16A00DD4640 /* Set.m in Sources */,
 				8521C0B013F314800063BAAC /* EditMatchResultController.m in Sources */,
+				855F58AA1403095000499B78 /* ContactTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

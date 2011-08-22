@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Match.h"
 #import <MessageUI/MessageUI.h>
+#import "ContactTableCell.h"
 
 @interface MatchDetailController : UITableViewController <MFMessageComposeViewControllerDelegate>
 {
 }
 
-@property (nonatomic, retain) Match *match;
+@property (nonatomic, strong) Match *match;
+@property (nonatomic, strong) IBOutlet ContactTableCell *contactTableCell;
+
+-(IBAction)sendSms:(id)sender;
 @end
