@@ -270,9 +270,26 @@
 	}
 }
 
-- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+-(IBAction)sendEmail:(id)sender
+{
+	if ([MFMailComposeViewController canSendMail]) {
+		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+		[mailController setToRecipients: [[NSArray alloc] initWithObjects:@"niklas@ingholt.com", nil]];
+		[mailController setSubject: @"Tennismatch"];
+		[mailController setMessageBody: @"Hej, vi har match. Kan ni?" isHTML:NO];
+		mailController.mailComposeDelegate = self;
+		[self presentModalViewController:mailController animated:YES];
+	}
+}
+
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+	[self dismissModalViewControllerAnimated:YES];	
 }
 
 -(NSString *)matchResult:(NSArray *)sets

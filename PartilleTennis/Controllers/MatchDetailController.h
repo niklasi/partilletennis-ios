@@ -11,7 +11,7 @@
 #import <MessageUI/MessageUI.h>
 #import "ContactTableCell.h"
 
-@interface MatchDetailController : UITableViewController <MFMessageComposeViewControllerDelegate>
+@interface MatchDetailController : UITableViewController <MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate>
 {
 }
 
@@ -19,4 +19,5 @@
 @property (nonatomic, strong) IBOutlet ContactTableCell *contactTableCell;
 
 -(IBAction)sendSms:(id)sender;
+-(IBAction)sendEmail:(id)sender;
 @end
