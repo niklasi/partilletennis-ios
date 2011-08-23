@@ -49,11 +49,11 @@
 	
 	[tabBarController setViewControllers:viewControllers];
 	UITabBarItem *seriesTableItem = [tabBarController.tabBar.items objectAtIndex:0];
-	seriesTableItem.image = [UIImage imageNamed:@"104-index-cards.png"]; 
+	seriesTableItem.image = [UIImage imageNamed:@"table-series.png"]; 
 	UITabBarItem *matchesItem = [tabBarController.tabBar.items objectAtIndex:1];
-	matchesItem.image = [UIImage imageNamed:@"83-calendar.png"]; 
+	matchesItem.image = [UIImage imageNamed:@"matches.png"]; 
 	UITabBarItem *settingsItem = [tabBarController.tabBar.items objectAtIndex:2];
-	settingsItem.image = [UIImage imageNamed:@"19-gear.png"]; 
+	settingsItem.image = [UIImage imageNamed:@"settings.png"]; 
   [_window setRootViewController:tabBarController];
 		
 	// Add the navigation controller's view to the window and display.
