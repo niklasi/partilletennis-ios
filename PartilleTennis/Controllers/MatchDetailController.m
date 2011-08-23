@@ -259,6 +259,12 @@
 	}
 }
 
+-(IBAction)dial:(id)sender
+{
+	NSURL *phoneURL = [[NSURL alloc] initWithString:@"tel:0705275386"];
+	[[UIApplication sharedApplication] openURL:phoneURL];
+}
+
 -(IBAction)sendSms:(id)sender
 {
 	if ([MFMessageComposeViewController canSendText]) {

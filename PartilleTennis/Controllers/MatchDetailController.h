@@ -20,4 +20,5 @@
 
 -(IBAction)sendSms:(id)sender;
 -(IBAction)sendEmail:(id)sender;
+-(IBAction)dial:(id)sender;
 @end
