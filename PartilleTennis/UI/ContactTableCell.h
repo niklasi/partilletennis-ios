@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contact.h"
 
 @interface ContactTableCell : UITableViewCell
 
+@property	(nonatomic, strong) Contact *contact;
 @end

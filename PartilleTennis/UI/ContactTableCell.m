@@ -8,16 +8,22 @@
 
 #import "ContactTableCell.h"
 
-@implementation ContactTableCell
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+@interface ContactTableCell() {
 }
+@property (strong, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+@property (strong, nonatomic) IBOutlet UILabel *emailLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@end
 
+@implementation ContactTableCell
+@synthesize nameLabel = _nameLabel, phoneNumberLabel = _phoneNumberLabel, emailLabel = _emailLabel, contact = _contact;
+
+-(void)setContact:(Contact *)value
+{
+	_contact = value;
+	self.nameLabel.text = value.name;
+	self.phoneNumberLabel.text = value.phone;
+	self.emailLabel.text = value.email;
+}
 
 @end

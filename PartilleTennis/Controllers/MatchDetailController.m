@@ -133,42 +133,24 @@
     
 	switch (indexPath.row) {
 		case 0:
-			if (indexPath.section == 0) {
 				cell.textLabel.text = @"Dubbel";
-				
 				cell.detailTextLabel.text = [self matchResult:self.match.result.doubleSets];
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			}
-			else {
-				cell.textLabel.text = @"Namn";
-				cell.detailTextLabel.text = self.match.contact.name;
-			}
 			break;
 		case 1:
-			if (indexPath.section == 0) {
 				cell.textLabel.text = @"1:a singel";
 				cell.detailTextLabel.text = [self matchResult:self.match.result.single1Sets];
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			}
-			else {
-				cell.textLabel.text = @"Telefon";
-				cell.detailTextLabel.text = self.match.contact.phone;
-			}
 			break;
 		case 2:
-			if (indexPath.section == 0) {
 				cell.textLabel.text = @"2:a singel";
 				cell.detailTextLabel.text = [self matchResult:self.match.result.single2Sets];
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			}
-			else {
-				cell.textLabel.text = @"Email";
-				cell.detailTextLabel.text = self.match.contact.email;
-			}
 			break;
 		default:
 			break;
-	}
+		}
+		
 		return cell;
 	}
 	
@@ -178,7 +160,8 @@
 			[[NSBundle mainBundle] loadNibNamed:@"ContactTableCellView" owner:self options:nil];
 			contactCell = self.contactTableCell;
 		}
-
+	
+	contactCell.contact = self.match.contact;
 	return contactCell;
 }
 
@@ -268,9 +251,11 @@
 -(IBAction)sendSms:(id)sender
 {
 	if ([MFMessageComposeViewController canSendText]) {
+		id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
+		Team *myTeam = teamDelegate.myTeam;
 		MFMessageComposeViewController *smsController = [[MFMessageComposeViewController alloc] init];
 		smsController.recipients = [[NSArray alloc] initWithObjects:@"0705275386", nil];
-		smsController.body = @"Hej, vi har match. Kan ni?";
+		smsController.body = [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, myTeam.name];
 		smsController.messageComposeDelegate = self;
 		[self presentModalViewController:smsController animated:YES];
 	}
@@ -279,10 +264,12 @@
 -(IBAction)sendEmail:(id)sender
 {
 	if ([MFMailComposeViewController canSendMail]) {
+		id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
+		Team *myTeam = teamDelegate.myTeam;
 		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 		[mailController setToRecipients: [[NSArray alloc] initWithObjects:@"niklas@ingholt.com", nil]];
 		[mailController setSubject: @"Tennismatch"];
-		[mailController setMessageBody: @"Hej, vi har match. Kan ni?" isHTML:NO];
+		[mailController setMessageBody: [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, myTeam.name] isHTML:NO];
 		mailController.mailComposeDelegate = self;
 		[self presentModalViewController:mailController animated:YES];
 	}
