@@ -218,7 +218,7 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 	MatchDetailController *matchDetailController = [[MatchDetailController alloc] init];
 	Match *match = (Match *)[self.matchData objectAtIndex:indexPath.row];
 	[matchDetailController setMatch:match];
-	
+	matchDetailController.myTeam = self.currentTeam;
 	[self.navigationController pushViewController:matchDetailController animated:YES];
 }
 

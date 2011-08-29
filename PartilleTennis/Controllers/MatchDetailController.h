@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) Match *match;
 @property (nonatomic, strong) IBOutlet ContactTableCell *contactTableCell;
+@property (nonatomic, strong) Team *myTeam;
 
 -(IBAction)sendSms:(id)sender;
 -(IBAction)sendEmail:(id)sender;

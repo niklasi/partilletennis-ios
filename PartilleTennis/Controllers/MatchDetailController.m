@@ -19,7 +19,7 @@
 
 @implementation MatchDetailController
 
-@synthesize match = _match, contactTableCell = _contactTableCell;
+@synthesize match = _match, contactTableCell = _contactTableCell, myTeam = _myTeam;
 
 - (id)init
 {
@@ -251,11 +251,9 @@
 -(IBAction)sendSms:(id)sender
 {
 	if ([MFMessageComposeViewController canSendText]) {
-		id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
-		Team *myTeam = teamDelegate.myTeam;
 		MFMessageComposeViewController *smsController = [[MFMessageComposeViewController alloc] init];
 		smsController.recipients = [[NSArray alloc] initWithObjects:@"0705275386", nil];
-		smsController.body = [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, myTeam.name];
+		smsController.body = [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, self.myTeam.name];
 		smsController.messageComposeDelegate = self;
 		[self presentModalViewController:smsController animated:YES];
 	}
@@ -264,12 +262,10 @@
 -(IBAction)sendEmail:(id)sender
 {
 	if ([MFMailComposeViewController canSendMail]) {
-		id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
-		Team *myTeam = teamDelegate.myTeam;
 		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 		[mailController setToRecipients: [[NSArray alloc] initWithObjects:@"niklas@ingholt.com", nil]];
 		[mailController setSubject: @"Tennismatch"];
-		[mailController setMessageBody: [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, myTeam.name] isHTML:NO];
+		[mailController setMessageBody: [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, self.myTeam.name] isHTML:NO];
 		mailController.mailComposeDelegate = self;
 		[self presentModalViewController:mailController animated:YES];
 	}
