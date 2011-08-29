@@ -142,12 +142,16 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-	if (self.sets.count > 0) {
-		Set *lastSet = [self.sets objectAtIndex:self.sets.count - 1];
-		if (lastSet.myTeam == 0 && lastSet.opponent == 0) {
-			[self.sets removeObject:lastSet];
+	
+	NSMutableArray *forDelete = [[NSMutableArray alloc] initWithCapacity:self.sets.count];
+	
+	for (Set *set in self.sets) {
+    if (set.myTeam == 0 && set.opponent == 0) {
+			[forDelete addObject:set];
 		}
 	}
+	
+	[self.sets removeObjectsInArray:forDelete];
 }
 
 - (void)viewDidUnload
