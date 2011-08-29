@@ -67,7 +67,7 @@
 			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"allTeams" ofType:@"json"]isDirectory:NO]];	
 		}
 		else {
-			NSString *url = @"http://sharp-robot-596.heroku.com/teams/all?output=json";
+			NSString *url = @"http://partilletennis.ingholt.com/teams/all?output=json";
 		
 			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -89,7 +89,7 @@
 			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"matches" ofType:@"json"]isDirectory:NO]];	
 		}
 		else {
-			NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/teams/matches/%d/%@?output=json", series, team];
+			NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/teams/matches/%d/%@?output=json", series, team];
 			
 			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -113,7 +113,7 @@
 			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"series%d", series] ofType:@"json"]isDirectory:NO]];	
 		}
 		else {
-		NSString *url = [NSString stringWithFormat:@"http://sharp-robot-596.heroku.com/series/%d?output=json", series];
+		NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/series/%d?output=json", series];
 		
 			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
