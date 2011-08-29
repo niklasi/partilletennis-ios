@@ -245,7 +245,7 @@
 
 -(IBAction)dial:(id)sender
 {
-	NSURL *phoneURL = [[NSURL alloc] initWithString:@"tel:0705-275386"];
+	NSURL *phoneURL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"tel:%@", self.match.contact.phone]];
 	[[UIApplication sharedApplication] openURL:phoneURL];
 }
 
