@@ -244,7 +244,7 @@
 
 -(IBAction)dial:(id)sender
 {
-	NSURL *phoneURL = [[NSURL alloc] initWithString:@"tel:0705275386"];
+	NSURL *phoneURL = [[NSURL alloc] initWithString:@"tel:0705-275386"];
 	[[UIApplication sharedApplication] openURL:phoneURL];
 }
 
@@ -252,7 +252,7 @@
 {
 	if ([MFMessageComposeViewController canSendText]) {
 		MFMessageComposeViewController *smsController = [[MFMessageComposeViewController alloc] init];
-		smsController.recipients = [[NSArray alloc] initWithObjects:@"0705275386", nil];
+		smsController.recipients = [[NSArray alloc] initWithObjects:self.match.contact.phone, nil];
 		smsController.body = [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, self.myTeam.name];
 		smsController.messageComposeDelegate = self;
 		[self presentModalViewController:smsController animated:YES];
@@ -263,7 +263,7 @@
 {
 	if ([MFMailComposeViewController canSendMail]) {
 		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-		[mailController setToRecipients: [[NSArray alloc] initWithObjects:@"niklas@ingholt.com", nil]];
+		[mailController setToRecipients: [[NSArray alloc] initWithObjects:self.match.contact.email, nil]];
 		[mailController setSubject: @"Tennismatch"];
 		[mailController setMessageBody: [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, self.myTeam.name] isHTML:NO];
 		mailController.mailComposeDelegate = self;
