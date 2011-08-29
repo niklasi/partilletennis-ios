@@ -68,6 +68,9 @@
 		85B7183713C3C8B100E8A81C /* SeriesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7183613C3C8B000E8A81C /* SeriesTable.m */; };
 		85B84DC413D0DB3B005266A6 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B84DC313D0DB3B005266A6 /* SettingsController.m */; };
 		85C2867213CFABDB003A834B /* MatchDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C2867113CFABDB003A834B /* MatchDetailView.xib */; };
+		85C302F0140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C302EF140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib */; };
+		85C302F4140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C302F3140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.m */; };
+		85C302F7140C3B7A009F1C11 /* TemplateMessageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C302F6140C3B7A009F1C11 /* TemplateMessageService.m */; };
 		85CCAD6413CF9F1A0061FA5C /* MatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */; };
 		85CCAD6613CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CCAD6513CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib */; };
 		85CFDC1313EF16EE0016E4C4 /* CompletedMatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFDC1213EF16EE0016E4C4 /* CompletedMatchTableCell.m */; };
@@ -176,6 +179,11 @@
 		85B84DC213D0DB3B005266A6 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
 		85B84DC313D0DB3B005266A6 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
 		85C2867113CFABDB003A834B /* MatchDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchDetailView.xib; sourceTree = "<group>"; };
+		85C302EF140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmMessageTemplateTableCellView.xib; sourceTree = "<group>"; };
+		85C302F2140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmMessageTemplateTableViewCell.h; sourceTree = "<group>"; };
+		85C302F3140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmMessageTemplateTableViewCell.m; sourceTree = "<group>"; };
+		85C302F5140C3B7A009F1C11 /* TemplateMessageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateMessageService.h; sourceTree = "<group>"; };
+		85C302F6140C3B7A009F1C11 /* TemplateMessageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateMessageService.m; sourceTree = "<group>"; };
 		85CCAD6213CF9F1A0061FA5C /* MatchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchTableCell.h; sourceTree = "<group>"; };
 		85CCAD6313CF9F1A0061FA5C /* MatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchTableCell.m; sourceTree = "<group>"; };
 		85CCAD6513CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingMatchTableCellView.xib; sourceTree = "<group>"; };
@@ -259,6 +267,8 @@
 				85CFDC1613EF17560016E4C4 /* UpcomingMatchTableCell.m */,
 				855F58A81403095000499B78 /* ContactTableCell.h */,
 				855F58A91403095000499B78 /* ContactTableCell.m */,
+				85C302F2140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.h */,
+				85C302F3140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -350,6 +360,8 @@
 			children = (
 				85B7182B13C3AE5D00E8A81C /* PfService.h */,
 				85B7182C13C3AE5D00E8A81C /* PfService.m */,
+				85C302F5140C3B7A009F1C11 /* TemplateMessageService.h */,
+				85C302F6140C3B7A009F1C11 /* TemplateMessageService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -428,6 +440,7 @@
 				8555726113DC554700100CD6 /* TeamPickerView.xib */,
 				852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */,
 				855F58A6140305D200499B78 /* ContactTableCellView.xib */,
+				85C302EF140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,6 +525,7 @@
 				855F58BE14045D0C00499B78 /* draw@2x.png in Resources */,
 				855F58C114045D6800499B78 /* lost.png in Resources */,
 				855F58C214045D6800499B78 /* lost@2x.png in Resources */,
+				85C302F0140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +571,8 @@
 				8578545C13F1F16A00DD4640 /* Set.m in Sources */,
 				8521C0B013F314800063BAAC /* EditMatchResultController.m in Sources */,
 				855F58AA1403095000499B78 /* ContactTableCell.m in Sources */,
+				85C302F4140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.m in Sources */,
+				85C302F7140C3B7A009F1C11 /* TemplateMessageService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "MatchDetailController.h"
 #import "EditMatchResultController.h"
 #import "Set.h"
+#import "TemplateMessageService.h"
 
 @interface MatchDetailController() {
 }
@@ -253,7 +254,7 @@
 	if ([MFMessageComposeViewController canSendText]) {
 		MFMessageComposeViewController *smsController = [[MFMessageComposeViewController alloc] init];
 		smsController.recipients = [[NSArray alloc] initWithObjects:self.match.contact.phone, nil];
-		smsController.body = [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, self.myTeam.name];
+		smsController.body = [[[TemplateMessageService alloc] init] confirmMessage:self.match team:self.myTeam];
 		smsController.messageComposeDelegate = self;
 		[self presentModalViewController:smsController animated:YES];
 	}
@@ -265,7 +266,7 @@
 		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 		[mailController setToRecipients: [[NSArray alloc] initWithObjects:self.match.contact.email, nil]];
 		[mailController setSubject: @"Tennismatch"];
-		[mailController setMessageBody: [[NSString alloc] initWithFormat: @"Hej, vi har tennismatch %@ kl %@. Kan ni spela då? mvh %@", self.match.date, self.match.time, self.myTeam.name] isHTML:NO];
+		[mailController setMessageBody: [[[TemplateMessageService alloc] init] confirmMessage:self.match team:self.myTeam] isHTML:NO];
 		mailController.mailComposeDelegate = self;
 		[self presentModalViewController:mailController animated:YES];
 	}
