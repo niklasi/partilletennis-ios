@@ -19,6 +19,7 @@
 
 -(void)cancelEditingMessageTemplate;
 -(void)saveEditingMessageTemplate;
+-(void)restoreMessageTemplate;
 @end
 
 @implementation SettingsController
@@ -148,10 +149,14 @@
 		[boolbar sizeToFit];
 		
 		
-		UIBarButtonItem *saveButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveEditingMessageTemplate)];
+		UIBarButtonItem *restoreButton =[[UIBarButtonItem alloc] initWithTitle:@"Återställ" style:UIBarButtonItemStyleBordered target:self action:@selector(restoreMessageTemplate)];
+		
+		UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];		
+		
 		UIBarButtonItem *cancelButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelEditingMessageTemplate)];
-		UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-		NSArray *array = [NSArray arrayWithObjects:space, cancelButton, saveButton, nil];
+		UIBarButtonItem *saveButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveEditingMessageTemplate)];
+		
+		NSArray *array = [NSArray arrayWithObjects:restoreButton, space, cancelButton, saveButton, nil];
 		
 		[boolbar setItems:array];
 		cell.messageTemplateTextView.inputAccessoryView = boolbar;
@@ -170,6 +175,11 @@
 -(void)cancelEditingMessageTemplate
 {
 	[self.messageTemplateCell.messageTemplateTextView resignFirstResponder];
+}
+
+-(void)restoreMessageTemplate
+{
+	self.messageTemplateCell.messageTemplateTextView.text = self.templateMessageService.defaultTemplateText;
 }
 
 -(void)saveEditingMessageTemplate

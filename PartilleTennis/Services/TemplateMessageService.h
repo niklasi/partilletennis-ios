@@ -12,6 +12,7 @@
 @interface TemplateMessageService : NSObject
 
 @property (nonatomic, strong) NSString *templateText;
+@property (readonly, strong) NSString *defaultTemplateText;
 
 -(void)saveTemplate;
 -(NSString *)confirmMessage:(Match *)match team:(Team *)team;

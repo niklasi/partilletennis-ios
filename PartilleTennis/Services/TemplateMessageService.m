@@ -10,14 +10,15 @@
 
 @implementation TemplateMessageService
 
-@synthesize templateText = _templateText;
+@synthesize templateText = _templateText, defaultTemplateText = _defaultTemplateText;
 
 -(id)init
 {
 	if (self = [super init]) {
 		self.templateText = [NSKeyedUnarchiver unarchiveObjectWithFile:pathInDocumentDirectory(@"messageTemplate")];
+		_defaultTemplateText = @"Hej, vi har tennismatch den {datum} kl {tid}.\nKan ni spela då?\n\nMvh\n{lag}";
 		if (self.templateText == nil) {
-			self.templateText = @"Hej, vi har tennismatch den {datum} kl {tid}.\nKan ni spela då?\n\nMvh\n{lag}";
+			self.templateText = self.defaultTemplateText;
 		}
 	}
 	return self;
