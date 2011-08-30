@@ -108,7 +108,7 @@
 {
 	if (section == 0) return @"Ditt lag";
 	
-	return @"Bekräfta match text";
+	return @"Bekräfta match";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
