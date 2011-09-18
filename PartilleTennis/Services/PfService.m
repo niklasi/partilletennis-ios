@@ -1,4 +1,4 @@
-//
+ //
 //  PfService.m
 //  PartilleTennis
 //
@@ -79,7 +79,7 @@
 	}
 }
 
--(void)loadMatches:(int)series team:(NSString *)team
+-(void)loadMatches:(NSString *)team
 {
 	if ([self.delegate respondsToSelector:@selector(loadedMatches:)]) {
 		
@@ -89,7 +89,7 @@
 			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"matches" ofType:@"json"]isDirectory:NO]];	
 		}
 		else {
-			NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/teams/matches/%d/%@?output=json", series, team];
+			NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/teams/matches/%@?output=json", team];
 			
 			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
