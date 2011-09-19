@@ -236,6 +236,8 @@
 			NSDictionary *opponentData = (NSDictionary *)[matchData objectForKey:@"opponent"];
 			Match *match = [[Match alloc] init];
 			match.teamName = [opponentData objectForKey:@"team_name"];
+			match.season = [matchData objectForKey:@"season"];
+			match.year = [[matchData objectForKey:@"year"] intValue];
 			match.date = [matchData objectForKey:@"date"];
 			match.time = [matchData objectForKey:@"time"];
 			match.lanes = [matchData objectForKey:@"lanes"];

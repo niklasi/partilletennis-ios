@@ -10,7 +10,7 @@
 
 @implementation Match
 
-@synthesize teamName = _teamName, date = _date, time = _time, lanes = _lanes, 
+@synthesize teamName = _teamName, season = _season, year = _year, date = _date, time = _time, lanes = _lanes, 
 contact = _contact, homeMatch = _homeMatch, result = _result;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -18,6 +18,14 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 	self = [super init];
 	
 	self.teamName = [aDecoder decodeObjectForKey:@"teamName"];
+	self.season = [aDecoder decodeObjectForKey:@"season"];
+	if (self.season == nil) {
+		self.season = @"fall";
+	}
+	self.year = [aDecoder decodeIntForKey:@"year"];
+	if (self.year == 0) {
+		self.year = 2011;
+	}
 	self.date = [aDecoder decodeObjectForKey:@"date"];
 	self.time = [aDecoder decodeObjectForKey:@"time"];
 	self.lanes = [aDecoder decodeObjectForKey:@"lanes"];
@@ -31,6 +39,8 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 	[aCoder encodeObject:self.teamName forKey:@"teamName"];
+	[aCoder encodeObject:self.season forKey:@"season"];
+	[aCoder encodeInt:self.year forKey:@"year"];
 	[aCoder encodeObject:self.date forKey:@"date"];
 	[aCoder encodeObject:self.time forKey:@"time"];
 	[aCoder encodeObject:self.lanes forKey:@"lanes"];
@@ -43,6 +53,8 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 {
 	Match *match = [[Match alloc] init];
 	match.teamName = self.teamName;
+	match.season = self.season;
+	match.year = self.year;
 	match.date = self.date;
 	match.time = self.time;
 	match.lanes = self.lanes;
@@ -58,6 +70,8 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 	if ([object class] != self.class) return false;
 	Match *tmp = (Match *)object;
 	if (![self.teamName isEqualToString:tmp.teamName]) return false;
+	if (![self.season isEqualToString:tmp.season]) return false;
+	if (!(self.year == tmp.year)) return false;
 	if (![self.date isEqualToString:tmp.date]) return false;
 	if (![self.time isEqualToString:tmp.time]) return false;
 	
@@ -66,7 +80,7 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 
 -(NSUInteger)hash
 {
-	NSString *hashString = [NSString stringWithFormat:@"%@-%@-%@", self.teamName, self.date, self.time];
+	NSString *hashString = [NSString stringWithFormat:@"%@-%@-%d-%@-%@", self.teamName, self.season, self.year, self.date, self.time];
 	return [hashString hash];
 }
 

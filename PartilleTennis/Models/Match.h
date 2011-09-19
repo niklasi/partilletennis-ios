@@ -15,6 +15,8 @@
 }
 
 @property (nonatomic, strong) NSString *teamName;
+@property (nonatomic, strong) NSString *season;
+@property (nonatomic) int year;
 @property (nonatomic, strong) NSString *date;
 @property (nonatomic, strong) NSString *time;
 @property (nonatomic, strong) NSString *lanes;
