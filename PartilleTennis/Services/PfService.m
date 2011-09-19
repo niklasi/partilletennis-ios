@@ -89,7 +89,18 @@
 			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"matches" ofType:@"json"]isDirectory:NO]];	
 		}
 		else {
-			NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/teams/matches/%@?output=json", team];
+			NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+			[formatter setDateFormat:@"YYYY"];
+			int year = [[formatter stringFromDate:[NSDate date]] intValue];
+			[formatter setDateFormat:@"MM"];
+			int month = [[formatter stringFromDate:[NSDate date]] intValue];
+			
+			NSString *season = @"fall";
+			if (month < 7) {
+				season = @"spring";
+			}
+			
+			NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/teams/matches/%@/%@/%d?output=json", team, season, year];
 			
 			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
