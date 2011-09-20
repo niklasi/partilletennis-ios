@@ -24,7 +24,7 @@
 -(void)setMatch:(Match *)value
 {
 	[super setMatch:value];
-	self.teamLabel.text = self.match.teamName;
+	self.teamLabel.text = self.match.changedWithTeamName != nil ? self.match.changedWithTeamName : self.match.teamName;;
 	
 	NSString *resultText;
 	int matchPoints = [value.result calculateTotalMatchPoints];

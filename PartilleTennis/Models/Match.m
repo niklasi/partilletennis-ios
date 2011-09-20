@@ -11,7 +11,7 @@
 @implementation Match
 
 @synthesize teamName = _teamName, season = _season, year = _year, date = _date, time = _time, lanes = _lanes, 
-contact = _contact, homeMatch = _homeMatch, result = _result;
+contact = _contact, homeMatch = _homeMatch, result = _result, changedWithTeamName = _changedWithTeamName;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -32,6 +32,7 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 	self.contact = [aDecoder decodeObjectForKey:@"contact"];
 	self.homeMatch = [aDecoder decodeIntForKey:@"homeMatch"] == 1 ? YES : NO;
 	self.result = [aDecoder decodeObjectForKey:@"result"];
+	self.changedWithTeamName = [aDecoder decodeObjectForKey:@"changedWithTeamName"];
 	return self;
 	
 }
@@ -47,6 +48,7 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 	[aCoder encodeObject:self.contact forKey:@"contact"];
 	[aCoder encodeInt:self.homeMatch == YES ? 1 : 0 forKey:@"homeMatch"];
 	[aCoder encodeObject:self.result forKey:@"result"];
+	[aCoder encodeObject:self.changedWithTeamName forKey:@"changedWithTeamName"];
 }
 
 -(id)copyWithZone:(NSZone *)zone
@@ -61,7 +63,7 @@ contact = _contact, homeMatch = _homeMatch, result = _result;
 	match.contact = self.contact;
 	match.homeMatch = self.homeMatch;
 	match.result = self.result;
-	
+	match.changedWithTeamName = self.changedWithTeamName;
 	return match;
 }
 

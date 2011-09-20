@@ -23,4 +23,5 @@
 @property (nonatomic) BOOL homeMatch;
 @property (nonatomic, strong) Contact *contact;
 @property (nonatomic, strong) MatchResult *result;
+@property (nonatomic, strong) NSString *changedWithTeamName;
 @end

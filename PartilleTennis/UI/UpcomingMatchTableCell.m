@@ -24,7 +24,7 @@
 -(void)setMatch:(Match *)value
 {
 	[super setMatch:value];
-	self.teamLabel.text = self.match.teamName;
+	self.teamLabel.text = self.match.changedWithTeamName != nil ? self.match.changedWithTeamName : self.match.teamName;
 	self.dateLabel.text = self.match.date;
 	self.timeLabel.text = [NSString stringWithFormat:@"kl %@", self.match.time];
 	self.detailsLabel.text = [NSString stringWithFormat:@"Banor: %@, %@", 
