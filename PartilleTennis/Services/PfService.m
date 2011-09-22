@@ -79,7 +79,7 @@
 	}
 }
 
--(void)loadMatches:(NSString *)team
+-(void)loadMatches:(NSString *)team season:(NSString *)season year:(int)year
 {
 	if ([self.delegate respondsToSelector:@selector(loadedMatches:)]) {
 		
@@ -89,17 +89,7 @@
 			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"matches" ofType:@"json"]isDirectory:NO]];	
 		}
 		else {
-			NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-			[formatter setDateFormat:@"YYYY"];
-			int year = [[formatter stringFromDate:[NSDate date]] intValue];
-			[formatter setDateFormat:@"MM"];
-			int month = [[formatter stringFromDate:[NSDate date]] intValue];
-			
-			NSString *season = @"fall";
-			if (month < 7) {
-				season = @"spring";
-			}
-			
+						
 			NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/teams/matches/%@/%@/%d?output=json", team, season, year];
 			
 			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]

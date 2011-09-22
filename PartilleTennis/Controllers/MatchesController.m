@@ -16,13 +16,15 @@
 }
 
 @property (nonatomic, strong) Team *currentTeam;
-@property (nonatomic, strong) NSMutableDictionary *matchResults;
+@property (nonatomic, readonly) int year;
+@property (nonatomic, readonly, strong) NSString *season;
+@property (nonatomic, readonly, strong) NSString *filename;
 @end
 
 @implementation MatchesController
 
-@synthesize matchData = _matchData, matchTableCell = _matchTableCell, 
-currentTeam = _currentTeam, matchResults = _matchResults;
+@synthesize matches = _matches, matchTableCell = _matchTableCell, 
+currentTeam = _currentTeam;
 
 -(id)init
 {
@@ -35,6 +37,29 @@ currentTeam = _currentTeam, matchResults = _matchResults;
     return self;
 }
 
+-(int)year
+{
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"YYYY"];
+	return [[formatter stringFromDate:[NSDate date]] intValue];
+}
+
+-(NSString *)season
+{
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"MM"];
+	int month = [[formatter stringFromDate:[NSDate date]] intValue];
+	
+	if (month < 7) {
+		return @"spring";
+	}
+	return @"fall";
+}
+
+-(NSString *)filename {
+	return [NSString stringWithFormat:@"matches-%@-%@-%d", self.currentTeam.name, self.season, self.year];
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -45,15 +70,15 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 
 -(void)save
 {
-	if (self.matchData.count == 0) return;
+	if (self.matches.count == 0) return;
 	
-	self.matchResults = [[NSMutableDictionary alloc] init];
-	for (Match *match in self.matchData) {
-		if (match.result != nil) {
-			[self.matchResults setObject:match.result forKey:match];
-		}
-	}
-	[NSKeyedArchiver archiveRootObject:self.matchResults toFile:pathInDocumentDirectory(@"matchResults")];
+//	self.matchResults = [[NSMutableDictionary alloc] init];
+//	for (Match *match in self.matchData) {
+//		if (match.result != nil) {
+//			[self.matchResults setObject:match.result forKey:match];
+//		}
+//	}
+	[NSKeyedArchiver archiveRootObject:self.matches toFile:pathInDocumentDirectory(self.filename)];
 }
 #pragma mark - View lifecycle
 
@@ -81,12 +106,16 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 	id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
 	Team *myTeam = teamDelegate.myTeam;
 
-	if (self.matchData.count == 0 || ![myTeam isEqual: self.currentTeam]) {
+	if (self.matches.count == 0 || ![myTeam isEqual: self.currentTeam]) {
 		self.currentTeam = myTeam;
-		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
-		NSLog(@"Division: %d, Team: %d", myTeam.division, myTeam.ranking);
-		[pfService loadMatches:myTeam.name];
-		self.matchResults = [NSKeyedUnarchiver unarchiveObjectWithFile:pathInDocumentDirectory(@"matchResults")];
+		self.matches = [NSKeyedUnarchiver unarchiveObjectWithFile:pathInDocumentDirectory(self.filename)];
+		if (self.matches.count == 0) {
+			[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
+			[pfService loadMatches:myTeam.name season:self.season year:self.year];
+		}
+		else {
+			[self.tableView reloadData];
+		}
 	}
 	else {
 		[self.tableView reloadData];
@@ -103,11 +132,11 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 {
 	[DSActivityView removeView];
 	
-	for (Match *match in matches) {
+	/*for (Match *match in matches) {
     match.result = [self.matchResults objectForKey:match];
-	}
+	}*/
 	
-	self.matchData = matches;
+	self.matches = matches;
 	[self.tableView reloadData];
 }
 
@@ -143,12 +172,12 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.matchData.count;
+    return self.matches.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	Match *match = (Match *)[[self matchData] objectAtIndex:[indexPath row]];
+	Match *match = (Match *)[self.matches objectAtIndex:[indexPath row]];
 		
 //	match.result = [self.matchResults objectForKey:match];
 	
@@ -216,7 +245,7 @@ currentTeam = _currentTeam, matchResults = _matchResults;
 {
 	// Navigation logic may go here. Create and push another view controller.
 	MatchDetailController *matchDetailController = [[MatchDetailController alloc] init];
-	Match *match = (Match *)[self.matchData objectAtIndex:indexPath.row];
+	Match *match = (Match *)[self.matches objectAtIndex:indexPath.row];
 	[matchDetailController setMatch:match];
 	matchDetailController.myTeam = self.currentTeam;
 	[self.navigationController pushViewController:matchDetailController animated:YES];

@@ -27,7 +27,7 @@
 @property (nonatomic, assign) id<PfServiceDelegate> delegate;
 
 -(void)loadAllTeams;
--(void)loadMatches:(NSString *)team;
+-(void)loadMatches:(NSString *)team season:(NSString *)season year:(int)year;
 -(void)loadSeriesTable:(int)series;
 
 @end

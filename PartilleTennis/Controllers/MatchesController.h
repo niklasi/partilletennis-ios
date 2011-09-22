@@ -15,7 +15,7 @@
 	PfService *pfService;
 }
 
-@property (nonatomic, strong) NSArray *matchData;
+@property (nonatomic, strong) NSArray *matches;
 @property (nonatomic, strong) IBOutlet MatchTableCell *matchTableCell;
 
 @end
