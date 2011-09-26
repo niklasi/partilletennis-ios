@@ -10,7 +10,7 @@
 #import "Contact.h"
 #import "MatchResult.h"
 
-@interface Match : NSObject <NSCopying, NSCoding>
+@interface Match : NSObject <NSCoding>
 {	
 }
 
@@ -23,5 +23,7 @@
 @property (nonatomic) BOOL homeMatch;
 @property (nonatomic, strong) Contact *contact;
 @property (nonatomic, strong) MatchResult *result;
-@property (nonatomic, strong) NSString *changedWithTeamName;
+@property (nonatomic) BOOL postponed;
+@property (nonatomic) BOOL postponedByOpponent;
+@property (nonatomic, strong) NSDate *postponedToDate;
 @end

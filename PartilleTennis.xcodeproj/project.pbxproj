@@ -17,6 +17,8 @@
 		8530AA9513F2CA4100CEE4C5 /* series1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8530AA9113F2CA4100CEE4C5 /* series1.json */; };
 		8530AA9613F2CA4100CEE4C5 /* series2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8530AA9213F2CA4100CEE4C5 /* series2.json */; };
 		8530AA9713F2CA4100CEE4C5 /* series3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8530AA9313F2CA4100CEE4C5 /* series3.json */; };
+		8535791F1431223900AA6A83 /* NewMatchTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8535791E1431223900AA6A83 /* NewMatchTimeView.xib */; };
+		853579221431233A00AA6A83 /* NewMatchTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853579211431233A00AA6A83 /* NewMatchTimeController.m */; };
 		8555726013DC551500100CD6 /* TeamPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555725F13DC551500100CD6 /* TeamPickerController.m */; };
 		8555726213DC554700100CD6 /* TeamPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8555726113DC554700100CD6 /* TeamPickerView.xib */; };
 		8555726513DC59E000100CD6 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 8555726413DC59E000100CD6 /* Team.m */; };
@@ -96,6 +98,9 @@
 		8530AA9113F2CA4100CEE4C5 /* series1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = series1.json; sourceTree = "<group>"; };
 		8530AA9213F2CA4100CEE4C5 /* series2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = series2.json; sourceTree = "<group>"; };
 		8530AA9313F2CA4100CEE4C5 /* series3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = series3.json; sourceTree = "<group>"; };
+		8535791E1431223900AA6A83 /* NewMatchTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMatchTimeView.xib; sourceTree = "<group>"; };
+		853579201431233A00AA6A83 /* NewMatchTimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMatchTimeController.h; sourceTree = "<group>"; };
+		853579211431233A00AA6A83 /* NewMatchTimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMatchTimeController.m; sourceTree = "<group>"; };
 		8555725E13DC551500100CD6 /* TeamPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamPickerController.h; sourceTree = "<group>"; };
 		8555725F13DC551500100CD6 /* TeamPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamPickerController.m; sourceTree = "<group>"; };
 		8555726113DC554700100CD6 /* TeamPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamPickerView.xib; sourceTree = "<group>"; };
@@ -351,6 +356,8 @@
 				8589AAF613C4F1CC006F961E /* MatchDetailController.m */,
 				85B84DC213D0DB3B005266A6 /* SettingsController.h */,
 				85B84DC313D0DB3B005266A6 /* SettingsController.m */,
+				853579201431233A00AA6A83 /* NewMatchTimeController.h */,
+				853579211431233A00AA6A83 /* NewMatchTimeController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -441,6 +448,7 @@
 				852525ED13E0D0A600C580AE /* CompletedMatchTableCellView.xib */,
 				855F58A6140305D200499B78 /* ContactTableCellView.xib */,
 				85C302EF140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib */,
+				8535791E1431223900AA6A83 /* NewMatchTimeView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +534,7 @@
 				855F58C114045D6800499B78 /* lost.png in Resources */,
 				855F58C214045D6800499B78 /* lost@2x.png in Resources */,
 				85C302F0140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib in Resources */,
+				8535791F1431223900AA6A83 /* NewMatchTimeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +582,7 @@
 				855F58AA1403095000499B78 /* ContactTableCell.m in Sources */,
 				85C302F4140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.m in Sources */,
 				85C302F7140C3B7A009F1C11 /* TemplateMessageService.m in Sources */,
+				853579221431233A00AA6A83 /* NewMatchTimeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

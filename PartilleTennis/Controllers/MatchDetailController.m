@@ -10,6 +10,7 @@
 #import "EditMatchResultController.h"
 #import "Set.h"
 #import "TemplateMessageService.h"
+#import "NewMatchTimeController.h"
 
 @interface MatchDetailController() {
 }
@@ -62,6 +63,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	self.title = self.match.teamName;
 	[self.tableView reloadData];
 }
 
@@ -90,16 +92,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
-    // Return the number of sections.
-    return 2;
+	return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  if (section == 0) return 3;
-	
-	return 1;
+  if (section == 2) return 1;
+
+	return 3;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -108,14 +108,17 @@
 		return @"Resultat";
 	}
 	
+	if (section == 1) {
+		return @"Uppskjuten match";
+	}
+	
 	return @"Kontakt";
 	
-	return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.section == 1) return 96;
+	if (indexPath.section == 2) return 96;
 	
 	return 44.0;
 }
@@ -123,7 +126,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	if (indexPath.section == 0) {
-		
 	
     static NSString *CellIdentifier = @"Cell";
     
@@ -155,23 +157,59 @@
 		return cell;
 	}
 	
+	if (indexPath.section == 1) {
+		static NSString *CellIdentifier = @"MoveMatch";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    }
+		cell.accessoryType = UITableViewCellAccessoryNone;
+		if (indexPath.row == 0) {
+			cell.textLabel.text = @"Oss själva";
+			if (!self.match.postponedByOpponent) {
+				cell.accessoryType = UITableViewCellAccessoryCheckmark;
+			}
+		}
+		else if (indexPath.row == 1) {
+			cell.textLabel.text = [NSString stringWithFormat:@"%@", self.match.teamName];
+			if (self.match.postponedByOpponent) {
+				cell.accessoryType = UITableViewCellAccessoryCheckmark;
+			}
+		}
+		else {
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;		
+			cell.textLabel.text = @"Ny tid";
+			cell.detailTextLabel.text = @"Ingen ny tid än";
+			if (self.match.postponedToDate != nil) {
+				NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+				[formatter setDateFormat: @"yyyy-MM-dd HH:mm"];
+				cell.detailTextLabel.text = [formatter stringFromDate:self.match.postponedToDate];
+			}
+		}
+		return cell;
+	}
+	
+	
 	ContactTableCell *contactCell = (ContactTableCell *)[tableView dequeueReusableCellWithIdentifier:@"ContactTableCellView"];
 	if (contactCell == nil) {
 		//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-			[[NSBundle mainBundle] loadNibNamed:@"ContactTableCellView" owner:self options:nil];
-			contactCell = self.contactTableCell;
-		}
+		[[NSBundle mainBundle] loadNibNamed:@"ContactTableCellView" owner:self options:nil];
+		contactCell = self.contactTableCell;
+	}
 	
 	contactCell.contact = self.match.contact;
 	return contactCell;
+	
 }
 
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.section == 1) return NO;
-	return YES;
+	return NO;
+	//if (indexPath.section == 1) return NO;
+	//return YES;
 }
 
 
@@ -240,6 +278,24 @@
 		}
 		
 		[self.navigationController pushViewController:resultsController animated:YES];
+	}
+	
+	if (indexPath.section	 == 1) {
+		if (indexPath.row != 2) {
+			
+		if (indexPath.row == 0) {
+			self.match.postponedByOpponent = NO;
+		}
+		else if (indexPath.row == 1) {
+			self.match.postponedByOpponent = YES;
+		}
+		[self.tableView reloadData];
+		}
+		else {
+			NewMatchTimeController *timeController = [[NewMatchTimeController alloc] init];
+			timeController.match = self.match;
+			[self.navigationController pushViewController:timeController animated:YES];
+		}
 	}
 }
 
