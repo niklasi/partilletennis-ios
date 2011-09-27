@@ -173,7 +173,7 @@
 			}
 		}
 		else if (indexPath.row == 1) {
-			cell.textLabel.text = @"Av oss själva";
+			cell.textLabel.text = [NSString stringWithFormat:@"Av %@", self.myTeam.name];
 			if (!self.match.postponedByOpponent) {
 				cell.accessoryType = UITableViewCellAccessoryCheckmark;
 			}
