@@ -25,11 +25,34 @@
 {
 	[super setMatch:value];
 	self.teamLabel.text = self.match.teamName;
-	self.dateLabel.text = self.match.date;
-	self.timeLabel.text = [NSString stringWithFormat:@"kl %@", self.match.time];
-	self.detailsLabel.text = [NSString stringWithFormat:@"Banor: %@, %@", 
+	if (value.postponed && value.postponedToDate == nil) {
+		self.dateLabel.text = @"";
+		self.timeLabel.text = @"";
+		self.detailsLabel.text = [NSString stringWithFormat:@"Matchen är uppskjuten tills vidare"];
+	}
+	else {
+		if (value.postponed) {
+			NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+			[formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"sv_SE"]];
+			[formatter setDateFormat:@"MMMM"];
+			NSString *month = [[[formatter stringFromDate:value.postponedToDate] substringToIndex:3] lowercaseString];
+			[formatter setDateFormat:@"d"];
+			NSString *day = [formatter stringFromDate:value.postponedToDate];
+			
+			self.dateLabel.text = [NSString stringWithFormat:@"%@ %@", day, month];
+			[formatter setDateFormat:@"HH"];
+			self.timeLabel.text = [NSString stringWithFormat:@"kl %@", [formatter stringFromDate:value.postponedToDate]];
+			self.detailsLabel.text = [NSString stringWithFormat:@"Flyttad match, %@", 
+																self.match.homeMatch ? @"Hemmamatch" : @"Bortamatch"];
+		}
+		else {
+			self.dateLabel.text = self.match.date;
+			self.timeLabel.text = [NSString stringWithFormat:@"kl %@", self.match.time];
+			self.detailsLabel.text = [NSString stringWithFormat:@"Banor: %@, %@", 
 														self.match.lanes,
 														self.match.homeMatch ? @"Hemmamatch" : @"Bortamatch"];
+		}
+	}
 }
 
 
