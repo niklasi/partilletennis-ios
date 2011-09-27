@@ -97,9 +97,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+	if (section == 0) return 3;
   if (section == 2) return 1;
 
-	return 3;
+	return self.match.postponed ? 4 : 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -109,7 +110,7 @@
 	}
 	
 	if (section == 1) {
-		return @"Uppskjuten match";
+		return @"Skjut upp match";
 	}
 	
 	return @"Kontakt";
@@ -166,18 +167,24 @@
     }
 		cell.accessoryType = UITableViewCellAccessoryNone;
 		if (indexPath.row == 0) {
-			cell.textLabel.text = @"Oss själva";
-			if (!self.match.postponedByOpponent) {
+			cell.textLabel.text = @"Uppskjuten";
+			if (self.match.postponed) {
 				cell.accessoryType = UITableViewCellAccessoryCheckmark;
 			}
 		}
 		else if (indexPath.row == 1) {
-			cell.textLabel.text = [NSString stringWithFormat:@"%@", self.match.teamName];
+			cell.textLabel.text = @"Av oss själva";
+			if (!self.match.postponedByOpponent) {
+				cell.accessoryType = UITableViewCellAccessoryCheckmark;
+			}
+		}
+		else if (indexPath.row == 2) {
+			cell.textLabel.text = [NSString stringWithFormat:@"Av %@", self.match.teamName];
 			if (self.match.postponedByOpponent) {
 				cell.accessoryType = UITableViewCellAccessoryCheckmark;
 			}
 		}
-		else {
+		else if (indexPath.row == 3) {
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;		
 			cell.textLabel.text = @"Ny tid";
 			cell.detailTextLabel.text = @"Ingen ny tid än";
@@ -281,15 +288,17 @@
 	}
 	
 	if (indexPath.section	 == 1) {
-		if (indexPath.row != 2) {
-			
-		if (indexPath.row == 0) {
-			self.match.postponedByOpponent = NO;
-		}
-		else if (indexPath.row == 1) {
-			self.match.postponedByOpponent = YES;
-		}
-		[self.tableView reloadData];
+		if (indexPath.row != 3) {
+			if (indexPath.row == 0) {
+				self.match.postponed = !self.match.postponed;
+			}
+			else if (indexPath.row == 1) {
+				self.match.postponedByOpponent = NO;
+			}
+			else if (indexPath.row == 2) {
+				self.match.postponedByOpponent = YES;
+			}
+			[self.tableView reloadData];
 		}
 		else {
 			NewMatchTimeController *timeController = [[NewMatchTimeController alloc] init];
