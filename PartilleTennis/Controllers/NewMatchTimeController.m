@@ -9,6 +9,7 @@
 #import "NewMatchTimeController.h"
 
 @implementation NewMatchTimeController
+@synthesize timePickerSegment = _timePickerSegment;
 @synthesize timePicker = _timePicker, match = _match;
 
 
@@ -56,12 +57,18 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-	self.match.postponedToDate = [self.timePicker date];
+	if (self.timePickerSegment.selectedSegmentIndex == 0) {
+		self.match.postponedToDate = [self.timePicker date];
+	}
+	else {
+		self.match.postponedToDate = nil;
+	}
 }
 
 - (void)viewDidUnload
 {
 	[self setTimePicker:nil];
+	[self setTimePickerSegment:nil];
 	[super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

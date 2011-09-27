@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) Match *match;
 @property (strong, nonatomic) IBOutlet UIDatePicker *timePicker;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *timePickerSegment;
 
 @end
