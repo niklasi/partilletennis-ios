@@ -184,7 +184,7 @@ currentTeam = _currentTeam;
 	NSString *cellIdentifier = @"UpcomingMatchCell";
 	NSString *nib = @"UpcomingMatchTableCellView";	
 	
-	if (match.result.completeResult) {
+	if (match.result.completeResult || (match.postponed && match.postponedToDate == nil)) {
 		cellIdentifier = @"CompletedMatchCell";
 		nib = @"CompletedMatchTableCellView";
 	}

@@ -26,25 +26,32 @@
 	[super setMatch:value];
 	self.teamLabel.text = self.match.teamName;;
 	
-	NSString *resultText;
-	int matchPoints = [value.result calculateTotalMatchPoints];
-	UIImage *resultIcon;
-	if (matchPoints > 3) {
-		resultText = @"Vinst";
-		resultIcon = [UIImage imageNamed:@"won.png"];
-	}
-	else if (matchPoints == 3) {
-		resultText = @"Oavgjort";
-		resultIcon = [UIImage imageNamed:@"draw.png"];
+	if (value.postponed && value.postponedToDate == nil) {
+		self.resultLabel.text = [NSString stringWithFormat:@"Matchen är uppskjuten tills vidare"];
+		self.imageView.image = value.postponedByOpponent ? [UIImage imageNamed:@"won.png"] : [UIImage imageNamed:@"lost.png"];
+		self.imageView.alpha = 0.25;
 	}
 	else {
-		resultText = @"Förlust";
-		resultIcon = [UIImage imageNamed:@"lost.png"];
+		NSString *resultText;
+		int matchPoints = [value.result calculateTotalMatchPoints];
+		UIImage *resultIcon;
+		
+		if (matchPoints > 3) {
+			resultText = @"Vinst";
+			resultIcon = [UIImage imageNamed:@"won.png"];
+		}
+		else if (matchPoints == 3) {
+			resultText = @"Oavgjort";
+			resultIcon = [UIImage imageNamed:@"draw.png"];
+		}
+		else {
+			resultText = @"Förlust";
+			resultIcon = [UIImage imageNamed:@"lost.png"];
+		}
+		
+		self.resultLabel.text = [NSString stringWithFormat:@"%@: %d-%d", resultText, matchPoints, 6 - matchPoints];
+		self.imageView.image = resultIcon;
 	}
-	
-	self.resultLabel.text = [NSString stringWithFormat:@"%@: %d-%d", resultText, matchPoints, 6 - matchPoints];
-	self.imageView.image = resultIcon;
-	
 }
 
 @end
