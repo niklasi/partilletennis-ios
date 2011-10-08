@@ -12,8 +12,6 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>iPhone3-Icon.png</string>
-		<string>iPhone4-Icon.png</string>
 		<string>Icon.png</string>
 		<string>Icon@2x.png</string>
 	</array>
