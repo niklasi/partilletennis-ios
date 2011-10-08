@@ -39,8 +39,9 @@
 		855F58C114045D6800499B78 /* lost.png in Resources */ = {isa = PBXBuildFile; fileRef = 855F58BF14045D6800499B78 /* lost.png */; };
 		855F58C214045D6800499B78 /* lost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 855F58C014045D6800499B78 /* lost@2x.png */; };
 		856289AF1440BE6100C38084 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 856289AE1440BE6100C38084 /* Icon.png */; };
-		856289B11440C39B00C38084 /* LargeIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 856289B01440C39B00C38084 /* LargeIcon.jpg */; };
-		8578545413F1E5BD00DD4640 /* iPhone4-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */; };
+		856289C41440E7A500C38084 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 856289C31440E7A500C38084 /* Default@2x.png */; };
+		856289C61440E86400C38084 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 856289C51440E86400C38084 /* Default.png */; };
+		856289CA1440EBBE00C38084 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 856289C91440EBBE00C38084 /* Icon@2x.png */; };
 		8578545913F1EEC800DD4640 /* MatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578545813F1EEC800DD4640 /* MatchResult.m */; };
 		8578545C13F1F16A00DD4640 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578545B13F1F16A00DD4640 /* Set.m */; };
 		8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAF613C4F1CC006F961E /* MatchDetailController.m */; };
@@ -127,8 +128,9 @@
 		855F58BF14045D6800499B78 /* lost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lost.png; sourceTree = "<group>"; };
 		855F58C014045D6800499B78 /* lost@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lost@2x.png"; sourceTree = "<group>"; };
 		856289AE1440BE6100C38084 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		856289B01440C39B00C38084 /* LargeIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LargeIcon.jpg; sourceTree = "<group>"; };
-		8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone4-Icon.png"; sourceTree = "<group>"; };
+		856289C31440E7A500C38084 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		856289C51440E86400C38084 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		856289C91440EBBE00C38084 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		8578545713F1EEC700DD4640 /* MatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchResult.h; sourceTree = "<group>"; };
 		8578545813F1EEC800DD4640 /* MatchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchResult.m; sourceTree = "<group>"; };
 		8578545A13F1F16A00DD4640 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
@@ -283,9 +285,10 @@
 		85B543B313BBCC290065B152 = {
 			isa = PBXGroup;
 			children = (
-				856289B01440C39B00C38084 /* LargeIcon.jpg */,
+				856289C91440EBBE00C38084 /* Icon@2x.png */,
+				856289C51440E86400C38084 /* Default.png */,
+				856289C31440E7A500C38084 /* Default@2x.png */,
 				856289AE1440BE6100C38084 /* Icon.png */,
-				8578545313F1E5BD00DD4640 /* iPhone4-Icon.png */,
 				85B543C813BBCC2A0065B152 /* PartilleTennis */,
 				85B543C113BBCC2A0065B152 /* Frameworks */,
 				85B543BF13BBCC2A0065B152 /* Products */,
@@ -515,7 +518,6 @@
 				85A5836413D9A21800545CCB /* SettingsView.xib in Resources */,
 				8555726213DC554700100CD6 /* TeamPickerView.xib in Resources */,
 				852525EE13E0D0A600C580AE /* CompletedMatchTableCellView.xib in Resources */,
-				8578545413F1E5BD00DD4640 /* iPhone4-Icon.png in Resources */,
 				8530AA8F13F2C03400CEE4C5 /* matches.json in Resources */,
 				8530AA9413F2CA4100CEE4C5 /* allTeams.json in Resources */,
 				8530AA9513F2CA4100CEE4C5 /* series1.json in Resources */,
@@ -538,7 +540,9 @@
 				85C302F0140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib in Resources */,
 				8535791F1431223900AA6A83 /* NewMatchTimeView.xib in Resources */,
 				856289AF1440BE6100C38084 /* Icon.png in Resources */,
-				856289B11440C39B00C38084 /* LargeIcon.jpg in Resources */,
+				856289C41440E7A500C38084 /* Default@2x.png in Resources */,
+				856289C61440E86400C38084 /* Default.png in Resources */,
+				856289CA1440EBBE00C38084 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +608,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		856289C71440E98600C38084 /* App Store Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Niklas Ingholt";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9CF35FB6-E734-4FCE-8DF1-E886BFB28B96";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "App Store Distribution";
+		};
+		856289C81440E98600C38084 /* App Store Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PartilleTennis/PartilleTennis-Prefix.pch";
+				INFOPLIST_FILE = "PartilleTennis/PartilleTennis-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "Partille Davis Cup";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "App Store Distribution";
+		};
 		85A321DB13FC8793009E6FBE /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -718,6 +756,7 @@
 			buildConfigurations = (
 				85B543D413BBCC2A0065B152 /* Debug */,
 				85B543D513BBCC2A0065B152 /* Release */,
+				856289C71440E98600C38084 /* App Store Distribution */,
 				85A321DB13FC8793009E6FBE /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -728,6 +767,7 @@
 			buildConfigurations = (
 				85B543D713BBCC2A0065B152 /* Debug */,
 				85B543D813BBCC2A0065B152 /* Release */,
+				856289C81440E98600C38084 /* App Store Distribution */,
 				85A321DC13FC8793009E6FBE /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;

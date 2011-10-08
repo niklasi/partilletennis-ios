@@ -15,6 +15,7 @@
 		<string>iPhone3-Icon.png</string>
 		<string>iPhone4-Icon.png</string>
 		<string>Icon.png</string>
+		<string>Icon@2x.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -25,6 +26,7 @@
 				<string>iPhone3-Icon.png</string>
 				<string>iPhone4-Icon.png</string>
 				<string>Icon.png</string>
+				<string>Icon@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<false/>
@@ -52,7 +54,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>10</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
