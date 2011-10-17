@@ -50,6 +50,7 @@
 		}
 		
 		self.resultLabel.text = [NSString stringWithFormat:@"%@: %d-%d", resultText, matchPoints, 6 - matchPoints];
+		self.imageView.alpha = 1.0;
 		self.imageView.image = resultIcon;
 	}
 }
