@@ -80,7 +80,15 @@
 -(void)selectTeam
 {
 	if (self.teamDelegate.myTeam != nil) {
-		int index = [self.teamDelegate.allTeams indexOfObject:self.teamDelegate.myTeam];
+		int index = [self.teamDelegate.allTeams indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+            Team *team = (Team*)obj;
+            if ([team.name isEqualToString:self.teamDelegate.myTeam.name]) {
+                *stop = YES;
+                return YES;
+            }
+            return NO;
+        }];
+                     
 		[self.teamPicker selectRow:index inComponent:0 animated:NO];
 	}
 	else {
