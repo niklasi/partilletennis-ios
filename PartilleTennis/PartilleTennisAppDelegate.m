@@ -74,7 +74,8 @@
 
 		UINavigationController *tmp = [[UINavigationController alloc] initWithRootViewController:picker];
 		tmp.navigationBar.barStyle = UIBarStyleBlackOpaque;
-		[tabBarController presentModalViewController:tmp animated:NO];
+
+		[tabBarController presentViewController:tmp animated:NO completion:nil];
 	}
 	
 	return YES;
@@ -82,7 +83,7 @@
 
 -(void)teamPickerDidFinnish:(TeamPickerController *)teamPickerController
 {
-	[self.window.rootViewController dismissModalViewControllerAnimated:YES];
+	[self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

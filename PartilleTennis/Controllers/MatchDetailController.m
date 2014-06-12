@@ -321,7 +321,7 @@
 		smsController.recipients = [[NSArray alloc] initWithObjects:self.match.contact.phone, nil];
 		smsController.body = [[[TemplateMessageService alloc] init] confirmMessage:self.match team:self.myTeam];
 		smsController.messageComposeDelegate = self;
-		[self presentModalViewController:smsController animated:YES];
+        [self presentViewController:smsController animated:YES completion:nil];
 	}
 }
 
@@ -333,18 +333,18 @@
 		[mailController setSubject: @"Tennismatch"];
 		[mailController setMessageBody: [[[TemplateMessageService alloc] init] confirmMessage:self.match team:self.myTeam] isHTML:NO];
 		mailController.mailComposeDelegate = self;
-		[self presentModalViewController:mailController animated:YES];
+        [self presentViewController:mailController animated:YES completion:nil];
 	}
 }
 
 -(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-	[self dismissModalViewControllerAnimated:YES];	
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(NSString *)matchResult:(NSArray *)sets

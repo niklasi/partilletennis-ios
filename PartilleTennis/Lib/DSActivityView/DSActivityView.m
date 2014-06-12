@@ -252,7 +252,7 @@ static DSActivityView *dsActivityView = nil;
         _activityLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         
         _activityLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-        _activityLabel.textAlignment = UITextAlignmentLeft;
+        _activityLabel.textAlignment = NSTextAlignmentLeft;
         _activityLabel.textColor = [UIColor blackColor];
         _activityLabel.backgroundColor = [UIColor clearColor];
         _activityLabel.shadowColor = [UIColor whiteColor];
@@ -277,8 +277,8 @@ static DSActivityView *dsActivityView = nil;
     // If we're animating a transform, don't lay out now, as can't use the frame property when transforming:
     if (!CGAffineTransformIsIdentity(self.borderView.transform))
         return;
-    
-    CGSize textSize = [self.activityLabel.text sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
+
+    CGSize textSize = [self.activityLabel.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:[UIFont systemFontSize]]}];
     
     // Use the fixed width if one is specified:
     if (self.labelWidth > 10)
@@ -514,7 +514,7 @@ static DSActivityView *dsActivityView = nil;
         _activityLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         
         _activityLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
-        _activityLabel.textAlignment = UITextAlignmentCenter;
+        _activityLabel.textAlignment = NSTextAlignmentCenter;
         _activityLabel.textColor = [UIColor whiteColor];
         _activityLabel.backgroundColor = [UIColor clearColor];
     }
@@ -538,7 +538,7 @@ static DSActivityView *dsActivityView = nil;
     
     self.frame = [self enclosingFrame];
     
-    CGSize textSize = [self.activityLabel.text sizeWithFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
+    CGSize textSize = [self.activityLabel.text sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]}];
     
     // Use the fixed width if one is specified:
     if (self.labelWidth > 10)
