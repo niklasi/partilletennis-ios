@@ -32,8 +32,15 @@
 {
     // Override point for customization after application launch.
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	
+    UIColor *appColor = [UIColor colorWithRed:214/255.0f green:107/255.0f blue:0/255.0f alpha:1.0f];
+    self.window.tintColor = appColor;
+    
+    UINavigationBar.appearance.tintColor = [UIColor whiteColor];
+	UINavigationBar.appearance.barTintColor = appColor;
+    
+    
 	UITabBarController *tabBarController = [[UITabBarController alloc] init];
+
 	UIViewController *seriesController = [[SeriesController alloc] init];
 	self.navController = [[UINavigationController alloc] initWithRootViewController:seriesController];
 	self.navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
