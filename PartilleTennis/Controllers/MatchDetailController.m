@@ -15,7 +15,9 @@
 @interface MatchDetailController() {
 }
 
--(NSString *)matchResult:(NSArray *)sets;
+@property (nonatomic, strong) NSArray *matchResultTitles;
+- (NSString *)matchResult:(NSArray *)sets;
+
 
 @end
 
@@ -26,8 +28,9 @@
 - (id)init
 {
 	self = [super initWithNibName:@"MatchDetailView" bundle:nil];
-    if (self) {
-			//[[self navigationItem] setRightBarButtonItem:[self editButtonItem]];
+    if (self)
+    {
+        self.matchResultTitles = @[@"Dubbel", @"1:a singel", @"2:a singel"];
     }
     return self;
 }
@@ -102,24 +105,20 @@
     
 	switch (indexPath.row) {
 		case 0:
-				cell.textLabel.text = @"Dubbel";
 				cell.detailTextLabel.text = [self matchResult:self.match.result.doubleSets];
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
 		case 1:
-				cell.textLabel.text = @"1:a singel";
 				cell.detailTextLabel.text = [self matchResult:self.match.result.single1Sets];
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
 		case 2:
-				cell.textLabel.text = @"2:a singel";
 				cell.detailTextLabel.text = [self matchResult:self.match.result.single2Sets];
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
 		default:
 			break;
 		}
-		
+        
+        cell.textLabel.text = self.matchResultTitles[indexPath.row];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		return cell;
 	}
 	
@@ -212,7 +211,7 @@
 			default:
 				break;
 		}
-		
+		resultsController.title = self.matchResultTitles[indexPath.row];
 		[self.navigationController pushViewController:resultsController animated:YES];
 	}
 	
