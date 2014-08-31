@@ -17,6 +17,7 @@
 {
     self = [super initWithNibName:@"NewMatchTimeView" bundle:nil];
     if (self) {
+        self.title = @"Uppskjuten match";
     }
     return self;
 }
