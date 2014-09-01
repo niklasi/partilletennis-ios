@@ -60,43 +60,11 @@ currentTeam = _currentTeam;
 	return [NSString stringWithFormat:@"matches-%@-%@-%d", self.currentTeam.name, self.season, self.year];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 -(void)save
 {
 	if (self.matches.count == 0) return;
 	
-//	self.matchResults = [[NSMutableDictionary alloc] init];
-//	for (Match *match in self.matchData) {
-//		if (match.result != nil) {
-//			[self.matchResults setObject:match.result forKey:match];
-//		}
-//	}
 	[NSKeyedArchiver archiveRootObject:self.matches toFile:pathInDocumentDirectory(self.filename)];
-}
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-	[super viewDidLoad];
-	NSLog(@"Matches view load...");
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)viewDidUnload
-{
-	[super viewDidUnload];
-	NSLog(@"Matches view did unload...");
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -122,19 +90,9 @@ currentTeam = _currentTeam;
 	}
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-	NSLog(@"Matches view will disappear...");
-}
-
 - (void)loadedMatches:(NSArray *)matches
 {
 	[DSActivityView removeView];
-	
-	/*for (Match *match in matches) {
-    match.result = [self.matchResults objectForKey:match];
-	}*/
 	
 	self.matches = matches;
 	[self.tableView reloadData];
@@ -145,19 +103,8 @@ currentTeam = _currentTeam;
 	[DSActivityView removeView];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	// Return YES for supported orientations
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -165,13 +112,11 @@ currentTeam = _currentTeam;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return self.matches.count;
 }
 
@@ -179,8 +124,6 @@ currentTeam = _currentTeam;
 {
 	Match *match = (Match *)[self.matches objectAtIndex:[indexPath row]];
 		
-//	match.result = [self.matchResults objectForKey:match];
-	
 	NSString *cellIdentifier = @"UpcomingMatchCell";
 	NSString *nib = @"UpcomingMatchTableCellView";	
 	
@@ -191,7 +134,7 @@ currentTeam = _currentTeam;
 	
 	MatchTableCell *cell = (MatchTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (cell == nil) {
-		//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+		
 		[[NSBundle mainBundle] loadNibNamed:nib owner:self options:nil];
 		cell = self.matchTableCell;
 	}
@@ -200,50 +143,10 @@ currentTeam = _currentTeam;
 	return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// Navigation logic may go here. Create and push another view controller.
 	MatchDetailController *matchDetailController = [[MatchDetailController alloc] init];
 	Match *match = (Match *)[self.matches objectAtIndex:indexPath.row];
 	[matchDetailController setMatch:match];
