@@ -30,9 +30,9 @@ currentTeam = _currentTeam;
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-			self.title = @"Matcher";
-			pfService = [[PfService alloc] init];
-			pfService.delegate = self;			
+        self.title = @"Matcher";
+        pfService = [[PfService alloc] init];
+        pfService.delegate = self;
     }
     return self;
 }
@@ -86,6 +86,11 @@ currentTeam = _currentTeam;
 		}
 	}
 	else {
+        self.matches = [self.matches sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSDate *first = ((Match*)a).playDate;
+            NSDate *second = ((Match*)b).playDate;
+            return [first compare:second];
+        }];
 		[self.tableView reloadData];
 	}
 }
