@@ -8,10 +8,33 @@
 
 #import "Match.h"
 
+@interface Match()
+
+@end
+
 @implementation Match
 
-@synthesize teamName = _teamName, season = _season, year = _year, date = _date, time = _time, lanes = _lanes, 
-contact = _contact, homeMatch = _homeMatch, result = _result, postponedByOpponent = _postponedByOpponent, postponed = _postponed, postponedToDate = _postponedToDate;
+- (NSDate *)playDate {
+    if (self.postponed) {
+        return self.postponedToDate;
+    }
+    NSArray *months = @[@"jan", @"feb", @"mar", @"apr", @"maj", @"jun", @"jul", @"aug", @"sep", @"okt", @"nov", @"dec"];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    comps.day = [self.date substringToIndex:2].intValue;
+    
+    comps.month = [months indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return [self.date rangeOfString:((NSString *)obj)].location != NSNotFound;
+    }] + 1;
+    
+    comps.year = self.year;
+    comps.hour = self.time.intValue;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDate *date = [calendar dateFromComponents:comps];
+    return date;
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

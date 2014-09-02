@@ -26,4 +26,5 @@
 @property (nonatomic) BOOL postponed;
 @property (nonatomic) BOOL postponedByOpponent;
 @property (nonatomic, strong) NSDate *postponedToDate;
+@property (nonatomic, readonly) NSDate *playDate;
 @end
