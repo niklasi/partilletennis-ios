@@ -19,12 +19,34 @@
 @property (nonatomic, readonly) int year;
 @property (nonatomic, readonly, strong) NSString *season;
 @property (nonatomic, readonly, strong) NSString *filename;
+
+- (void)observeForNewMatchTimes;
+
 @end
 
 @implementation MatchesController
 
-@synthesize matches = _matches, matchTableCell = _matchTableCell, 
-currentTeam = _currentTeam;
+- (void)observeForNewMatchTimes {
+    for (Match *match in self.matches) {
+        [match addObserver:self forKeyPath:@"postponedToDate" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+        [match addObserver:self forKeyPath:@"postponed" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+   
+    if ([change objectForKey:NSKeyValueChangeOldKey] != [change objectForKey:NSKeyValueChangeNewKey]) {
+        self.matches = [self.matches sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSDate *first = ((Match*)a).playDate;
+            NSDate *second = ((Match*)b).playDate;
+            return [first compare:second];
+        }];
+    
+        NSLog(@"Changed...");
+    }
+    
+    NSLog(@"New play date %@", ((Match *)object).playDate);
+}
 
 -(id)init
 {
@@ -82,15 +104,11 @@ currentTeam = _currentTeam;
 			[pfService loadMatches:myTeam.name season:self.season year:self.year];
 		}
 		else {
+            [self observeForNewMatchTimes];
 			[self.tableView reloadData];
 		}
 	}
 	else {
-        self.matches = [self.matches sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-            NSDate *first = ((Match*)a).playDate;
-            NSDate *second = ((Match*)b).playDate;
-            return [first compare:second];
-        }];
 		[self.tableView reloadData];
 	}
 }
@@ -100,6 +118,7 @@ currentTeam = _currentTeam;
 	[DSActivityView removeView];
 	
 	self.matches = matches;
+    [self observeForNewMatchTimes];
 	[self.tableView reloadData];
 }
 
