@@ -15,7 +15,7 @@
 	PfService *pfService;
 }
 
-@property (nonatomic) int division;
+@property (nonatomic) NSInteger division;
 @property (nonatomic, retain) NSArray *tableData;
 @property (nonatomic, assign) IBOutlet SeriesTableCell *seriesTableCell;
 

@@ -103,7 +103,7 @@
 	}
 }
 
--(void)loadSeriesTable:(int)series
+-(void)loadSeriesTable:(NSInteger)series
 {
 
 	if ([self.delegate respondsToSelector:@selector(loadedSeriesTable:)]) {
@@ -111,10 +111,10 @@
 		NSURLRequest *theRequest;
 		
 		if (self.useLocalFile == YES) {
-			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"series%d", series] ofType:@"json"]isDirectory:NO]];	
+			theRequest=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"series%ld", (long)series] ofType:@"json"]isDirectory:NO]];
 		}
 		else {
-		NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/series/%d?output=json", series];
+		NSString *url = [NSString stringWithFormat:@"http://partilletennis.ingholt.com/series/%ld?output=json", (long)series];
 		
 			theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
 																							cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -166,7 +166,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	NSLog(@"Connection didReceiveData of length: %u", data.length);
+	NSLog(@"Connection didReceiveData of length: %lu", (unsigned long)data.length);
 	
 	// Parse the new chunk of data. The parser will append it to
 	// its internal buffer, then parse from where it left off in

@@ -61,7 +61,7 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-	NSLog(@"Antal: %d", self.teamDelegate.allTeams.count);
+	NSLog(@"Antal: %lu", (unsigned long)self.teamDelegate.allTeams.count);
 	return self.teamDelegate.allTeams.count;
 }
 
@@ -80,7 +80,7 @@
 -(void)selectTeam
 {
 	if (self.teamDelegate.myTeam != nil) {
-		int index = [self.teamDelegate.allTeams indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+		long index = [self.teamDelegate.allTeams indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
             Team *team = (Team*)obj;
             if ([team.name isEqualToString:self.teamDelegate.myTeam.name]) {
                 *stop = YES;

@@ -50,12 +50,12 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-	return [NSString stringWithFormat:@"%d", row];
+	return [NSString stringWithFormat:@"%ld", (long)row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-	int index = pickerView.tag - 100;
+	long index = pickerView.tag - 100;
 	Set *set;
 	
 	if (index < self.sets.count) {
@@ -93,7 +93,7 @@
 
 -(void)hideSetControls
 {
-	int setCount = self.sets.count;
+	long setCount = self.sets.count;
 	
 	int offset = 0;
 	if (setCount == 0) {

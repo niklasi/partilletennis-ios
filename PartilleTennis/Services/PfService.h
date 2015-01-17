@@ -28,6 +28,6 @@
 
 -(void)loadAllTeams;
 -(void)loadMatches:(NSString *)team season:(NSString *)season year:(int)year;
--(void)loadSeriesTable:(int)series;
+-(void)loadSeriesTable:(NSInteger)series;
 
 @end

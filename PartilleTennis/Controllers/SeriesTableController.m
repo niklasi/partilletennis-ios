@@ -55,7 +55,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	[self setTitle:[NSString stringWithFormat:@"Division %d", self.division]];
+	[self setTitle:[NSString stringWithFormat:@"Division %ld", (long)self.division]];
 	if (self.tableData.count == 0) {
 		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
 		[pfService loadSeriesTable:self.division];

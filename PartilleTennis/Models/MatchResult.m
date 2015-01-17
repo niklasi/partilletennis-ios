@@ -83,7 +83,7 @@
 	
 	if (unfinnishedSet == nil) return MATCH_POINTS_DRAW;
 	
-	int gameDiff = unfinnishedSet.myTeam - unfinnishedSet.opponent;
+	NSInteger gameDiff = unfinnishedSet.myTeam - unfinnishedSet.opponent;
 	
 	if (gameDiff >= 2 ) return MATCH_POINTS_WON;
 	if (gameDiff <= -2) return MATCH_POINTS_LOST;

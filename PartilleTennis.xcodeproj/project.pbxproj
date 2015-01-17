@@ -84,6 +84,9 @@
 		85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C813C7711300975A7C /* SeriesTableView.xib */; };
 		85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */; };
 		85E9F8D113C7817900975A7C /* SeriesTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E9F8D013C7817900975A7C /* SeriesTableCell.m */; };
+		85FFC8CA19BA0CDB00D19A05 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85FFC8C919BA0CDB00D19A05 /* EventKit.framework */; };
+		85FFC8CC19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FFC8CB19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib */; };
+		85FFC8CF19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FFC8CE19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -207,6 +210,10 @@
 		85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableCellView.xib; sourceTree = "<group>"; };
 		85E9F8CF13C7817800975A7C /* SeriesTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesTableCell.h; sourceTree = "<group>"; };
 		85E9F8D013C7817900975A7C /* SeriesTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTableCell.m; sourceTree = "<group>"; };
+		85FFC8C919BA0CDB00D19A05 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		85FFC8CB19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SyncWithCalendarTableViewCell.xib; sourceTree = "<group>"; };
+		85FFC8CD19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncWithCalendarTableViewCell.h; sourceTree = "<group>"; };
+		85FFC8CE19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncWithCalendarTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FFC8CA19BA0CDB00D19A05 /* EventKit.framework in Frameworks */,
 				855F58A51402FFEA00499B78 /* MessageUI.framework in Frameworks */,
 				85B543C313BBCC2A0065B152 /* UIKit.framework in Frameworks */,
 				85B543C513BBCC2A0065B152 /* Foundation.framework in Frameworks */,
@@ -280,6 +288,8 @@
 				855F58A91403095000499B78 /* ContactTableCell.m */,
 				85C302F2140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.h */,
 				85C302F3140C27CF009F1C11 /* ConfirmMessageTemplateTableViewCell.m */,
+				85FFC8CD19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.h */,
+				85FFC8CE19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -309,6 +319,7 @@
 		85B543C113BBCC2A0065B152 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85FFC8C919BA0CDB00D19A05 /* EventKit.framework */,
 				855F58A41402FFEA00499B78 /* MessageUI.framework */,
 				85B543C213BBCC2A0065B152 /* UIKit.framework */,
 				85B543C413BBCC2A0065B152 /* Foundation.framework */,
@@ -458,6 +469,7 @@
 				855F58A6140305D200499B78 /* ContactTableCellView.xib */,
 				85C302EF140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib */,
 				8535791E1431223900AA6A83 /* NewMatchTimeView.xib */,
+				85FFC8CB19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -488,7 +500,7 @@
 		85B543B513BBCC290065B152 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				TargetAttributes = {
 					85B543BD13BBCC290065B152 = {
 						DevelopmentTeam = B7GBJ4HG77;
@@ -517,6 +529,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FFC8CC19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib in Resources */,
 				85B543CD13BBCC2A0065B152 /* InfoPlist.strings in Resources */,
 				85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */,
 				85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */,
@@ -580,6 +593,7 @@
 				8555726D13DC6E7500100CD6 /* FileHelpers.m in Sources */,
 				85CFDC1313EF16EE0016E4C4 /* CompletedMatchTableCell.m in Sources */,
 				85CFDC1713EF17560016E4C4 /* UpcomingMatchTableCell.m in Sources */,
+				85FFC8CF19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.m in Sources */,
 				8591FAB613F1D35E00B0CC5F /* NSObject+SBJson.m in Sources */,
 				8591FAB713F1D35E00B0CC5F /* SBJsonParser.m in Sources */,
 				8591FAB813F1D35E00B0CC5F /* SBJsonStreamParser.m in Sources */,
@@ -627,9 +641,11 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Niklas Ingholt";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -673,10 +689,12 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Niklas Ingholt";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -720,9 +738,11 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -755,9 +775,11 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

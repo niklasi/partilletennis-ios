@@ -35,33 +35,13 @@
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
 
 - (void)viewDidUnload
 {
     [self setMessageTemplateCell:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -87,7 +67,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -95,13 +74,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return 1;
 }
 
@@ -109,7 +86,9 @@
 {
 	if (section == 0) return @"Ditt lag";
 	
-	return @"Bekräfta match";
+	if (section == 1) return @"Bekräfta match";
+    
+    return @"Synka med kalender";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -122,13 +101,13 @@
 {
 	if (indexPath.section == 0) {
 		
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        static NSString *CellIdentifier = @"Cell";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+        }
     
 		id<TeamDelegateProtocol> teamDelegate = (id<TeamDelegateProtocol>) [UIApplication sharedApplication].delegate;
 		Team *myTeam = teamDelegate.myTeam;
@@ -138,33 +117,42 @@
 		return cell;
 	}
 
-	static NSString *cellIdentifier = @"confirmMessageTemplateTableCell";
-	ConfirmMessageTemplateTableViewCell *cell = (ConfirmMessageTemplateTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	if (cell == nil) {
-		//cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-		[[NSBundle mainBundle] loadNibNamed:@"ConfirmMessageTemplateTableCellView" owner:self options:nil];
-		cell = self.messageTemplateCell;
-		UIToolbar *boolbar = [UIToolbar new];
-		boolbar.barStyle = UIBarStyleBlack;
-		[boolbar sizeToFit];
-		
-		
-		UIBarButtonItem *restoreButton =[[UIBarButtonItem alloc] initWithTitle:@"Återställ" style:UIBarButtonItemStyleBordered target:self action:@selector(restoreMessageTemplate)];
-		
-		UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];		
-		
-		UIBarButtonItem *cancelButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelEditingMessageTemplate)];
-		UIBarButtonItem *saveButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveEditingMessageTemplate)];
-		
-		NSArray *array = [NSArray arrayWithObjects:restoreButton, space, cancelButton, saveButton, nil];
-		
-		[boolbar setItems:array];
-		cell.messageTemplateTextView.inputAccessoryView = boolbar;
-	}
-
-	cell.messageTemplateTextView.text = self.templateMessageService.templateText;
-	
-	return cell;
+    if (indexPath.section == 1) {
+        static NSString *cellIdentifier = @"confirmMessageTemplateTableCell";
+        ConfirmMessageTemplateTableViewCell *cell = (ConfirmMessageTemplateTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil) {
+            [[NSBundle mainBundle] loadNibNamed:@"ConfirmMessageTemplateTableCellView" owner:self options:nil];
+            cell = self.messageTemplateCell;
+            UIToolbar *boolbar = [UIToolbar new];
+            boolbar.barStyle = UIBarStyleBlack;
+            [boolbar sizeToFit];
+            
+            
+            UIBarButtonItem *restoreButton =[[UIBarButtonItem alloc] initWithTitle:@"Återställ" style:UIBarButtonItemStyleBordered target:self action:@selector(restoreMessageTemplate)];
+            
+            UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+            
+            UIBarButtonItem *cancelButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelEditingMessageTemplate)];
+            UIBarButtonItem *saveButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveEditingMessageTemplate)];
+            
+            NSArray *array = [NSArray arrayWithObjects:restoreButton, space, cancelButton, saveButton, nil];
+            
+            [boolbar setItems:array];
+            cell.messageTemplateTextView.inputAccessoryView = boolbar;
+        }
+        
+        cell.messageTemplateTextView.text = self.templateMessageService.templateText;
+        
+        return cell;
+    }
+    
+    static NSString *cellIdentifier = @"syncWithCalendarCell";
+    ConfirmMessageTemplateTableViewCell *cell = (ConfirmMessageTemplateTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        [[NSBundle mainBundle] loadNibNamed:@"SyncWithCalendarTableViewCell" owner:self options:nil];
+        cell = self.messageTemplateCell;
+    }
+    return cell;
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
@@ -189,44 +177,6 @@
 	[self.templateMessageService saveTemplate];
 	[template resignFirstResponder];
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

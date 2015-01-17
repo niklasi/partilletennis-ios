@@ -12,7 +12,7 @@
 
 @synthesize myTeam = _myTeam, opponent = _opponent;
 
--(id)initWithSets:(int)myTeam opponent:(int)opponent
+-(id)initWithSets:(NSInteger)myTeam opponent:(NSInteger)opponent
 {
 	self = [super init];
 	if (self) {
@@ -32,12 +32,12 @@
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
-	[aCoder encodeInt:self.myTeam forKey:@"myTeam"];
-	[aCoder encodeInt:self.opponent forKey:@"opponent"];
+	[aCoder encodeInteger:self.myTeam forKey:@"myTeam"];
+	[aCoder encodeInteger:self.opponent forKey:@"opponent"];
 }
 
 -(NSString *)asText
 {
-	return [NSString stringWithFormat:@"%d-%d", self.myTeam, self.opponent];
+	return [NSString stringWithFormat:@"%ld-%ld", self.myTeam, self.opponent];
 }
 @end

@@ -10,9 +10,9 @@
 
 @interface Set : NSObject <NSCoding>
 
-@property (nonatomic) int myTeam;
-@property (nonatomic) int	opponent;
+@property (nonatomic) NSInteger myTeam;
+@property (nonatomic) NSInteger	opponent;
 
--(id)initWithSets:(int)myTeam opponent:(int)opponent;
+-(id)initWithSets:(NSInteger)myTeam opponent:(NSInteger)opponent;
 -(NSString *)asText;
 @end

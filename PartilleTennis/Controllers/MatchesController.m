@@ -11,6 +11,7 @@
 #import "DSActivityView.h"
 #import "MatchDetailController.h"
 #import "Set.h"
+#import <EventKit/EventKit.h>
 
 @interface MatchesController() {
 }
@@ -19,12 +20,18 @@
 @property (nonatomic, readonly) int year;
 @property (nonatomic, readonly, strong) NSString *season;
 @property (nonatomic, readonly, strong) NSString *filename;
+@property (nonatomic, strong) EKEventStore *eventStore;
 
 - (void)observeForNewMatchTimes;
+- (void)addToCalendar: (Match *)match;
 
 @end
 
 @implementation MatchesController
+
+- (void)addToCalendar:(Match *)match {
+    
+}
 
 - (void)observeForNewMatchTimes {
     for (Match *match in self.matches) {
@@ -55,6 +62,7 @@
         self.title = @"Matcher";
         pfService = [[PfService alloc] init];
         pfService.delegate = self;
+        self.eventStore = [[EKEventStore alloc] init];
     }
     return self;
 }
