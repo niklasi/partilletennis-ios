@@ -74,7 +74,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -127,7 +127,6 @@
             boolbar.barStyle = UIBarStyleBlack;
             [boolbar sizeToFit];
             
-            
             UIBarButtonItem *restoreButton =[[UIBarButtonItem alloc] initWithTitle:@"Återställ" style:UIBarButtonItemStyleBordered target:self action:@selector(restoreMessageTemplate)];
             
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -150,9 +149,10 @@
     ConfirmMessageTemplateTableViewCell *cell = (ConfirmMessageTemplateTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         [[NSBundle mainBundle] loadNibNamed:@"SyncWithCalendarTableViewCell" owner:self options:nil];
-        cell = self.messageTemplateCell;
+        //cell = self.messageTemplateCell;
     }
     return cell;
+    
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField

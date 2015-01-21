@@ -38,6 +38,6 @@
 
 -(NSString *)asText
 {
-	return [NSString stringWithFormat:@"%ld-%ld", self.myTeam, self.opponent];
+	return [NSString stringWithFormat:@"%ld-%ld", (long)self.myTeam, (long)self.opponent];
 }
 @end
