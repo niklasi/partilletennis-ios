@@ -107,6 +107,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
 	if (self.teamDelegate.allTeams.count == 0) {
 		[DSActivityView newActivityViewForView:self.view withLabel:@"Laddar..."].showNetworkActivityIndicator = YES;
 		[self.pfService loadAllTeams];

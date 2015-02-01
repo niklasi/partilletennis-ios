@@ -38,10 +38,6 @@
 		855F58BE14045D0C00499B78 /* draw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 855F58BC14045D0B00499B78 /* draw@2x.png */; };
 		855F58C114045D6800499B78 /* lost.png in Resources */ = {isa = PBXBuildFile; fileRef = 855F58BF14045D6800499B78 /* lost.png */; };
 		855F58C214045D6800499B78 /* lost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 855F58C014045D6800499B78 /* lost@2x.png */; };
-		856289AF1440BE6100C38084 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 856289AE1440BE6100C38084 /* Icon.png */; };
-		856289C41440E7A500C38084 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 856289C31440E7A500C38084 /* Default@2x.png */; };
-		856289C61440E86400C38084 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 856289C51440E86400C38084 /* Default.png */; };
-		856289CA1440EBBE00C38084 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 856289C91440EBBE00C38084 /* Icon@2x.png */; };
 		8578545913F1EEC800DD4640 /* MatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578545813F1EEC800DD4640 /* MatchResult.m */; };
 		8578545C13F1F16A00DD4640 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578545B13F1F16A00DD4640 /* Set.m */; };
 		8589AAF713C4F1CC006F961E /* MatchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8589AAF613C4F1CC006F961E /* MatchDetailController.m */; };
@@ -79,11 +75,11 @@
 		85CCAD6613CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CCAD6513CF9F4E0061FA5C /* UpcomingMatchTableCellView.xib */; };
 		85CFDC1313EF16EE0016E4C4 /* CompletedMatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFDC1213EF16EE0016E4C4 /* CompletedMatchTableCell.m */; };
 		85CFDC1713EF17560016E4C4 /* UpcomingMatchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFDC1613EF17560016E4C4 /* UpcomingMatchTableCell.m */; };
-		85D808D9182E8D3200626931 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D808D8182E8D3200626931 /* Default-568h@2x.png */; };
 		85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C113C76BA400975A7C /* SeriesView.xib */; };
 		85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8C813C7711300975A7C /* SeriesTableView.xib */; };
 		85E9F8CE13C77A1A00975A7C /* SeriesTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */; };
 		85E9F8D113C7817900975A7C /* SeriesTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E9F8D013C7817900975A7C /* SeriesTableCell.m */; };
+		85FBE6781A705167002ED73A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FBE6771A705167002ED73A /* Images.xcassets */; };
 		85FFC8CA19BA0CDB00D19A05 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85FFC8C919BA0CDB00D19A05 /* EventKit.framework */; };
 		85FFC8CC19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FFC8CB19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib */; };
 		85FFC8CF19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FFC8CE19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.m */; };
@@ -131,10 +127,6 @@
 		855F58BC14045D0B00499B78 /* draw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "draw@2x.png"; sourceTree = "<group>"; };
 		855F58BF14045D6800499B78 /* lost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lost.png; sourceTree = "<group>"; };
 		855F58C014045D6800499B78 /* lost@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lost@2x.png"; sourceTree = "<group>"; };
-		856289AE1440BE6100C38084 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		856289C31440E7A500C38084 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		856289C51440E86400C38084 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		856289C91440EBBE00C38084 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		8578545713F1EEC700DD4640 /* MatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchResult.h; sourceTree = "<group>"; };
 		8578545813F1EEC800DD4640 /* MatchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchResult.m; sourceTree = "<group>"; };
 		8578545A13F1F16A00DD4640 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
@@ -204,12 +196,12 @@
 		85CFDC1213EF16EE0016E4C4 /* CompletedMatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedMatchTableCell.m; sourceTree = "<group>"; };
 		85CFDC1513EF17560016E4C4 /* UpcomingMatchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingMatchTableCell.h; sourceTree = "<group>"; };
 		85CFDC1613EF17560016E4C4 /* UpcomingMatchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingMatchTableCell.m; sourceTree = "<group>"; };
-		85D808D8182E8D3200626931 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		85E9F8C113C76BA400975A7C /* SeriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesView.xib; sourceTree = "<group>"; };
 		85E9F8C813C7711300975A7C /* SeriesTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableView.xib; sourceTree = "<group>"; };
 		85E9F8CD13C77A1A00975A7C /* SeriesTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeriesTableCellView.xib; sourceTree = "<group>"; };
 		85E9F8CF13C7817800975A7C /* SeriesTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriesTableCell.h; sourceTree = "<group>"; };
 		85E9F8D013C7817900975A7C /* SeriesTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriesTableCell.m; sourceTree = "<group>"; };
+		85FBE6771A705167002ED73A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		85FFC8C919BA0CDB00D19A05 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		85FFC8CB19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SyncWithCalendarTableViewCell.xib; sourceTree = "<group>"; };
 		85FFC8CD19BC61EC00D19A05 /* SyncWithCalendarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncWithCalendarTableViewCell.h; sourceTree = "<group>"; };
@@ -297,11 +289,6 @@
 		85B543B313BBCC290065B152 = {
 			isa = PBXGroup;
 			children = (
-				85D808D8182E8D3200626931 /* Default-568h@2x.png */,
-				856289C91440EBBE00C38084 /* Icon@2x.png */,
-				856289C51440E86400C38084 /* Default.png */,
-				856289C31440E7A500C38084 /* Default@2x.png */,
-				856289AE1440BE6100C38084 /* Icon.png */,
 				85B543C813BBCC2A0065B152 /* PartilleTennis */,
 				85B543C113BBCC2A0065B152 /* Frameworks */,
 				85B543BF13BBCC2A0065B152 /* Products */,
@@ -343,6 +330,7 @@
 				85B7182513C3AB3000E8A81C /* Controllers */,
 				85B543D113BBCC2A0065B152 /* PartilleTennisAppDelegate.h */,
 				85B543D213BBCC2A0065B152 /* PartilleTennisAppDelegate.m */,
+				85FBE6771A705167002ED73A /* Images.xcassets */,
 				85B543C913BBCC2A0065B152 /* Supporting Files */,
 			);
 			path = PartilleTennis;
@@ -530,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85FFC8CC19BC60AF00D19A05 /* SyncWithCalendarTableViewCell.xib in Resources */,
+				85FBE6781A705167002ED73A /* Images.xcassets in Resources */,
 				85B543CD13BBCC2A0065B152 /* InfoPlist.strings in Resources */,
 				85E9F8C213C76BA400975A7C /* SeriesView.xib in Resources */,
 				85E9F8C913C7711300975A7C /* SeriesTableView.xib in Resources */,
@@ -560,11 +549,6 @@
 				855F58C214045D6800499B78 /* lost@2x.png in Resources */,
 				85C302F0140C2663009F1C11 /* ConfirmMessageTemplateTableCellView.xib in Resources */,
 				8535791F1431223900AA6A83 /* NewMatchTimeView.xib in Resources */,
-				856289AF1440BE6100C38084 /* Icon.png in Resources */,
-				856289C41440E7A500C38084 /* Default@2x.png in Resources */,
-				856289C61440E86400C38084 /* Default.png in Resources */,
-				85D808D9182E8D3200626931 /* Default-568h@2x.png in Resources */,
-				856289CA1440EBBE00C38084 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +650,8 @@
 		856289C81440E98600C38084 /* App Store Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -715,6 +701,8 @@
 		85A321DC13FC8793009E6FBE /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -799,6 +787,8 @@
 		85B543D713BBCC2A0065B152 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -815,6 +805,8 @@
 		85B543D813BBCC2A0065B152 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
